@@ -17,6 +17,8 @@
 		CF78B1BE1BCC12DD00FDC2CF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1BD1BCC12DD00FDC2CF /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C01BCC130500FDC2CF /* SalesToolsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */; settings = {ASSET_TAGS = (); }; };
+		CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		CF78B1C01BCC130500FDC2CF /* SalesToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesToolsViewController.m; sourceTree = "<group>"; };
 		CF78B1C21BCC132400FDC2CF /* HandyRefViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandyRefViewController.h; sourceTree = "<group>"; };
 		CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandyRefViewController.m; sourceTree = "<group>"; };
+		CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
+		CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 		CF78B17A1BCC110B00FDC2CF = {
 			isa = PBXGroup;
 			children = (
+				CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */,
 				CF78B1851BCC110B00FDC2CF /* QuickMARSales */,
 				CF78B1A21BCC110B00FDC2CF /* QuickMARSalesTests */,
 				CF78B1AD1BCC110B00FDC2CF /* QuickMARSalesUITests */,
@@ -127,6 +133,8 @@
 		CF78B1861BCC110B00FDC2CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */,
+				CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */,
 				CF78B1871BCC110B00FDC2CF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -255,6 +263,7 @@
 			files = (
 				CF78B1991BCC110B00FDC2CF /* LaunchScreen.storyboard in Resources */,
 				CF78B1961BCC110B00FDC2CF /* Assets.xcassets in Resources */,
+				CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */,
 				CF78B1941BCC110B00FDC2CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +291,7 @@
 			files = (
 				CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */,
 				CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */,
+				CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */,
 				CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */,
 				CF78B1881BCC110B00FDC2CF /* main.m in Sources */,
 				CF78B1BE1BCC12DD00FDC2CF /* HomeViewController.m in Sources */,

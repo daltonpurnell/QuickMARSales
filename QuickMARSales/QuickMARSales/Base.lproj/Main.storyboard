@@ -18,38 +18,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-Vj-oGj">
-                                <rect key="frame" x="20" y="85" width="560" height="20.5"/>
+                                <rect key="frame" x="20" y="85" width="560" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.019454342654488074" green="0.0068780371574358144" blue="0.69691051136363635" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqc-yc-DAU">
-                                <rect key="frame" x="20" y="113.5" width="560" height="170"/>
+                                <rect key="frame" x="20" y="114" width="560" height="170"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="ZpB-5W-jWg"/>
                                 </constraints>
                                 <string key="text">This is your elevator pitch. It will be customized for your particular needs.  It will be awesome. I hope you like it. You will like it. If you ever forget what to say to a potential customer, feel free to refer to this.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.33005839646464652" green="0.33005839646464652" blue="0.33005839646464652" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-NM-EQE">
+                                <rect key="frame" x="0.0" y="291" width="600" height="178"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.31603140782828287" green="0.31603140782828287" blue="0.31603140782828287" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-GS-3yB" customClass="YTPlayerView">
+                                <rect key="frame" x="180" y="305" width="240" height="149"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="2f8-Uv-b9P"/>
+                                    <constraint firstAttribute="width" constant="240" id="4u3-7q-e3C"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="xqc-yc-DAU" secondAttribute="trailing" id="0s6-n2-2nQ"/>
                             <constraint firstItem="BOz-Vj-oGj" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="21" id="3kB-vd-zmk"/>
+                            <constraint firstItem="QNa-NM-EQE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="5Pv-Ec-aPB"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xqc-yc-DAU" secondAttribute="leading" id="7Y3-OP-TrZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BOz-Vj-oGj" secondAttribute="trailing" id="9S3-S0-2PT"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="QNa-NM-EQE" secondAttribute="bottom" constant="82" id="OkY-4h-exR"/>
+                            <constraint firstItem="fb4-GS-3yB" firstAttribute="centerX" secondItem="QNa-NM-EQE" secondAttribute="centerX" id="W2P-pz-eBc"/>
+                            <constraint firstItem="fb4-GS-3yB" firstAttribute="top" secondItem="xqc-yc-DAU" secondAttribute="bottom" constant="21" id="bEP-YT-JBq"/>
+                            <constraint firstItem="QNa-NM-EQE" firstAttribute="top" secondItem="xqc-yc-DAU" secondAttribute="bottom" constant="7" id="iy4-Vr-phb"/>
+                            <constraint firstItem="fb4-GS-3yB" firstAttribute="centerY" secondItem="QNa-NM-EQE" secondAttribute="centerY" id="jOH-Bi-MAJ"/>
                             <constraint firstItem="xqc-yc-DAU" firstAttribute="top" secondItem="BOz-Vj-oGj" secondAttribute="bottom" constant="8" id="mkQ-aH-Hfq"/>
+                            <constraint firstItem="fb4-GS-3yB" firstAttribute="centerX" secondItem="xqc-yc-DAU" secondAttribute="centerX" id="zLg-RL-BAr"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BOz-Vj-oGj" secondAttribute="leading" id="zUH-z5-gVj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mBD-uf-qAN"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="QNa-NM-EQE" id="ZNm-gh-GBw"/>
                         <outlet property="elevatorPitchLabel" destination="BOz-Vj-oGj" id="CT9-ny-WUX"/>
+                        <outlet property="elevatorPitchText" destination="xqc-yc-DAU" id="33B-Z8-Kh6"/>
+                        <outlet property="playerView" destination="fb4-GS-3yB" id="eek-q1-Edv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

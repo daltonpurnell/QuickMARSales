@@ -10,6 +10,9 @@
 
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *elevatorPitchLabel;
+@property (weak, nonatomic) IBOutlet UILabel *elevatorPitchText;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @end
 
@@ -21,7 +24,9 @@
     
     UIImage *image = [UIImage imageNamed:@"QuickMAR"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-
+    
+    // load video into player view
+    [self.playerView loadWithVideoId:@"KYVdf5xyD8I"];
 }
 
 
