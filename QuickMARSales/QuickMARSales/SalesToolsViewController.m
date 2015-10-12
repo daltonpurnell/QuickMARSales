@@ -10,6 +10,8 @@
 
 @interface SalesToolsViewController ()
 
+@property (nonatomic, strong) NSArray *optionsList;
+
 @end
 
 @implementation SalesToolsViewController
@@ -22,34 +24,35 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.optionsList= [[NSArray alloc] initWithObjects: @"Elevator Pitch", @"Show Video", @"PowerPoint Slides", nil];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.optionsList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = [self.optionsList objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor colorWithRed:74/255 green:75/255 blue:76/255 alpha:1];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
