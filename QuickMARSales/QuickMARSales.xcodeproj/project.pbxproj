@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF78B1881BCC110B00FDC2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1871BCC110B00FDC2CF /* main.m */; };
+		CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */; };
+		CF78B18E1BCC110B00FDC2CF /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B18D1BCC110B00FDC2CF /* FirstViewController.m */; };
+		CF78B1911BCC110B00FDC2CF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1901BCC110B00FDC2CF /* SecondViewController.m */; };
+		CF78B1941BCC110B00FDC2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1921BCC110B00FDC2CF /* Main.storyboard */; };
+		CF78B1961BCC110B00FDC2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1951BCC110B00FDC2CF /* Assets.xcassets */; };
+		CF78B1991BCC110B00FDC2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */; };
+		CF78B1A41BCC110B00FDC2CF /* QuickMARSalesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1A31BCC110B00FDC2CF /* QuickMARSalesTests.m */; };
+		CF78B1AF1BCC110B00FDC2CF /* QuickMARSalesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1AE1BCC110B00FDC2CF /* QuickMARSalesUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF78B1A01BCC110B00FDC2CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF78B17B1BCC110B00FDC2CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF78B1821BCC110B00FDC2CF;
+			remoteInfo = QuickMARSales;
+		};
+		CF78B1AB1BCC110B00FDC2CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF78B17B1BCC110B00FDC2CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF78B1821BCC110B00FDC2CF;
+			remoteInfo = QuickMARSales;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF78B1831BCC110B00FDC2CF /* QuickMARSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickMARSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF78B1871BCC110B00FDC2CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF78B1891BCC110B00FDC2CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF78B18C1BCC110B00FDC2CF /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		CF78B18D1BCC110B00FDC2CF /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		CF78B18F1BCC110B00FDC2CF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		CF78B1901BCC110B00FDC2CF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CF78B1931BCC110B00FDC2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF78B1951BCC110B00FDC2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF78B1981BCC110B00FDC2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF78B19A1BCC110B00FDC2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF78B19F1BCC110B00FDC2CF /* QuickMARSalesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickMARSalesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF78B1A31BCC110B00FDC2CF /* QuickMARSalesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickMARSalesTests.m; sourceTree = "<group>"; };
+		CF78B1A51BCC110B00FDC2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF78B1AA1BCC110B00FDC2CF /* QuickMARSalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickMARSalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF78B1AE1BCC110B00FDC2CF /* QuickMARSalesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickMARSalesUITests.m; sourceTree = "<group>"; };
+		CF78B1B01BCC110B00FDC2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF78B1801BCC110B00FDC2CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B19C1BCC110B00FDC2CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B1A71BCC110B00FDC2CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF78B17A1BCC110B00FDC2CF = {
+			isa = PBXGroup;
+			children = (
+				CF78B1851BCC110B00FDC2CF /* QuickMARSales */,
+				CF78B1A21BCC110B00FDC2CF /* QuickMARSalesTests */,
+				CF78B1AD1BCC110B00FDC2CF /* QuickMARSalesUITests */,
+				CF78B1841BCC110B00FDC2CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF78B1841BCC110B00FDC2CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF78B1831BCC110B00FDC2CF /* QuickMARSales.app */,
+				CF78B19F1BCC110B00FDC2CF /* QuickMARSalesTests.xctest */,
+				CF78B1AA1BCC110B00FDC2CF /* QuickMARSalesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF78B1851BCC110B00FDC2CF /* QuickMARSales */ = {
+			isa = PBXGroup;
+			children = (
+				CF78B1891BCC110B00FDC2CF /* AppDelegate.h */,
+				CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */,
+				CF78B18C1BCC110B00FDC2CF /* FirstViewController.h */,
+				CF78B18D1BCC110B00FDC2CF /* FirstViewController.m */,
+				CF78B18F1BCC110B00FDC2CF /* SecondViewController.h */,
+				CF78B1901BCC110B00FDC2CF /* SecondViewController.m */,
+				CF78B1921BCC110B00FDC2CF /* Main.storyboard */,
+				CF78B1951BCC110B00FDC2CF /* Assets.xcassets */,
+				CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */,
+				CF78B19A1BCC110B00FDC2CF /* Info.plist */,
+				CF78B1861BCC110B00FDC2CF /* Supporting Files */,
+			);
+			path = QuickMARSales;
+			sourceTree = "<group>";
+		};
+		CF78B1861BCC110B00FDC2CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF78B1871BCC110B00FDC2CF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF78B1A21BCC110B00FDC2CF /* QuickMARSalesTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF78B1A31BCC110B00FDC2CF /* QuickMARSalesTests.m */,
+				CF78B1A51BCC110B00FDC2CF /* Info.plist */,
+			);
+			path = QuickMARSalesTests;
+			sourceTree = "<group>";
+		};
+		CF78B1AD1BCC110B00FDC2CF /* QuickMARSalesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF78B1AE1BCC110B00FDC2CF /* QuickMARSalesUITests.m */,
+				CF78B1B01BCC110B00FDC2CF /* Info.plist */,
+			);
+			path = QuickMARSalesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF78B1821BCC110B00FDC2CF /* QuickMARSales */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF78B1B31BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSales" */;
+			buildPhases = (
+				CF78B17F1BCC110B00FDC2CF /* Sources */,
+				CF78B1801BCC110B00FDC2CF /* Frameworks */,
+				CF78B1811BCC110B00FDC2CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickMARSales;
+			productName = QuickMARSales;
+			productReference = CF78B1831BCC110B00FDC2CF /* QuickMARSales.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF78B19E1BCC110B00FDC2CF /* QuickMARSalesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF78B1B61BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSalesTests" */;
+			buildPhases = (
+				CF78B19B1BCC110B00FDC2CF /* Sources */,
+				CF78B19C1BCC110B00FDC2CF /* Frameworks */,
+				CF78B19D1BCC110B00FDC2CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF78B1A11BCC110B00FDC2CF /* PBXTargetDependency */,
+			);
+			name = QuickMARSalesTests;
+			productName = QuickMARSalesTests;
+			productReference = CF78B19F1BCC110B00FDC2CF /* QuickMARSalesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF78B1A91BCC110B00FDC2CF /* QuickMARSalesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF78B1B91BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSalesUITests" */;
+			buildPhases = (
+				CF78B1A61BCC110B00FDC2CF /* Sources */,
+				CF78B1A71BCC110B00FDC2CF /* Frameworks */,
+				CF78B1A81BCC110B00FDC2CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF78B1AC1BCC110B00FDC2CF /* PBXTargetDependency */,
+			);
+			name = QuickMARSalesUITests;
+			productName = QuickMARSalesUITests;
+			productReference = CF78B1AA1BCC110B00FDC2CF /* QuickMARSalesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF78B17B1BCC110B00FDC2CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Dalton;
+				TargetAttributes = {
+					CF78B1821BCC110B00FDC2CF = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					CF78B19E1BCC110B00FDC2CF = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = CF78B1821BCC110B00FDC2CF;
+					};
+					CF78B1A91BCC110B00FDC2CF = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = CF78B1821BCC110B00FDC2CF;
+					};
+				};
+			};
+			buildConfigurationList = CF78B17E1BCC110B00FDC2CF /* Build configuration list for PBXProject "QuickMARSales" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF78B17A1BCC110B00FDC2CF;
+			productRefGroup = CF78B1841BCC110B00FDC2CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF78B1821BCC110B00FDC2CF /* QuickMARSales */,
+				CF78B19E1BCC110B00FDC2CF /* QuickMARSalesTests */,
+				CF78B1A91BCC110B00FDC2CF /* QuickMARSalesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF78B1811BCC110B00FDC2CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF78B1991BCC110B00FDC2CF /* LaunchScreen.storyboard in Resources */,
+				CF78B1961BCC110B00FDC2CF /* Assets.xcassets in Resources */,
+				CF78B1941BCC110B00FDC2CF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B19D1BCC110B00FDC2CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B1A81BCC110B00FDC2CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF78B17F1BCC110B00FDC2CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF78B1911BCC110B00FDC2CF /* SecondViewController.m in Sources */,
+				CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */,
+				CF78B18E1BCC110B00FDC2CF /* FirstViewController.m in Sources */,
+				CF78B1881BCC110B00FDC2CF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B19B1BCC110B00FDC2CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF78B1A41BCC110B00FDC2CF /* QuickMARSalesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF78B1A61BCC110B00FDC2CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF78B1AF1BCC110B00FDC2CF /* QuickMARSalesUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF78B1A11BCC110B00FDC2CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF78B1821BCC110B00FDC2CF /* QuickMARSales */;
+			targetProxy = CF78B1A01BCC110B00FDC2CF /* PBXContainerItemProxy */;
+		};
+		CF78B1AC1BCC110B00FDC2CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF78B1821BCC110B00FDC2CF /* QuickMARSales */;
+			targetProxy = CF78B1AB1BCC110B00FDC2CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF78B1921BCC110B00FDC2CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF78B1931BCC110B00FDC2CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF78B1981BCC110B00FDC2CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF78B1B11BCC110B00FDC2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF78B1B21BCC110B00FDC2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF78B1B41BCC110B00FDC2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuickMARSales/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF78B1B51BCC110B00FDC2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QuickMARSales/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSales;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CF78B1B71BCC110B00FDC2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QuickMARSalesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSalesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickMARSales.app/QuickMARSales";
+			};
+			name = Debug;
+		};
+		CF78B1B81BCC110B00FDC2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = QuickMARSalesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSalesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickMARSales.app/QuickMARSales";
+			};
+			name = Release;
+		};
+		CF78B1BA1BCC110B00FDC2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QuickMARSalesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSalesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QuickMARSales;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CF78B1BB1BCC110B00FDC2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = QuickMARSalesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSalesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = QuickMARSales;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF78B17E1BCC110B00FDC2CF /* Build configuration list for PBXProject "QuickMARSales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF78B1B11BCC110B00FDC2CF /* Debug */,
+				CF78B1B21BCC110B00FDC2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF78B1B31BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSales" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF78B1B41BCC110B00FDC2CF /* Debug */,
+				CF78B1B51BCC110B00FDC2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF78B1B61BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSalesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF78B1B71BCC110B00FDC2CF /* Debug */,
+				CF78B1B81BCC110B00FDC2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CF78B1B91BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSalesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF78B1BA1BCC110B00FDC2CF /* Debug */,
+				CF78B1BB1BCC110B00FDC2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF78B17B1BCC110B00FDC2CF /* Project object */;
+}
