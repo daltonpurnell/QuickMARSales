@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QMBackgroundGradient" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-Ss-Jux">
-                                <rect key="frame" x="0.0" y="85" width="600" height="26"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="26"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="V4a-qc-DcA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-Vj-oGj">
-                                <rect key="frame" x="20" y="85" width="560" height="26"/>
+                                <rect key="frame" x="20" y="64" width="560" height="26"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="cpQ-SZ-RmI"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqc-yc-DAU">
-                                <rect key="frame" x="20" y="119" width="560" height="120"/>
+                                <rect key="frame" x="20" y="98" width="560" height="120"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="2gz-MD-ClM"/>
@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-NM-EQE">
-                                <rect key="frame" x="0.0" y="311" width="600" height="178"/>
+                                <rect key="frame" x="0.0" y="290" width="600" height="178"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.31603140782828287" green="0.31603140782828287" blue="0.31603140782828287" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-GS-3yB" customClass="YTPlayerView">
-                                <rect key="frame" x="180" y="325" width="240" height="149"/>
+                                <rect key="frame" x="180" y="304" width="240" height="149"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -71,7 +71,7 @@
                             <constraint firstItem="fb4-GS-3yB" firstAttribute="centerX" secondItem="QNa-NM-EQE" secondAttribute="centerX" id="V9E-GA-jsc"/>
                             <constraint firstItem="TbT-Ss-Jux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="YAJ-9m-cE7"/>
                             <constraint firstItem="TbT-Ss-Jux" firstAttribute="centerY" secondItem="BOz-Vj-oGj" secondAttribute="centerY" id="ZR8-Of-25b"/>
-                            <constraint firstItem="BOz-Vj-oGj" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="21" id="b8u-XS-GNi"/>
+                            <constraint firstItem="BOz-Vj-oGj" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="b8u-XS-GNi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xqc-yc-DAU" secondAttribute="trailing" id="cob-Qs-Df4"/>
                             <constraint firstItem="QNa-NM-EQE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="hEK-fA-m5e"/>
                             <constraint firstItem="xqc-yc-DAU" firstAttribute="top" secondItem="BOz-Vj-oGj" secondAttribute="bottom" constant="8" id="jGo-KQ-kr5"/>

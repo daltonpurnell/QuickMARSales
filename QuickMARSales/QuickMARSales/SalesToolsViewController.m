@@ -59,7 +59,21 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    if (indexPath.row == 0) {
+        
+        // elevator pitch
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        
+    } else if (indexPath.row == 1) {
+        
+        // youtube video
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.youtube.com/watch?v=4LhHBE2RyqY"]];
+        
+    } else if (indexPath.row == 2) {
+        
+        // power point slides
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+    }
 }
 
 
