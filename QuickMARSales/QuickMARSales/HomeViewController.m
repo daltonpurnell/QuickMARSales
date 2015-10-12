@@ -26,7 +26,10 @@
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     
     // load video into player view
-    [self.playerView loadWithVideoId:@"KYVdf5xyD8I"];
+    [self.playerView loadWithVideoId:@"4LhHBE2RyqY"];
+    
+    
+    
 }
 
 
