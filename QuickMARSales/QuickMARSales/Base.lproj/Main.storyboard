@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -16,18 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="157.5" height="41.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevator Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-Vj-oGj">
+                                <rect key="frame" x="20" y="85" width="560" height="20.5"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="194.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqc-yc-DAU">
+                                <rect key="frame" x="20" y="113.5" width="560" height="170"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="ZpB-5W-jWg"/>
+                                </constraints>
+                                <string key="text">This is your elevator pitch. It will be customized for your particular needs.  It will be awesome. I hope you like it. You will like it. If you ever forget what to say to a potential customer, feel free to refer to this.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,29 +39,34 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xqc-yc-DAU" secondAttribute="trailing" id="0s6-n2-2nQ"/>
+                            <constraint firstItem="BOz-Vj-oGj" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="21" id="3kB-vd-zmk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xqc-yc-DAU" secondAttribute="leading" id="7Y3-OP-TrZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BOz-Vj-oGj" secondAttribute="trailing" id="9S3-S0-2PT"/>
+                            <constraint firstItem="xqc-yc-DAU" firstAttribute="top" secondItem="BOz-Vj-oGj" secondAttribute="bottom" constant="8" id="mkQ-aH-Hfq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BOz-Vj-oGj" secondAttribute="leading" id="zUH-z5-gVj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mBD-uf-qAN"/>
+                    <connections>
+                        <outlet property="elevatorPitchLabel" destination="BOz-Vj-oGj" id="CT9-ny-WUX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sales Tools-->
         <scene sceneID="6lf-8c-LJW">
             <objects>
-                <tableViewController id="89v-ZL-acp" sceneMemberID="viewController">
+                <tableViewController id="89v-ZL-acp" customClass="SalesToolsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ql1-YC-ozE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9LL-FU-Ogz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="9LL-FU-Ogz">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9LL-FU-Ogz" id="BHQ-26-Wp0">
@@ -73,23 +82,23 @@
                             <outlet property="delegate" destination="89v-ZL-acp" id="GaH-g4-ujV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="o6B-3C-WSC"/>
+                    <navigationItem key="navigationItem" title="Sales Tools" id="o6B-3C-WSC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMB-eC-TLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="378"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Handy Reference-->
         <scene sceneID="Q7o-qX-IRU">
             <objects>
-                <tableViewController id="sew-bc-eUT" sceneMemberID="viewController">
+                <tableViewController id="sew-bc-eUT" customClass="HandyRefViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZuV-1t-M8G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IwX-kO-2I4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IwX-kO-2I4">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IwX-kO-2I4" id="16o-Y0-mOo">
@@ -105,7 +114,7 @@
                             <outlet property="delegate" destination="sew-bc-eUT" id="EGB-Re-sQi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="V8M-pA-4cM"/>
+                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="-164" y="528"/>
         </scene>
-        <!--First-->
+        <!--Home-->
         <scene sceneID="BK0-0N-oyC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XiK-1G-bUD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D2C-2F-obP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -152,11 +161,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Item-->
+        <!--Sales Tools-->
         <scene sceneID="9ZD-vt-aCi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j64-jv-bsj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gXh-6o-8Qa"/>
+                    <tabBarItem key="tabBarItem" title="Sales Tools" id="gXh-6o-8Qa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AST-xg-oHp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -172,11 +181,11 @@
             </objects>
             <point key="canvasLocation" x="750" y="378"/>
         </scene>
-        <!--Item-->
+        <!--Handy Ref-->
         <scene sceneID="uet-p8-QWS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCe-ZX-aFw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2Dq-aX-1xi"/>
+                    <tabBarItem key="tabBarItem" title="Handy Ref" id="2Dq-aX-1xi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eWw-1d-GR0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
