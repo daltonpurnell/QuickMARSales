@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MessageUI;
 
-@interface HandyRefViewController : UITableViewController
+@interface HandyRefViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @end

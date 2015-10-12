@@ -28,10 +28,11 @@
     // load video into player view
     [self.playerView loadWithVideoId:@"4LhHBE2RyqY"];
     
+    self.tabBarController.tabBar.barTintColor =  [UIColor colorWithRed:0.533 green:0.764 blue:0.216 alpha:1.000];
+    self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     
     
 }
-
 
 /*
 #pragma mark - Navigation

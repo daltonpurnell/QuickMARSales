@@ -153,7 +153,13 @@
                             <outlet property="delegate" destination="sew-bc-eUT" id="EGB-Re-sQi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM"/>
+                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM">
+                        <barButtonItem key="rightBarButtonItem" image="Edit Property-32" id="BqF-2r-zAB">
+                            <connections>
+                                <action selector="emailButtonTapped:" destination="sew-bc-eUT" id="Tj3-wk-R8x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,7 +190,7 @@
         <scene sceneID="BK0-0N-oyC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XiK-1G-bUD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home-32 (1)" selectedImage="Home-32 (1)" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D2C-2F-obP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -204,7 +210,7 @@
         <scene sceneID="9ZD-vt-aCi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j64-jv-bsj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sales Tools" id="gXh-6o-8Qa"/>
+                    <tabBarItem key="tabBarItem" title="Sales Tools" image="Hammer-26" selectedImage="Hammer-26" id="gXh-6o-8Qa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AST-xg-oHp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -224,7 +230,7 @@
         <scene sceneID="uet-p8-QWS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCe-ZX-aFw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Handy Ref" id="2Dq-aX-1xi"/>
+                    <tabBarItem key="tabBarItem" title="Handy Ref" image="Document-26" selectedImage="Document-26" id="2Dq-aX-1xi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eWw-1d-GR0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -242,7 +248,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Document-26" width="26" height="26"/>
+        <image name="Edit Property-32" width="32" height="32"/>
+        <image name="Hammer-26" width="26" height="26"/>
+        <image name="Home-32 (1)" width="32" height="32"/>
         <image name="QMBackgroundGradient" width="360" height="216"/>
-        <image name="first" width="30" height="30"/>
     </resources>
 </document>

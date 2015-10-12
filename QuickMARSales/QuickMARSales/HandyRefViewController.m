@@ -24,7 +24,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
     self.optionsList= [[NSArray alloc] initWithObjects: @"Request A Demo", @"Request A Training", @"Request Hardware", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", nil];
 
 }
@@ -104,6 +103,23 @@
         
     }
 }
+
+- (IBAction)emailButtonTapped:(id)sender {
+// mf mail compose view controller
+    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+    mailViewController.mailComposeDelegate = self;
+    [self presentViewController:mailViewController animated:YES completion:nil];
+    
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 
 
 
