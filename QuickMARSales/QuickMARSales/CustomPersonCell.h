@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonController.h"
 
 @interface CustomPersonCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (strong, nonatomic) Person *person;
 
 @end

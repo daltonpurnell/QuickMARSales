@@ -54,6 +54,16 @@
 }
 
 
+
+#pragma mark - table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 150;
+}
+
+
+
 - (IBAction)addButtonTapped:(id)sender {
     
     // Show ABPeoplePickerNavigationController
@@ -177,10 +187,9 @@
                                  [alert addAction:[UIAlertAction actionWithTitle:@"Add Employee" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      
                                      // now load all these things into a person object and save it to parse
-//                                     [[EmployeeController sharedInstance]createEmployeeWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address Photo:self.savedPhoto];
-//                                     
-                                    
+                                     [[PersonController sharedInstance]createPersonWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address];
                                      [self.tableView reloadData];
+                                     NSLog(@"Person saved to parse");
                                  }]];
                                  
                                  [alert addAction:[UIAlertAction actionWithTitle:@"Nevermind" style:UIAlertActionStyleCancel handler:nil]];

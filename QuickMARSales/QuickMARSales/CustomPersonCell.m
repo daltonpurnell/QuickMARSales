@@ -12,6 +12,12 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName, self.person.lastName];
+    self.emailLabel.text = [NSString stringWithFormat:@"%@", self.person.emailAddress];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@", self.person.address];
+    self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

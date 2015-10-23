@@ -263,15 +263,68 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="CKj-j8-AbI">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="CKj-j8-AbI" customClass="CustomPersonCell">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKj-j8-AbI" id="zDC-4z-ZN0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evk-rE-qQQ">
+                                            <rect key="frame" x="13" y="14" width="573" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-Q3-2nH">
+                                            <rect key="frame" x="13" y="42" width="573" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-uN-7pK">
+                                            <rect key="frame" x="13" y="70.5" width="573" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNs-TV-YLM">
+                                            <rect key="frame" x="13" y="99" width="573" height="42.5"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42.5" id="BQH-Qb-NWI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bNs-TV-YLM" secondAttribute="trailing" constant="6" id="KyU-PL-PWq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cwA-uN-7pK" secondAttribute="trailing" constant="6" id="WI1-A6-PSj"/>
+                                        <constraint firstItem="bNs-TV-YLM" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="a4b-zD-wkG"/>
+                                        <constraint firstItem="Xjd-Q3-2nH" firstAttribute="top" secondItem="evk-rE-qQQ" secondAttribute="bottom" constant="8" id="aZE-9R-v4e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="evk-rE-qQQ" secondAttribute="trailing" constant="6" id="bth-n3-zQx"/>
+                                        <constraint firstItem="Xjd-Q3-2nH" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="dgh-ge-ozU"/>
+                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="top" secondItem="Xjd-Q3-2nH" secondAttribute="bottom" constant="8" id="eAw-5b-aMR"/>
+                                        <constraint firstItem="evk-rE-qQQ" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="jHY-DD-mZE"/>
+                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="jgv-Bv-Mfg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xjd-Q3-2nH" secondAttribute="trailing" constant="6" id="r1o-XA-HwS"/>
+                                        <constraint firstItem="bNs-TV-YLM" firstAttribute="top" secondItem="cwA-uN-7pK" secondAttribute="bottom" constant="8" id="uY6-Fm-60m"/>
+                                        <constraint firstItem="evk-rE-qQQ" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="6" id="yGs-FT-IpO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="addressLabel" destination="bNs-TV-YLM" id="CMv-Aj-o8l"/>
+                                    <outlet property="emailLabel" destination="cwA-uN-7pK" id="LGb-gQ-PmN"/>
+                                    <outlet property="nameLabel" destination="evk-rE-qQQ" id="KjO-bp-8Ii"/>
+                                    <outlet property="phoneNumberLabel" destination="Xjd-Q3-2nH" id="1yu-YH-APl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
