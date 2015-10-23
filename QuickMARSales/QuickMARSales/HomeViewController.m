@@ -9,8 +9,7 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *elevatorPitchLabel;
-@property (weak, nonatomic) IBOutlet UILabel *elevatorPitchText;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
@@ -22,15 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIImage *image = [UIImage imageNamed:@"QuickMAR"];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-    
     // load video into player view
     [self.playerView loadWithVideoId:@"4LhHBE2RyqY"];
     
     self.tabBarController.tabBar.barTintColor =  [UIColor colorWithRed:0.533 green:0.764 blue:0.216 alpha:1.000];
     self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     
+    
+}
+
+
+- (IBAction)doneButtonTapped:(id)sender {
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
