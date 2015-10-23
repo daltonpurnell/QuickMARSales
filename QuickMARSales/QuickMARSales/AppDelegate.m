@@ -22,6 +22,9 @@
     [Parse setApplicationId:@"Fg952Idn4lDdhlFZSEutCexY9sFS5lDRn2iwXiPM"
                   clientKey:@"UVw84TDwmBOzDzLwbo7UEbfCfK8iaP9ueHILikcK"];
     
+    
+    [Person registerSubclass];
+    
     return YES;
 }
 
