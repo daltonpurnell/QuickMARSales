@@ -333,6 +333,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CRM" id="9KE-sg-xIh">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="ND7-g4-jgE">
+                            <connections>
+                                <action selector="refreshButtonTapped:" destination="qca-Y4-wAQ" id="1th-Fv-xrE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="sez-0H-MAl">
                             <connections>
                                 <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>

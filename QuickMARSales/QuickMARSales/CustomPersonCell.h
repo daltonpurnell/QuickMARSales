@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 
 @end

@@ -15,5 +15,6 @@
 
 @interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate>
 
+@property (strong, nonatomic) Person *person;
 
 @end

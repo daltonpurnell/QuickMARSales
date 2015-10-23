@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [PersonController sharedInstance].people.count;
 }
 
 
@@ -46,9 +46,10 @@
     CustomPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
-//    Person *person = [PersonController sharedInstance].people[indexPath.row];
-//    customCell.person = person;
-
+    Person *person = [PersonController sharedInstance].people[indexPath.row];
+    cell.person = person;
+    
+    cell.indexPath = indexPath;
     
     return cell;
 }
@@ -62,7 +63,7 @@
     return 150;
 }
 
-
+#pragma mark - events
 
 - (IBAction)addButtonTapped:(id)sender {
     
@@ -80,6 +81,16 @@
 
     
 }
+
+
+- (IBAction)refreshButtonTapped:(id)sender {
+    
+    
+    [self.tableView reloadData];
+    
+}
+
+
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate methods
 
