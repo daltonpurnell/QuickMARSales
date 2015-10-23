@@ -7,6 +7,7 @@
 //
 
 #import "CRMTableVC.h"
+#import "CustomPersonCell.h"
 
 @interface CRMTableVC ()
 
@@ -41,11 +42,13 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+- (CustomPersonCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CustomPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = @"text";
+//    Person *person = [PersonController sharedInstance].people[indexPath.row];
+//    customCell.person = person;
+
     
     return cell;
 }
