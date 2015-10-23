@@ -256,14 +256,14 @@
         <!--CRM-->
         <scene sceneID="Q8S-XG-fF9">
             <objects>
-                <tableViewController id="qca-Y4-wAQ" sceneMemberID="viewController">
+                <tableViewController id="qca-Y4-wAQ" customClass="CRMTableVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="vkp-9p-Ch4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CKj-j8-AbI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="CKj-j8-AbI">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKj-j8-AbI" id="zDC-4z-ZN0">
@@ -280,7 +280,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CRM" id="9KE-sg-xIh">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="sez-0H-MAl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="sez-0H-MAl">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWL-wl-TMA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CF2863AC1BDA8F610005ABA0 /* CRMTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */; settings = {ASSET_TAGS = (); }; };
+		CF2863AE1BDA904C0005ABA0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863AD1BDA904C0005ABA0 /* AddressBook.framework */; };
+		CF2863B01BDA90540005ABA0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863AF1BDA90540005ABA0 /* AddressBookUI.framework */; };
 		CF78B1881BCC110B00FDC2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1871BCC110B00FDC2CF /* main.m */; };
 		CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */; };
 		CF78B1941BCC110B00FDC2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1921BCC110B00FDC2CF /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElevatorPitchViewController.m; sourceTree = "<group>"; };
 		CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTableVC.h; sourceTree = "<group>"; };
 		CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMTableVC.m; sourceTree = "<group>"; };
+		CF2863AD1BDA904C0005ABA0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CF2863AF1BDA90540005ABA0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CF78B1831BCC110B00FDC2CF /* QuickMARSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickMARSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF78B1871BCC110B00FDC2CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF78B1891BCC110B00FDC2CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2863B01BDA90540005ABA0 /* AddressBookUI.framework in Frameworks */,
+				CF2863AE1BDA904C0005ABA0 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,13 +135,13 @@
 				CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */,
 				CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */,
 				CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */,
+				CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */,
+				CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */,
 				CF78B1921BCC110B00FDC2CF /* Main.storyboard */,
 				CF78B1951BCC110B00FDC2CF /* Assets.xcassets */,
 				CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */,
 				CF78B19A1BCC110B00FDC2CF /* Info.plist */,
 				CF78B1861BCC110B00FDC2CF /* Supporting Files */,
-				CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */,
-				CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */,
 			);
 			path = QuickMARSales;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 		CF78B1861BCC110B00FDC2CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF2863AF1BDA90540005ABA0 /* AddressBookUI.framework */,
+				CF2863AD1BDA904C0005ABA0 /* AddressBook.framework */,
 				CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */,
 				CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */,
 				CF78B1871BCC110B00FDC2CF /* main.m */,

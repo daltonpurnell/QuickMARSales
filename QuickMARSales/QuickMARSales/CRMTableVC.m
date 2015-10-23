@@ -10,6 +10,12 @@
 
 @interface CRMTableVC ()
 
+@property (strong, nonatomic) NSString *savedEmail;
+@property (strong, nonatomic) NSString *savedPhoneNumber;
+@property (strong, nonatomic) NSString *savedAddress;
+@property (strong, nonatomic) NSString *savedFirstName;
+@property (strong, nonatomic) NSString *savedLastName;
+
 @end
 
 @implementation CRMTableVC
@@ -17,17 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 #pragma mark - Table view data source
 
@@ -36,7 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 0;
 }
 
 
@@ -44,45 +45,150 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = @"text";
     
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+- (IBAction)addButtonTapped:(id)sender {
+    
+    // Show ABPeoplePickerNavigationController
+    ABPeoplePickerNavigationController *picker = [ABPeoplePickerNavigationController new];
+    picker.peoplePickerDelegate = self;
+    picker.displayedProperties = @[@(kABPersonEmailProperty)];
+    //    picker.predicateForEnablingPerson = [NSPredicate predicateWithFormat:@"emailAddresses.@count > 0"];
+    //    picker.predicateForSelectionOfPerson = [NSPredicate predicateWithFormat:@"emailAddresses.@count = 1"];
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+    NSLog(@"People picker launched");
+    //    }
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+#pragma mark - ABPeoplePickerNavigationControllerDelegate methods
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+// A selected person is returned with this method.
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person
+{
+    [self didSelectPerson:person identifier:kABMultiValueInvalidIdentifier];
 }
-*/
+
+
+// A selected person and property is returned with this method.
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
+{
+    [self didSelectPerson:person identifier:identifier];
+}
+
+
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
+{
+    
+}
+
+
+
+#pragma mark - ABPeoplePickerNavigationController helper methods
+
+- (void)didSelectPerson:(ABRecordRef)person identifier:(ABMultiValueIdentifier)identifier
+{
+    
+    // get email
+    NSString *emailAddress = @"No Email Address";
+    ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+    if (emails)
+    {
+        if (ABMultiValueGetCount(emails) > 0)
+        {
+            CFIndex index = 0;
+            if (identifier != kABMultiValueInvalidIdentifier)
+            {
+                index = ABMultiValueGetIndexForIdentifier(emails, identifier);
+            }
+            emailAddress = CFBridgingRelease(ABMultiValueCopyValueAtIndex(emails, index));
+        }
+        CFRelease(emails);
+    }
+    self.savedEmail = emailAddress;
+    
+    // get phone number
+    NSString *phoneNumber = @"No Phone Number";
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    if (phoneNumbers) {
+        if (ABMultiValueGetCount(phoneNumbers) > 0)
+        {
+            CFIndex index = 0;
+            if (identifier != kABMultiValueInvalidIdentifier) {
+                
+                index = ABMultiValueGetIndexForIdentifier(phoneNumbers, identifier);
+            }
+            phoneNumber = CFBridgingRelease(ABMultiValueCopyValueAtIndex(phoneNumbers, index));
+        }
+        CFRelease(phoneNumbers);
+    }
+    
+    self.savedPhoneNumber = phoneNumber;
+    
+    
+    // get address
+    NSString *address = @"No Address";
+    ABMultiValueRef addresses = ABRecordCopyValue(person, kABPersonAddressProperty);
+    if (addresses) {
+        if (ABMultiValueGetCount(addresses) > 0)
+        {
+            CFIndex index = 0;
+            if (identifier != kABMultiValueInvalidIdentifier) {
+                
+                index = ABMultiValueGetIndexForIdentifier(addresses, identifier);
+            }
+            address = CFBridgingRelease(ABMultiValueCopyValueAtIndex(addresses, index));
+        }
+        CFRelease(addresses);
+    }
+    self.savedAddress = address;
+    
+    // get firstname
+    NSString *firstName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    
+    if (!firstName) {
+        firstName = @"";
+    } else {
+        self.savedFirstName = firstName;
+    }
+    
+    // get lastname
+    NSString *lastName = (__bridge NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    if (!lastName) {
+        lastName = @"";
+    } else {
+        self.savedLastName = lastName;
+    }
+    
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure you would like to add this person to your CRM?" message:[NSString stringWithFormat:@"%@ %@ \n %@ \n %@ \n %@", firstName, lastName, phoneNumber, emailAddress, address] preferredStyle:UIAlertControllerStyleAlert];
+                                 
+                                 [alert addAction:[UIAlertAction actionWithTitle:@"Add Employee" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     
+                                     // now load all these things into a person object and save it to parse
+//                                     [[EmployeeController sharedInstance]createEmployeeWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address Photo:self.savedPhoto];
+//                                     
+                                    
+                                     [self.tableView reloadData];
+                                 }]];
+                                 
+                                 [alert addAction:[UIAlertAction actionWithTitle:@"Nevermind" style:UIAlertActionStyleCancel handler:nil]];
+                                 
+                                 [self presentViewController:alert animated:YES completion:nil];
+                                 
+                             }];
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

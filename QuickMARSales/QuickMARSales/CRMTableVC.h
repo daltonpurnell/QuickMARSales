@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MessageUI;
+@import AddressBook;
+@import AddressBookUI;
 
-@interface CRMTableVC : UITableViewController
+
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate>
 
 @end
