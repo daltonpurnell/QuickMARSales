@@ -9,7 +9,7 @@
 #import "CRMTableVC.h"
 #import "CustomPersonCell.h"
 
-@interface CRMTableVC ()
+@interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate>
 
 @property (strong, nonatomic) NSString *savedEmail;
 @property (strong, nonatomic) NSString *savedPhoneNumber;
@@ -26,6 +26,14 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // get permission to access contacts
+    ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
+    ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+        NSLog(@"Access to contacts %@ by user", granted ? @"granted" : @"denied");
+    });
+    
+    [self registerForNotifications];
 
 }
 
@@ -49,6 +57,8 @@
     Person *person = [PersonController sharedInstance].people[indexPath.row];
     cell.person = person;
     
+    cell.delegate = self;
+    cell.emailDelegate = self;
     cell.indexPath = indexPath;
     
     return cell;
@@ -195,7 +205,7 @@
                              completion:^{
                                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure you would like to add this person to your CRM?" message:[NSString stringWithFormat:@"%@ %@ \n %@ \n %@ \n %@", firstName, lastName, phoneNumber, emailAddress, address] preferredStyle:UIAlertControllerStyleAlert];
                                  
-                                 [alert addAction:[UIAlertAction actionWithTitle:@"Add Employee" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 [alert addAction:[UIAlertAction actionWithTitle:@"Add Person" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      
                                      // now load all these things into a person object and save it to parse
                                      self.person = [[PersonController sharedInstance]createPersonWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address];
@@ -210,6 +220,123 @@
                              }];
     
 }
+
+
+
+#pragma mark - custom delegate methods
+
+-(void)textButtonTapped:(NSIndexPath*)indexPath {
+    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
+    
+    // if the phoneNumber string contains numbers and his more than 7 characters long
+    if (person.phoneNumber.length >= 7 && [person.phoneNumber rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound)
+    {
+        
+        
+        NSString *strippedPhoneNumber = [[person.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        
+        NSLog(@"%@", strippedPhoneNumber);
+        
+        // launch mfmessagecompose
+        MFMessageComposeViewController *messageVC = [MFMessageComposeViewController new];
+        messageVC.messageComposeDelegate = self;
+        messageVC.recipients = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", strippedPhoneNumber], nil];
+        
+        [self presentViewController:messageVC animated:YES completion:nil];
+        
+    } else {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This person does not have a phone number on file" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+
+
+-(void)emailButtonTapped:(NSIndexPath*)indexPath {
+    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
+    
+    // if the email string contains @
+    NSCharacterSet *cset = [NSCharacterSet characterSetWithCharactersInString:@"@"];
+    if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
+    {
+        // launch mfmailcompose
+        MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
+        
+        [self presentViewController:mailViewController animated:YES completion:nil];
+        
+        
+    } else {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This person does not have an email address on file" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+
+
+
+#pragma mark - message compose delegate method
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
+#pragma mark - mail compose delegate method
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+#pragma mark - nsnotifications methods
+
+-(void)registerForNotifications {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToNoPhoneNumber:) name:NoPhoneNumberNotificationKey object:nil];
+    
+}
+
+
+-(void)respondToNoPhoneNumber:(NSNotification *)notification {
+    
+    // send notification to vc to present alert view "this person does not have a phone number on file"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This person does not have a phone number on file" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+
+-(void)unregisterForNotifications {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name: NoPhoneNumberNotificationKey object:nil];
+}
+
+-(void)dealloc {
+    
+    [self unregisterForNotifications];
+}
+
+
 
 
 

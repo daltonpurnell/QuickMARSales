@@ -12,8 +12,9 @@
 @import AddressBook;
 @import AddressBookUI;
 
+static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 
-@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate>
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) Person *person;
 

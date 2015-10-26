@@ -13,7 +13,6 @@
 - (void)awakeFromNib {
     // Initialization code
 
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -31,5 +30,36 @@
     self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
     
 }
+
+- (IBAction)callButtonTapped:(id)sender {
+    
+    // if the phoneNumber string contains numbers and his more than 7 characters long
+    if (self.person.phoneNumber.length >= 7 && [self.person.phoneNumber rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound)
+    {
+        
+        NSString *strippedPhoneNumber = [[self.person.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        
+        NSLog(@"%@", strippedPhoneNumber);
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", strippedPhoneNumber]]];
+    } else {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:NoPhoneNumberNotificationKey object:nil userInfo:nil];
+    }
+
+}
+
+- (IBAction)textButtonTapped:(id)sender {
+    
+    [self.delegate textButtonTapped:self.indexPath];
+    
+}
+
+- (IBAction)emailButtonTapped:(id)sender {
+    
+    [self.emailDelegate emailButtonTapped:self.indexPath];
+
+}
+
 
 @end

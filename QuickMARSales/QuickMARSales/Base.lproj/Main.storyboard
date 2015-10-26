@@ -301,10 +301,51 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUC-LB-bZL">
+                                            <rect key="frame" x="528" y="11" width="25" height="25"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="JI9-CQ-zqn"/>
+                                                <constraint firstAttribute="height" constant="25" id="qvz-a7-jiM"/>
+                                            </constraints>
+                                            <state key="normal" image="Speech Bubble-25"/>
+                                            <connections>
+                                                <action selector="textButtonTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="tao-93-IJj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UU9-xw-FDq">
+                                            <rect key="frame" x="561" y="11" width="25" height="25"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="4sF-yF-CYz"/>
+                                                <constraint firstAttribute="width" constant="25" id="JO0-Gb-blU"/>
+                                            </constraints>
+                                            <state key="normal" image="Message-25"/>
+                                            <connections>
+                                                <action selector="emailButtonTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="oz4-Hd-BvV"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68N-Jg-c49">
+                                            <rect key="frame" x="495" y="11" width="25" height="25"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="ALh-vs-NYu"/>
+                                                <constraint firstAttribute="width" constant="25" id="Lb7-uH-rId"/>
+                                            </constraints>
+                                            <state key="normal" image="Phone-25 (1)"/>
+                                            <connections>
+                                                <action selector="callButtonTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="ces-9I-oPa"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UU9-xw-FDq" secondAttribute="trailing" constant="6" id="Bi9-zE-OHr"/>
+                                        <constraint firstItem="UU9-xw-FDq" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="3" id="Dt9-3W-sZC"/>
+                                        <constraint firstItem="mUC-LB-bZL" firstAttribute="leading" secondItem="68N-Jg-c49" secondAttribute="trailing" constant="8" id="ILH-2H-W5X"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bNs-TV-YLM" secondAttribute="trailing" constant="6" id="KyU-PL-PWq"/>
+                                        <constraint firstItem="68N-Jg-c49" firstAttribute="centerY" secondItem="mUC-LB-bZL" secondAttribute="centerY" id="R2Y-BK-Qul"/>
+                                        <constraint firstItem="mUC-LB-bZL" firstAttribute="centerY" secondItem="UU9-xw-FDq" secondAttribute="centerY" id="RpS-Gb-ZEM"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cwA-uN-7pK" secondAttribute="trailing" constant="6" id="WI1-A6-PSj"/>
                                         <constraint firstItem="bNs-TV-YLM" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="a4b-zD-wkG"/>
                                         <constraint firstItem="Xjd-Q3-2nH" firstAttribute="top" secondItem="evk-rE-qQQ" secondAttribute="bottom" constant="8" id="aZE-9R-v4e"/>
@@ -315,15 +356,19 @@
                                         <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="jgv-Bv-Mfg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Xjd-Q3-2nH" secondAttribute="trailing" constant="6" id="r1o-XA-HwS"/>
                                         <constraint firstItem="bNs-TV-YLM" firstAttribute="top" secondItem="cwA-uN-7pK" secondAttribute="bottom" constant="8" id="uY6-Fm-60m"/>
+                                        <constraint firstItem="UU9-xw-FDq" firstAttribute="leading" secondItem="mUC-LB-bZL" secondAttribute="trailing" constant="8" id="vwZ-ga-9Oh"/>
                                         <constraint firstItem="evk-rE-qQQ" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="6" id="yGs-FT-IpO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="addressLabel" destination="bNs-TV-YLM" id="CMv-Aj-o8l"/>
+                                    <outlet property="callButton" destination="68N-Jg-c49" id="cWS-j2-jk3"/>
+                                    <outlet property="emailButton" destination="UU9-xw-FDq" id="yeT-xE-Ygv"/>
                                     <outlet property="emailLabel" destination="cwA-uN-7pK" id="LGb-gQ-PmN"/>
                                     <outlet property="nameLabel" destination="evk-rE-qQQ" id="KjO-bp-8Ii"/>
                                     <outlet property="phoneNumberLabel" destination="Xjd-Q3-2nH" id="1yu-YH-APl"/>
+                                    <outlet property="textButton" destination="mUC-LB-bZL" id="8dh-KF-FNy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -459,5 +504,8 @@
         <image name="Edit Property-32" width="32" height="32"/>
         <image name="Gender Neutral User Filled-25" width="25" height="25"/>
         <image name="Hammer-26" width="26" height="26"/>
+        <image name="Message-25" width="25" height="25"/>
+        <image name="Phone-25 (1)" width="25" height="25"/>
+        <image name="Speech Bubble-25" width="25" height="25"/>
     </resources>
 </document>
