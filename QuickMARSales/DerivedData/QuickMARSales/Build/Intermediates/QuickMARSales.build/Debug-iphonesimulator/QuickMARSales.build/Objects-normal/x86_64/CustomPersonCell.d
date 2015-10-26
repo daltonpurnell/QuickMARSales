@@ -46,4 +46,5 @@ dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Headers/PFNullability.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Headers/PFACL.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Headers/Parse.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Modules/module.modulemap
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Modules/module.modulemap \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/CRMTableVC.h

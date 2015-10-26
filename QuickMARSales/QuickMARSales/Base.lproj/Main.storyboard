@@ -180,13 +180,7 @@
                             <outlet property="delegate" destination="sew-bc-eUT" id="EGB-Re-sQi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM">
-                        <barButtonItem key="rightBarButtonItem" image="Edit Property-32" id="BqF-2r-zAB">
-                            <connections>
-                                <action selector="emailButtonTapped:" destination="sew-bc-eUT" id="Tj3-wk-R8x"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,7 +495,6 @@
     </scenes>
     <resources>
         <image name="Document-26" width="26" height="26"/>
-        <image name="Edit Property-32" width="32" height="32"/>
         <image name="Gender Neutral User Filled-25" width="25" height="25"/>
         <image name="Hammer-26" width="26" height="26"/>
         <image name="Message-25" width="25" height="25"/>

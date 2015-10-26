@@ -132,23 +132,6 @@
 
 
 
-
-
-- (IBAction)emailButtonTapped:(id)sender {
-// mf mail compose view controller
-    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
-    mailViewController.mailComposeDelegate = self;
-    [self presentViewController:mailViewController animated:YES completion:nil];
-    
-    // present choices of what to email
-    
-    
-}
-
-
-
-
-
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
     [self dismissViewControllerAnimated:YES completion:nil];
