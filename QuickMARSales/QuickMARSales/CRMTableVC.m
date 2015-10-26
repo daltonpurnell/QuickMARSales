@@ -198,7 +198,7 @@
                                  [alert addAction:[UIAlertAction actionWithTitle:@"Add Employee" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      
                                      // now load all these things into a person object and save it to parse
-                                     [[PersonController sharedInstance]createPersonWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address];
+                                     self.person = [[PersonController sharedInstance]createPersonWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address];
                                      [self.tableView reloadData];
                                      NSLog(@"Person saved to parse");
                                  }]];

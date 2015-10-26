@@ -12,11 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName, self.person.lastName];
-    self.emailLabel.text = [NSString stringWithFormat:@"%@", self.person.emailAddress];
-    self.addressLabel.text = [NSString stringWithFormat:@"%@", self.person.address];
-    self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
+
 
 }
 
@@ -24,6 +20,16 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+
+-(void)layoutSubviews {
+    
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName, self.person.lastName];
+    self.emailLabel.text = [NSString stringWithFormat:@"%@", self.person.emailAddress];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@", self.person.address];
+    self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
+    
 }
 
 @end
