@@ -331,6 +331,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name: NoPhoneNumberNotificationKey object:nil];
 }
 
+
 -(void)dealloc {
     
     [self unregisterForNotifications];
