@@ -36,8 +36,7 @@
     
 }
 
--(void)playerViewDidBecomeReady:(YTPlayerView *)playerView
-{ [[NSNotificationCenter defaultCenter] postNotificationName:@"Playback started" object:self];
+-(void)playerViewDidBecomeReady:(YTPlayerView *)playerView {
     [self.playerView playVideo];
 }
 
