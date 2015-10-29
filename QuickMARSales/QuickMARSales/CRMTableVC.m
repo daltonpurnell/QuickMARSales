@@ -266,6 +266,7 @@
         
         //TODO: let user select which links include in the email body. maybe a modal vc with a list view and check boxes
         
+        
         // launch mfmailcompose
         MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
         mailViewController.mailComposeDelegate = self;
