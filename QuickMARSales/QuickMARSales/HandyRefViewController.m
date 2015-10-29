@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     self.clearsSelectionOnViewWillAppear = YES;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -82,56 +82,68 @@
         
         // demo request form
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
     } else if (indexPath.row == 1) {
         
         // training request form
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 2) {
         
         // hardware requirements form
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 3) {
         
         // materials order form
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 4) {
         
         // training materials link
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 5) {
         
         // sample project plan
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 6) {
         
         // quickmar university
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 7) {
         
         // news
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 8) {
         
         // brochure
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 9) {
         
         // fact sheet
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     } else if (indexPath.row == 10) {
         
         //now what?
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     }
 }
 
