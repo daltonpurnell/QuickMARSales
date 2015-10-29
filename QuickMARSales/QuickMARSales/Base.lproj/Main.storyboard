@@ -17,34 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-NM-EQE">
-                                <rect key="frame" x="0.0" y="211" width="600" height="178"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.31603140782828287" green="0.31603140782828287" blue="0.31603140782828287" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="178" id="Bqh-L3-lby"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-GS-3yB" customClass="YTPlayerView">
-                                <rect key="frame" x="180" y="225" width="240" height="149"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB4-aT-FLn" customClass="YTPlayerView">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="A1q-1B-dbR"/>
-                                    <constraint firstAttribute="height" constant="149" id="alX-a3-hVr"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QNa-NM-EQE" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5wR-Bu-PFz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QNa-NM-EQE" secondAttribute="trailing" constant="-20" id="6AO-t9-nej"/>
-                            <constraint firstItem="fb4-GS-3yB" firstAttribute="centerX" secondItem="QNa-NM-EQE" secondAttribute="centerX" id="AMc-O3-6uX"/>
-                            <constraint firstItem="QNa-NM-EQE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="F5c-BQ-lQ0"/>
-                            <constraint firstItem="QNa-NM-EQE" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="UkY-oQ-jkS"/>
-                            <constraint firstItem="fb4-GS-3yB" firstAttribute="centerY" secondItem="QNa-NM-EQE" secondAttribute="centerY" id="ulf-9e-G57"/>
+                            <constraint firstItem="yB4-aT-FLn" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="7Zw-aZ-6SY"/>
+                            <constraint firstItem="yB4-aT-FLn" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="8bs-vi-nGs"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="yB4-aT-FLn" secondAttribute="bottom" constant="20" id="Onn-2E-7OV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yB4-aT-FLn" secondAttribute="trailing" id="cIW-qk-2VN"/>
+                            <constraint firstItem="yB4-aT-FLn" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="f94-bQ-t8Q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yB4-aT-FLn" secondAttribute="leading" id="yUI-hB-rQN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Zw-aZ-6SY"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Show Video" id="mBD-uf-qAN">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="tkw-MP-l9j">
@@ -54,8 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundImageView" destination="QNa-NM-EQE" id="ZNm-gh-GBw"/>
-                        <outlet property="playerView" destination="fb4-GS-3yB" id="eek-q1-Edv"/>
+                        <outlet property="playerView" destination="yB4-aT-FLn" id="Djg-zf-GF3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
