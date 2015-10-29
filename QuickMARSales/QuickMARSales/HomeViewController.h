@@ -10,7 +10,7 @@
 #import "YTPlayerView.h"
 
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <YTPlayerViewDelegate>
 
 
 
