@@ -53,6 +53,7 @@
     }
     
     self.cancelButton.enabled = NO;
+    self.sendButton.enabled = NO;
 }
 
 
@@ -184,8 +185,13 @@
     // show cancel button
     self.cancelButton.enabled = YES;
     
+    // disable mail button
+    self.mailButton.enabled = NO;
+    
     // multiple selection
     self.tableView.allowsMultipleSelection = YES;
+    
+    self.sendButton.enabled = YES;
     
     
 }
@@ -202,8 +208,16 @@
     
     // disable cancel button again
     self.cancelButton.enabled = NO;
+    
+    // enable mail button again
+    self.mailButton.enabled = YES;
+    
+    // disable send button
+    self.sendButton.enabled = NO;
 }
 
+- (IBAction)sendButtonTapped:(id)sender {
+}
 
 
 #pragma mark - mfmailcompose delegate methods

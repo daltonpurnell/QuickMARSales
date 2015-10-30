@@ -14,5 +14,7 @@
 
 @interface HandyRefViewController : UITableViewController <MFMailComposeViewControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendButton;
 
 @end

@@ -15,27 +15,29 @@ BOOL checked;
 
 - (void)awakeFromNib {
     // Initialization code
+    
 }
+
+
+
+
 - (IBAction)checkBoxTapped:(id)sender {
     
     checked = !checked;
     [sender setImage:[UIImage imageNamed:((checked) ? @"Checked Checkbox-32" : @"Unchecked Checkbox-32")] forState:UIControlStateNormal];
-    
-    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
-}
 
 
 -(void)layoutSubviews {
     
+    checked = NO;    
     [self registerForNotifications];
     
 }
+
+
 
 
 #pragma mark - nsnotifications methods
