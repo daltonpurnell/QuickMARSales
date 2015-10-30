@@ -1,6 +1,7 @@
 dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HandyRefViewController.m \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HandyRefViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/CustomHandyRefCell.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Bolts.framework/Headers/BFWebViewAppLinkResolver.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Bolts.framework/Headers/BFURL.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Bolts.framework/Headers/BFMeasurementEvent.h \

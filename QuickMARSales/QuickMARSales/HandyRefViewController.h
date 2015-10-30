@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomHandyRefCell.h"
 @import MessageUI;
 @import Parse;
 @import ParseUI;
 
 @interface HandyRefViewController : UITableViewController <MFMailComposeViewControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
 @end

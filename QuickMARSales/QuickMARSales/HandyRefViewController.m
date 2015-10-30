@@ -51,10 +51,12 @@
         }];
     
     }
+    
+    self.cancelButton.enabled = NO;
 }
 
 
-#pragma mark - Table view data source
+#pragma mark - Table view data source and delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -67,14 +69,21 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+- (CustomHandyRefCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CustomHandyRefCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [self.optionsList objectAtIndex:indexPath.row];
+    cell.label.text = [self.optionsList objectAtIndex:indexPath.row];
+    cell.checkBox.hidden = YES;
+    // unhide this when the mail button is tapped
+    
     
     return cell;
 }
+
+
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -148,6 +157,56 @@
 }
 
 
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+
+    return @"Tap the mail button to send materials to a friend";
+}
+
+
+
+
+#pragma mark - events
+
+- (IBAction)mailButtonTapped:(id)sender {
+    
+    [[[UIAlertView alloc] initWithTitle:@"Check the materials you would like to send"
+                                message:nil
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+    
+    // send notification to cell to show the check box button
+    [[NSNotificationCenter defaultCenter] postNotificationName:mailButtonTappedNotificationKey object:nil userInfo:nil];
+
+    
+    // show cancel button
+    self.cancelButton.enabled = YES;
+    
+    // multiple selection
+    self.tableView.allowsMultipleSelection = YES;
+    
+    
+}
+
+- (IBAction)cancelButtonTapped:(id)sender {
+    
+    
+    // send notification to cell to hide check box button
+    [[NSNotificationCenter defaultCenter] postNotificationName:cancelButtonTappedNotificationKey object:nil userInfo:nil];
+
+    
+    // disallow multiple selection
+    self.tableView.allowsMultipleSelection = NO;
+    
+    // disable cancel button again
+    self.cancelButton.enabled = NO;
+}
+
+
+
+#pragma mark - mfmailcompose delegate methods
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     

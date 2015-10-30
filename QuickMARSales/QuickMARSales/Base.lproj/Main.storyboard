@@ -156,15 +156,49 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IwX-kO-2I4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="44" id="IwX-kO-2I4" customClass="CustomHandyRefCell">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IwX-kO-2I4" id="16o-Y0-mOo">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-aU-bns">
+                                            <rect key="frame" x="51" y="12" width="541" height="20.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-0H-4fP">
+                                            <rect key="frame" x="8" y="7" width="35" height="30"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="3GW-Xs-no7"/>
+                                                <constraint firstAttribute="width" constant="35" id="EfK-EM-Tn9"/>
+                                            </constraints>
+                                            <state key="normal" image="Unchecked Checkbox-32"/>
+                                            <connections>
+                                                <action selector="checkBoxTapped:" destination="IwX-kO-2I4" eventType="touchUpInside" id="Ria-v5-w4C"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="2xp-0H-4fP" firstAttribute="centerY" secondItem="4mm-aU-bns" secondAttribute="centerY" id="A2U-Pm-QTu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4mm-aU-bns" secondAttribute="trailing" id="Lbt-fU-w6i"/>
+                                        <constraint firstItem="4mm-aU-bns" firstAttribute="centerY" secondItem="16o-Y0-mOo" secondAttribute="centerY" id="wKt-BC-Q21"/>
+                                        <constraint firstItem="4mm-aU-bns" firstAttribute="leading" secondItem="2xp-0H-4fP" secondAttribute="trailing" constant="8" id="zCv-fo-02j"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="2xp-0H-4fP" firstAttribute="leading" secondItem="IwX-kO-2I4" secondAttribute="leading" constant="8" id="LOU-8d-6no"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="checkBox" destination="2xp-0H-4fP" id="Qpm-cB-fAs"/>
+                                    <outlet property="label" destination="4mm-aU-bns" id="JIi-1j-UpK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -172,7 +206,21 @@
                             <outlet property="delegate" destination="sew-bc-eUT" id="EGB-Re-sQi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM"/>
+                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yus-MX-nZD">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="sew-bc-eUT" id="Yhl-yc-HVs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Message-25" id="J3h-BB-nCc">
+                            <connections>
+                                <action selector="mailButtonTapped:" destination="sew-bc-eUT" id="iSl-IZ-4ka"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="yus-MX-nZD" id="pDa-mz-HoW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,5 +540,6 @@
         <image name="Message-25" width="25" height="25"/>
         <image name="Phone-25 (1)" width="25" height="25"/>
         <image name="Speech Bubble-25" width="25" height="25"/>
+        <image name="Unchecked Checkbox-32" width="32" height="32"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */; settings = {ASSET_TAGS = (); }; };
 		CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CF2863AC1BDA8F610005ABA0 /* CRMTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */; settings = {ASSET_TAGS = (); }; };
 		CF2863AE1BDA904C0005ABA0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863AD1BDA904C0005ABA0 /* AddressBook.framework */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHandyRefCell.h; sourceTree = "<group>"; };
+		CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHandyRefCell.m; sourceTree = "<group>"; };
 		CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElevatorPitchViewController.h; sourceTree = "<group>"; };
 		CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElevatorPitchViewController.m; sourceTree = "<group>"; };
 		CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTableVC.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				CF78B1C01BCC130500FDC2CF /* SalesToolsViewController.m */,
 				CF78B1C21BCC132400FDC2CF /* HandyRefViewController.h */,
 				CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */,
+				CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */,
+				CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */,
 				CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */,
 				CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */,
 				CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */,
@@ -413,6 +418,7 @@
 				CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */,
 				CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */,
 				CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */,
+				CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */,
 				CF78B1881BCC110B00FDC2CF /* main.m in Sources */,
 				CF2863B31BDA98820005ABA0 /* CustomPersonCell.m in Sources */,
 				CF2863E01BDAA56B0005ABA0 /* PersonController.m in Sources */,
