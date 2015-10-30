@@ -522,11 +522,11 @@
             </objects>
             <point key="canvasLocation" x="2296" y="-317"/>
         </scene>
-        <!--CRM-->
+        <!--Contacts-->
         <scene sceneID="KIC-1a-8PA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lyP-2d-LG0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CRM" image="Gender Neutral User Filled-25" selectedImage="Gender Neutral User Filled-25" id="Ele-2y-vAb"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="Gender Neutral User Filled-25" selectedImage="Gender Neutral User Filled-25" id="Ele-2y-vAb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zhe-q8-tBK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
