@@ -236,7 +236,7 @@
             </objects>
             <point key="canvasLocation" x="1562" y="1080"/>
         </scene>
-        <!--Contacts-->
+        <!--Send to...-->
         <scene sceneID="Iet-VV-Uo6">
             <objects>
                 <tableViewController id="7dx-NO-1qg" customClass="ContactsTableViewController" sceneMemberID="viewController">
@@ -280,7 +280,7 @@
                             <outlet property="delegate" destination="7dx-NO-1qg" id="fpI-8n-u5L"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contacts" id="8fK-ga-nkz">
+                    <navigationItem key="navigationItem" title="Send to..." id="8fK-ga-nkz">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5D-Qz-pY0">
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="7dx-NO-1qg" id="iUG-Bh-WPV"/>

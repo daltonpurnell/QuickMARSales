@@ -69,6 +69,9 @@
 
 
 
+
+#pragma mark - events
+
 - (IBAction)cancelButtonTapped:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -76,9 +79,30 @@
 
 
 - (IBAction)sendButtonTapped:(id)sender {
+
     
-    
+    // launch mfmailcompose
+    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+    mailViewController.mailComposeDelegate = self;
+//    [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", self.person.emailAddress], nil]];
+  
+//    [mailViewController setMessageBody:@"links" isHTML:NO];
+    [self presentViewController:mailViewController animated:YES completion:nil];
+
 }
+
+
+
+
+#pragma mark - mail compose delegate method
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 
 
 /*

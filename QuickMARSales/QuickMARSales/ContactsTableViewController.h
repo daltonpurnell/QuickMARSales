@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
 
-@interface ContactsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@import MessageUI;
+
+@interface ContactsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) Person *person;
 
