@@ -219,7 +219,7 @@
                                     <action selector="mailButtonTapped:" destination="sew-bc-eUT" id="iSl-IZ-4ka"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Send" id="jd1-rv-qoh">
+                            <barButtonItem title="Next" id="jd1-rv-qoh">
                                 <connections>
                                     <segue destination="2QH-m1-b3J" kind="showDetail" id="Pq7-6A-gzT"/>
                                 </connections>
@@ -281,9 +281,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="8fK-ga-nkz">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="IuY-28-Hdq">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5D-Qz-pY0">
                             <connections>
-                                <action selector="refreshButtonTapped:" destination="7dx-NO-1qg" id="Awf-qp-SwO"/>
+                                <action selector="cancelButtonTapped:" destination="7dx-NO-1qg" id="iUG-Bh-WPV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Send" id="UFM-1d-Zys">
@@ -483,11 +483,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="CRM" id="9KE-sg-xIh">
-                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="ND7-g4-jgE">
-                            <connections>
-                                <action selector="refreshButtonTapped:" destination="qca-Y4-wAQ" id="1th-Fv-xrE"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="sez-0H-MAl">
                             <connections>
                                 <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>

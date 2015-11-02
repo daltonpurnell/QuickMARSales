@@ -99,14 +99,6 @@
 }
 
 
-- (IBAction)refreshButtonTapped:(id)sender {
-    
-    
-    [self.tableView reloadData];
-    
-}
-
-
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate methods
 

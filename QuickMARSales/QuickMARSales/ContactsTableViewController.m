@@ -55,12 +55,12 @@
     return cell;
 }
 
-
-- (IBAction)refreshButtonTapped:(id)sender {
+- (IBAction)cancelButtonTapped:(id)sender {
     
-    [self.tableView reloadData];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 - (IBAction)sendButtonTapped:(id)sender {
     
     
