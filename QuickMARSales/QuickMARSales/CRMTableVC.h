@@ -17,5 +17,6 @@ static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 @interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
 
 @property (strong, nonatomic) Person *person;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *topMailButton;
 
 @end

@@ -79,6 +79,15 @@
     return 150;
 }
 
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    
+    return @"Tap the mail button at the top of the screen to send materials to a friend";
+    
+}
+
+
 #pragma mark - events
 
 - (IBAction)addButtonTapped:(id)sender {
@@ -98,6 +107,8 @@
     
 }
 
+- (IBAction)topMailButtonTapped:(id)sender {
+}
 
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate methods
