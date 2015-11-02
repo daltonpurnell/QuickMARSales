@@ -19,6 +19,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.tableView.allowsMultipleSelection = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -55,6 +57,17 @@
     
     return cell;
 }
+
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    
+    return @"Check the contacts you would like to send these materials to";
+    
+}
+
+
 
 - (IBAction)cancelButtonTapped:(id)sender {
     
