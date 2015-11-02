@@ -38,6 +38,12 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [[PersonController sharedInstance]loadPeopleFromParse:^(NSError *error) {
+        [self.tableView reloadData];
+    }];
+}
 
 #pragma mark - Table view data source
 

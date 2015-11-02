@@ -21,6 +21,12 @@
     self.tableView.dataSource = self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [[PersonController sharedInstance]loadPeopleFromParse:^(NSError *error) {
+        [self.tableView reloadData];
+    }];
+}
 
 
 #pragma mark - Table view data source
@@ -43,6 +49,7 @@
     self.person = person;
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.firstName, person.lastName];
+    cell.detailTextLabel.text = person.emailAddress;
     
     
     return cell;
