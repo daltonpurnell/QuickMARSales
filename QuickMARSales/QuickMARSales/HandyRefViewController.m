@@ -216,9 +216,6 @@
     self.sendButton.enabled = NO;
 }
 
-- (IBAction)sendButtonTapped:(id)sender {
-}
-
 
 #pragma mark - mfmailcompose delegate methods
 
