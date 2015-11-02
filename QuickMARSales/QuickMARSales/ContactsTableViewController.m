@@ -50,6 +50,7 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", person.firstName, person.lastName];
     cell.detailTextLabel.text = person.emailAddress;
+    cell.imageView.image = [UIImage imageNamed:@"Unchecked Checkbox-32"];
     
     
     return cell;
