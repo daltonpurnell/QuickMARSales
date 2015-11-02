@@ -358,7 +358,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="1080"/>
         </scene>
-        <!--CRM-->
+        <!--Contacts-->
         <scene sceneID="Q8S-XG-fF9">
             <objects>
                 <tableViewController id="qca-Y4-wAQ" customClass="CRMTableVC" sceneMemberID="viewController">
@@ -482,7 +482,7 @@
                             <outlet property="delegate" destination="qca-Y4-wAQ" id="VFo-PN-PbI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CRM" id="9KE-sg-xIh">
+                    <navigationItem key="navigationItem" title="Contacts" id="9KE-sg-xIh">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" systemItem="add" id="sez-0H-MAl">
                                 <connections>
