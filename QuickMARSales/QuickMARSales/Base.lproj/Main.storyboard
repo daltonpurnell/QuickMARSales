@@ -483,20 +483,30 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="9KE-sg-xIh">
-                        <rightBarButtonItems>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Cancel" id="Mlo-HX-rkA">
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="qca-Y4-wAQ" id="7OA-iL-SRQ"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" systemItem="add" id="sez-0H-MAl">
                                 <connections>
                                     <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>
                                 </connections>
                             </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
                             <barButtonItem image="Message-25" id="PIz-ZE-cR9">
                                 <connections>
                                     <action selector="topMailButtonTapped:" destination="qca-Y4-wAQ" id="ZGA-gK-pti"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Next" id="NyG-aG-YKe"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="Mlo-HX-rkA" id="J6o-Yb-ex0"/>
+                        <outlet property="nextButton" destination="NyG-aG-YKe" id="dOe-Cf-nOm"/>
                         <outlet property="topMailButton" destination="PIz-ZE-cR9" id="M2p-IJ-XJ0"/>
                     </connections>
                 </tableViewController>

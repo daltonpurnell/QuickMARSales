@@ -108,7 +108,16 @@
 }
 
 - (IBAction)topMailButtonTapped:(id)sender {
+    
+    
 }
+
+- (IBAction)cancelButtonTapped:(id)sender {
+    
+    
+}
+
+
 
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate methods

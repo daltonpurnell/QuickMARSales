@@ -18,5 +18,7 @@ static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 
 @property (strong, nonatomic) Person *person;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *topMailButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 
 @end
