@@ -17,6 +17,7 @@
 @property (nonatomic, strong) id <textButtonTappedDelegate>delegate;
 @property (nonatomic, strong) id <emailButtonTappedDelegate>emailDelegate;
 
+@property (weak, nonatomic) IBOutlet UIButton *checkBox;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;

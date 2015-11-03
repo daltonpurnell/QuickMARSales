@@ -376,28 +376,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evk-rE-qQQ">
-                                            <rect key="frame" x="13" y="14" width="573" height="20.5"/>
+                                            <rect key="frame" x="48" y="14" width="538" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjd-Q3-2nH">
-                                            <rect key="frame" x="13" y="42" width="573" height="20.5"/>
+                                            <rect key="frame" x="48" y="42" width="538" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-uN-7pK">
-                                            <rect key="frame" x="13" y="70.5" width="573" height="20.5"/>
+                                            <rect key="frame" x="48" y="70.5" width="538" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNs-TV-YLM">
-                                            <rect key="frame" x="13" y="99" width="573" height="42.5"/>
+                                            <rect key="frame" x="48" y="99" width="538" height="42.5"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42.5" id="BQH-Qb-NWI"/>
@@ -442,33 +442,48 @@
                                                 <action selector="callButtonTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="ces-9I-oPa"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-Lg-WXS">
+                                            <rect key="frame" x="8" y="59" width="32" height="32"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="LzG-Yk-OaZ"/>
+                                                <constraint firstAttribute="width" constant="32" id="tgY-4a-Y1B"/>
+                                            </constraints>
+                                            <state key="normal" image="Unchecked Checkbox-32"/>
+                                            <connections>
+                                                <action selector="checkBoxTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="Iup-3P-vst"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="UU9-xw-FDq" secondAttribute="trailing" constant="6" id="Bi9-zE-OHr"/>
                                         <constraint firstItem="UU9-xw-FDq" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="3" id="Dt9-3W-sZC"/>
+                                        <constraint firstItem="evk-rE-qQQ" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="Hqo-Wf-vpE"/>
                                         <constraint firstItem="mUC-LB-bZL" firstAttribute="leading" secondItem="68N-Jg-c49" secondAttribute="trailing" constant="8" id="ILH-2H-W5X"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bNs-TV-YLM" secondAttribute="trailing" constant="6" id="KyU-PL-PWq"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="fcv-Lg-WXS" secondAttribute="leading" id="MBt-fz-qqk"/>
                                         <constraint firstItem="68N-Jg-c49" firstAttribute="centerY" secondItem="mUC-LB-bZL" secondAttribute="centerY" id="R2Y-BK-Qul"/>
                                         <constraint firstItem="mUC-LB-bZL" firstAttribute="centerY" secondItem="UU9-xw-FDq" secondAttribute="centerY" id="RpS-Gb-ZEM"/>
+                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="fcv-Lg-WXS" secondAttribute="trailing" constant="8" id="TCg-D2-r2h"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cwA-uN-7pK" secondAttribute="trailing" constant="6" id="WI1-A6-PSj"/>
-                                        <constraint firstItem="bNs-TV-YLM" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="a4b-zD-wkG"/>
                                         <constraint firstItem="Xjd-Q3-2nH" firstAttribute="top" secondItem="evk-rE-qQQ" secondAttribute="bottom" constant="8" id="aZE-9R-v4e"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="evk-rE-qQQ" secondAttribute="trailing" constant="6" id="bth-n3-zQx"/>
-                                        <constraint firstItem="Xjd-Q3-2nH" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="dgh-ge-ozU"/>
                                         <constraint firstItem="cwA-uN-7pK" firstAttribute="top" secondItem="Xjd-Q3-2nH" secondAttribute="bottom" constant="8" id="eAw-5b-aMR"/>
-                                        <constraint firstItem="evk-rE-qQQ" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="jHY-DD-mZE"/>
-                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="5" id="jgv-Bv-Mfg"/>
+                                        <constraint firstItem="bNs-TV-YLM" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="o4a-Dl-ohb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Xjd-Q3-2nH" secondAttribute="trailing" constant="6" id="r1o-XA-HwS"/>
+                                        <constraint firstItem="Xjd-Q3-2nH" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="r3P-e4-LYx"/>
                                         <constraint firstItem="bNs-TV-YLM" firstAttribute="top" secondItem="cwA-uN-7pK" secondAttribute="bottom" constant="8" id="uY6-Fm-60m"/>
                                         <constraint firstItem="UU9-xw-FDq" firstAttribute="leading" secondItem="mUC-LB-bZL" secondAttribute="trailing" constant="8" id="vwZ-ga-9Oh"/>
                                         <constraint firstItem="evk-rE-qQQ" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="6" id="yGs-FT-IpO"/>
+                                        <constraint firstItem="fcv-Lg-WXS" firstAttribute="centerY" secondItem="zDC-4z-ZN0" secondAttribute="centerY" id="ybS-YP-m1O"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="addressLabel" destination="bNs-TV-YLM" id="CMv-Aj-o8l"/>
                                     <outlet property="callButton" destination="68N-Jg-c49" id="cWS-j2-jk3"/>
+                                    <outlet property="checkBox" destination="fcv-Lg-WXS" id="NW9-S3-pHY"/>
                                     <outlet property="emailButton" destination="UU9-xw-FDq" id="yeT-xE-Ygv"/>
                                     <outlet property="emailLabel" destination="cwA-uN-7pK" id="LGb-gQ-PmN"/>
                                     <outlet property="nameLabel" destination="evk-rE-qQQ" id="KjO-bp-8Ii"/>
