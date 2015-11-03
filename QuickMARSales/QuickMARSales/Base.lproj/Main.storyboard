@@ -560,7 +560,18 @@
                             <outlet property="delegate" destination="SSr-gL-cln" id="Kpl-sd-KzL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Materials" id="JZX-CH-rvc"/>
+                    <navigationItem key="navigationItem" title="Choose Materials" id="JZX-CH-rvc">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2Nb-XV-8Jm">
+                            <connections>
+                                <action selector="cancelTapped:" destination="SSr-gL-cln" id="RQf-Lz-xbI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="Ps3-hV-BBV">
+                            <connections>
+                                <action selector="sendTapped:" destination="SSr-gL-cln" id="C4z-2z-PTN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pV5-9j-iht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
