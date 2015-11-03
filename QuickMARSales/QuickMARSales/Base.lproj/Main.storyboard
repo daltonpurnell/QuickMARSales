@@ -516,7 +516,11 @@
                                     <action selector="topMailButtonTapped:" destination="qca-Y4-wAQ" id="ZGA-gK-pti"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Next" id="NyG-aG-YKe"/>
+                            <barButtonItem title="Next" id="NyG-aG-YKe">
+                                <connections>
+                                    <segue destination="Cj6-nq-Vsy" kind="showDetail" id="a4u-RF-xpl"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -528,6 +532,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWL-wl-TMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1833"/>
+        </scene>
+        <!--Choose Materials-->
+        <scene sceneID="zVq-Ya-wdR">
+            <objects>
+                <tableViewController id="SSr-gL-cln" customClass="MaterialsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Orb-dE-FtS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="materialsCell" id="tMt-6H-y6R">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tMt-6H-y6R" id="RY8-Ax-ha6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SSr-gL-cln" id="C1t-kj-Ids"/>
+                            <outlet property="delegate" destination="SSr-gL-cln" id="Kpl-sd-KzL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Materials" id="JZX-CH-rvc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pV5-9j-iht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851" y="1833"/>
         </scene>
         <!--Elevator Pitch-->
         <scene sceneID="Tzw-xw-7OQ">
@@ -651,6 +687,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDZ-c8-be4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2204" y="1080"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tX4-af-Scu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cj6-nq-Vsy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNT-pN-1ET">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SSr-gL-cln" kind="relationship" relationship="rootViewController" id="Tp1-wh-dX4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWj-Fa-MDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="1833"/>
         </scene>
     </scenes>
     <resources>

@@ -47,6 +47,7 @@
 		CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */; settings = {ASSET_TAGS = (); }; };
 		CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */; settings = {ASSET_TAGS = (); }; };
+		CF91AE2C1BE9140800C99107 /* MaterialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF91AE2B1BE9140800C99107 /* MaterialsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
 		CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		CF91AE2A1BE9140800C99107 /* MaterialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsTableViewController.h; sourceTree = "<group>"; };
+		CF91AE2B1BE9140800C99107 /* MaterialsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 				CF1C41D41BE7B06600B834EF /* ContactsTableViewController.m */,
 				CF2863B11BDA98820005ABA0 /* CustomPersonCell.h */,
 				CF2863B21BDA98820005ABA0 /* CustomPersonCell.m */,
+				CF91AE2A1BE9140800C99107 /* MaterialsTableViewController.h */,
+				CF91AE2B1BE9140800C99107 /* MaterialsTableViewController.m */,
 				CF78B1921BCC110B00FDC2CF /* Main.storyboard */,
 				CF78B1951BCC110B00FDC2CF /* Assets.xcassets */,
 				CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */,
@@ -420,6 +425,7 @@
 				CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */,
 				CF2863DD1BDAA5570005ABA0 /* Person.m in Sources */,
 				CF2863AC1BDA8F610005ABA0 /* CRMTableVC.m in Sources */,
+				CF91AE2C1BE9140800C99107 /* MaterialsTableViewController.m in Sources */,
 				CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */,
 				CF1C41D51BE7B06600B834EF /* ContactsTableViewController.m in Sources */,
 				CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */,
