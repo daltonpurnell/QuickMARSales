@@ -524,6 +524,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="sez-0H-MAl" id="uJf-D9-xgW"/>
                         <outlet property="cancelButton" destination="Mlo-HX-rkA" id="J6o-Yb-ex0"/>
                         <outlet property="nextButton" destination="NyG-aG-YKe" id="dOe-Cf-nOm"/>
                         <outlet property="topMailButton" destination="PIz-ZE-cR9" id="M2p-IJ-XJ0"/>

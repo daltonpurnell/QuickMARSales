@@ -34,6 +34,10 @@
     });
     
     [self registerForNotifications];
+    
+    self.cancelButton.enabled = NO;
+    self.nextButton.enabled = NO;
+    
 
 }
 
@@ -109,11 +113,25 @@
 
 - (IBAction)topMailButtonTapped:(id)sender {
     
+    [[[UIAlertView alloc] initWithTitle:@"Check the contacts you would like to send materials to"
+                                message:nil
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+
     
+    self.cancelButton.enabled = YES;
+    self.nextButton.enabled = YES;
+    self.topMailButton.enabled = NO;
+    self.addButton.enabled = NO;
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
     
+    self.cancelButton.enabled = NO;
+    self.nextButton.enabled = NO;
+    self.topMailButton.enabled = YES;
+    self.addButton.enabled = YES;
     
 }
 
