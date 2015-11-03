@@ -49,6 +49,16 @@
 }
 
 
+#pragma mark - tableView delegate
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    
+    return @"Check the materials you would like to send to these contacts";
+    
+}
+
 #pragma mark - events
 
 - (IBAction)cancelTapped:(id)sender {
