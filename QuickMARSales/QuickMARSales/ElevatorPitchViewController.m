@@ -7,6 +7,7 @@
 //
 
 #import "ElevatorPitchViewController.h"
+#import "Appearance.h"
 
 @interface ElevatorPitchViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [Appearance initializeAppearanceDefaults];
+
 }
 
 - (IBAction)doneButtonTapped:(id)sender {

@@ -8,6 +8,7 @@
 
 #import "CRMTableVC.h"
 #import "CustomPersonCell.h"
+#import "Appearance.h"
 
 @interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate>
 
@@ -23,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [Appearance initializeAppearanceDefaults];
+
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

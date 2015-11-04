@@ -7,6 +7,7 @@
 //
 
 #import "ContactsTableViewController.h"
+#import "Appearance.h"
 
 @interface ContactsTableViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [Appearance initializeAppearanceDefaults];
+
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

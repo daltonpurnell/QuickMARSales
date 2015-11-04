@@ -8,6 +8,7 @@
 
 #import "CustomHandyRefCell.h"
 #import "HandyRefViewController.h"
+#import "Appearance.h"
 
 @implementation CustomHandyRefCell
 
@@ -34,7 +35,8 @@ BOOL checked;
     
     checked = NO;    
     [self registerForNotifications];
-    
+    [Appearance initializeAppearanceDefaults];
+
 }
 
 

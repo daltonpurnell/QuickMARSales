@@ -7,6 +7,7 @@
 //
 
 #import "MaterialsTableViewController.h"
+#import "Appearance.h"
 
 @interface MaterialsTableViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [Appearance initializeAppearanceDefaults];
+
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

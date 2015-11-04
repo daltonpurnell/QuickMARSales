@@ -7,6 +7,7 @@
 //
 
 #import "CustomPersonCell.h"
+#import "Appearance.h"
 
 @implementation CustomPersonCell
 
@@ -34,6 +35,9 @@ BOOL isChecked;
     self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
     
     self.checkBox.hidden = YES;
+    
+    [Appearance initializeAppearanceDefaults];
+
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "SalesToolsViewController.h"
+#import "Appearance.h"
 
 @interface SalesToolsViewController ()
 
@@ -17,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Appearance initializeAppearanceDefaults];
+
     
 }
 

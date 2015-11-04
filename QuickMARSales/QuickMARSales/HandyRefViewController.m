@@ -7,6 +7,7 @@
 //
 
 #import "HandyRefViewController.h"
+#import "Appearance.h"
 
 @interface HandyRefViewController ()
 @property (nonatomic, strong) NSArray *optionsList;
@@ -17,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [Appearance initializeAppearanceDefaults];
+
     
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
