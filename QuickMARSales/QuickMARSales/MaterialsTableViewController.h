@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MessageUI;
 
-@interface MaterialsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MaterialsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *optionsList;
 

@@ -23,7 +23,7 @@
     self.optionsList= [[NSArray alloc] initWithObjects: @"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", nil];
     
 
-
+    self.tableView.allowsMultipleSelection = YES;
 }
 
 
@@ -67,6 +67,25 @@
 }
 
 - (IBAction)sendTapped:(id)sender {
+    
+    // launch mfmailcompose
+    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+    mailViewController.mailComposeDelegate = self;
+    //    [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", self.person.emailAddress], nil]];
+    
+    //    [mailViewController setMessageBody:@"links" isHTML:NO];
+    [self presentViewController:mailViewController animated:YES completion:nil];
+
+    
+    
+}
+
+
+#pragma mark - message compose delegate methods
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
