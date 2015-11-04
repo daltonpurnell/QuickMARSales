@@ -37,7 +37,6 @@
     
     self.cancelButton.enabled = NO;
     self.nextButton.enabled = NO;
-    
 
 }
 
