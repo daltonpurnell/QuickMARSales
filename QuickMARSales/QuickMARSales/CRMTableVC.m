@@ -41,6 +41,9 @@
     
     self.cancelButton.enabled = NO;
     self.nextButton.enabled = NO;
+    
+    self.tableView.allowsMultipleSelection = NO;
+
 
 }
 
@@ -130,6 +133,9 @@
     self.topMailButton.enabled = NO;
     self.addButton.enabled = NO;
     
+    self.tableView.allowsMultipleSelection = YES;
+
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:topEmailButtonNotificationKey object:nil];
 }
 
@@ -141,6 +147,9 @@
     self.addButton.enabled = YES;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:topCancelButtonNotificationKey object:nil];
+    
+    self.tableView.allowsMultipleSelection = NO;
+
     
 }
 

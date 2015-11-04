@@ -58,6 +58,9 @@
     
     self.cancelButton.enabled = NO;
     self.sendButton.enabled = NO;
+    
+    self.tableView.allowsMultipleSelection = NO;
+
 }
 
 
@@ -197,6 +200,9 @@
     
     self.sendButton.enabled = YES;
     
+    self.tableView.allowsMultipleSelection = YES;
+
+    
     
 }
 
@@ -218,6 +224,9 @@
     
     // disable send button
     self.sendButton.enabled = NO;
+    
+    self.tableView.allowsMultipleSelection = NO;
+
 }
 
 

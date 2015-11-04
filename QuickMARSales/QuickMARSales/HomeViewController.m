@@ -29,6 +29,8 @@
     self.playerView.delegate = self;
     
     [Appearance initializeAppearanceDefaults];
+    
+
 }
 
 
