@@ -10,6 +10,8 @@
 
 @implementation CustomPersonCell
 
+BOOL isChecked;
+
 - (void)awakeFromNib {
     // Initialization code
     
@@ -68,7 +70,8 @@
 - (IBAction)checkBoxTapped:(id)sender {
     
     
-    
+    isChecked = !isChecked;
+    [sender setImage:[UIImage imageNamed:((isChecked) ? @"Checked Checkbox-32" : @"Unchecked Checkbox-32")] forState: UIControlStateNormal];
     
 }
 
