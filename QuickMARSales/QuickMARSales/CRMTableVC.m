@@ -86,9 +86,11 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    
-    return @"Tap the mail button at the top of the screen to send materials to a friend";
-    
+    if ([PersonController sharedInstance].people.count == 0) {
+        return @"Tap the + to add people to your contact list";
+    } else {
+        return @"Tap the mail button at the top of the screen to send materials to a friend";
+    }
 }
 
 
