@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    [self registerForNotification];
 
 }
 
@@ -28,6 +30,8 @@
     self.emailLabel.text = [NSString stringWithFormat:@"%@", self.person.emailAddress];
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.person.address];
     self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
+    
+    self.checkBox.hidden = YES;
     
 }
 
@@ -80,12 +84,12 @@
 
 -(void)respondToTopEmailButton:(NSNotification *)notification {
     
-    
+    self.checkBox.hidden = NO;
 }
 
 -(void)respondToTopCancelButton:(NSNotification *)notification {
     
-    
+    self.checkBox.hidden = YES;
 }
 
 -(void)unregisterForNotification {
