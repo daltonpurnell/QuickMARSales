@@ -124,6 +124,8 @@
     self.nextButton.enabled = YES;
     self.topMailButton.enabled = NO;
     self.addButton.enabled = NO;
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:topEmailButtonNotificationKey object:nil];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
@@ -132,6 +134,8 @@
     self.nextButton.enabled = NO;
     self.topMailButton.enabled = YES;
     self.addButton.enabled = YES;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:topCancelButtonNotificationKey object:nil];
     
 }
 

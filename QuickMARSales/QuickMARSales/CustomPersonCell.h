@@ -13,6 +13,9 @@
 @protocol textButtonTappedDelegate;
 @protocol emailButtonTappedDelegate;
 
+static NSString *const topEmailButtonNotificationKey = @"top email button tapped";
+static NSString *const topCancelButtonNotificationKey = @"Cancel button tapped";
+
 @interface CustomPersonCell : UITableViewCell
 @property (nonatomic, strong) id <textButtonTappedDelegate>delegate;
 @property (nonatomic, strong) id <emailButtonTappedDelegate>emailDelegate;
