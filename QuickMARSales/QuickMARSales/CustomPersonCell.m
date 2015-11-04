@@ -69,7 +69,35 @@
 }
 
 
+#pragma mark - nsnotification methods
 
+-(void)registerForNotification {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToTopEmailButton:) name:topEmailButtonNotificationKey object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToTopCancelButton:) name:topCancelButtonNotificationKey object:nil];
+}
 
+-(void)respondToTopEmailButton:(NSNotification *)notification {
+    
+    
+}
+
+-(void)respondToTopCancelButton:(NSNotification *)notification {
+    
+    
+}
+
+-(void)unregisterForNotification {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:topEmailButtonNotificationKey object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:topCancelButtonNotificationKey object:nil];
+    
+}
+
+-(void)dealloc {
+    
+    [self unregisterForNotification];
+}
 
 @end
