@@ -12,6 +12,7 @@
 @import AddressBook;
 @import AddressBookUI;
 
+
 static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 
 @interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
@@ -21,5 +22,8 @@ static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (strong, nonatomic) NSMutableArray *selectedContactCells;
 
 @end
+
+

@@ -10,7 +10,7 @@
 #import "CustomPersonCell.h"
 #import "Appearance.h"
 
-@interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate>
+@interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate, checkBoxDelegate>
 
 @property (strong, nonatomic) NSString *savedEmail;
 @property (strong, nonatomic) NSString *savedPhoneNumber;
@@ -75,6 +75,7 @@
     
     cell.delegate = self;
     cell.emailDelegate = self;
+    cell.checkBoxDelegate2 = self;
     cell.indexPath = indexPath;
     
     return cell;
@@ -342,6 +343,16 @@
 }
 
 
+-(void)checkBoxTapped:(NSIndexPath *)indexPath {
+    
+    // add this index path to the array
+    [self.selectedContactCells addObject:[NSNumber numberWithInteger:indexPath.row]];
+    
+    NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
+    
+    NSLog(@"Selected Cells:\n%@", self.selectedContactCells);
+    
+}
 
 
 #pragma mark - message compose delegate method

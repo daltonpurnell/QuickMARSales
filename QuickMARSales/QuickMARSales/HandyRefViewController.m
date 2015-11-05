@@ -331,10 +331,9 @@
 -(void)checkBoxTapped:(NSIndexPath *)indexPath {
     
 
-    // add this index path to the array
+    // add this index path to the array (this doesn't seem to be working)
     [self.selectedCells addObject:[NSNumber numberWithInteger:indexPath.row]];
 
-    // it logs the right numbers, but the array above is empty
     NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
     
     // the array is nil, even though we are getting the indexPath.rows in the above log
