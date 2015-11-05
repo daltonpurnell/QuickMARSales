@@ -345,7 +345,7 @@
 
 -(void)checkBoxTapped:(NSIndexPath *)indexPath {
     
-    // add this index path to the array
+    //TODO: add this index path to the array
     [self.selectedContactCells addObject:[NSNumber numberWithInteger:indexPath.row]];
     
     NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);

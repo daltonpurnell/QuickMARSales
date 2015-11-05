@@ -331,7 +331,7 @@
 -(void)checkBoxTapped:(NSIndexPath *)indexPath {
     
 
-    // add this index path to the array (this doesn't seem to be working)
+    // TODO: add this index path to the array (this doesn't seem to be working)
     [self.selectedCells addObject:[NSNumber numberWithInteger:indexPath.row]];
 
     NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
