@@ -12,5 +12,6 @@
 @interface MaterialsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) NSArray *optionsList;
+@property (strong, nonatomic) NSMutableArray *selectedCellsFromPreviousViewController;
 
 @end
