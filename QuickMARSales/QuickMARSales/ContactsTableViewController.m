@@ -25,6 +25,17 @@
     self.tableView.dataSource = self;
     
     self.tableView.allowsMultipleSelection = YES;
+    
+    
+    // this is just for testing
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"%@", self.selectedCellsFromPreviousVC] preferredStyle:UIAlertControllerStyleAlert];
+//    
+//    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+//    
+//    [self presentViewController:alert animated:YES completion:nil];
+
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
