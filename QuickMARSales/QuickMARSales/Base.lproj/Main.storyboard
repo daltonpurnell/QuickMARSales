@@ -221,7 +221,7 @@
                             </barButtonItem>
                             <barButtonItem title="Next" id="jd1-rv-qoh">
                                 <connections>
-                                    <segue destination="2QH-m1-b3J" kind="showDetail" id="Pq7-6A-gzT"/>
+                                    <segue destination="2QH-m1-b3J" kind="showDetail" identifier="showSendTo" id="Pq7-6A-gzT"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

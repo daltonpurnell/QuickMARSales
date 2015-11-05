@@ -9,7 +9,7 @@
 #import "HandyRefViewController.h"
 #import "Appearance.h"
 
-@interface HandyRefViewController ()
+@interface HandyRefViewController () <checkBoxTappedDelegate>
 @property (nonatomic, strong) NSArray *optionsList;
 
 @end
@@ -83,6 +83,8 @@
     // Configure the cell...
     cell.label.text = [self.optionsList objectAtIndex:indexPath.row];
     cell.checkBox.hidden = YES;
+    cell.checkBoxDelegate = self;
+    cell.indexPath = indexPath;
     // unhide this when the mail button is tapped
     
     
@@ -179,12 +181,11 @@
 
 - (IBAction)mailButtonTapped:(id)sender {
     
-    [[[UIAlertView alloc] initWithTitle:@"Check the materials you would like to send"
-                                message:nil
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Check the materials you would like to send" preferredStyle:UIAlertControllerStyleAlert];
     
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
     // send notification to cell to show the check box button
     [[NSNotificationCenter defaultCenter] postNotificationName:mailButtonTappedNotificationKey object:nil userInfo:nil];
 
@@ -249,11 +250,11 @@
         return YES; // Begin login process
     }
     
-    [[[UIAlertView alloc] initWithTitle:@"Missing Information"
-                                message:@"Make sure you fill out all of the information!"
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing information" message:@"Make sure you fill out all of the information!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
     return NO; // Interrupt login process
 }
 
@@ -294,16 +295,16 @@
     
     // Display an alert if a field wasn't completed
     if (!informationComplete) {
-        [[[UIAlertView alloc] initWithTitle:@"Missing Information"
-                                    message:@"Make sure you fill out all of the information!"
-                                   delegate:nil
-                          cancelButtonTitle:@"ok"
-                          otherButtonTitles:nil] show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Missing information" message:@"Make sure you fill out all of the information!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+
     }
     
     return informationComplete;
 }
-
 
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
@@ -311,7 +312,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
 
 
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
@@ -326,16 +326,30 @@
 
 
 
+#pragma mark - custom delegate methods
+
+-(void)checkBoxTapped:(NSIndexPath *)indexPath {
+    
+    // add this index path to the array
+    [self.selectedCells addObject:[NSNumber numberWithInteger:indexPath.row]];
+    NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
+    
+    
+}
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showSendTo"]) {
+        UINavigationController *navController = [segue destinationViewController];
+        ContactsTableViewController *SendToVC = navController.viewControllers.firstObject;
+        
+        self.selectedCells = SendToVC.selectedCellsFromPreviousVC;
+    }
 }
-*/
 
 @end

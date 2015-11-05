@@ -14,5 +14,6 @@
 @interface ContactsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) NSMutableArray *selectedCellsFromPreviousVC;
 
 @end

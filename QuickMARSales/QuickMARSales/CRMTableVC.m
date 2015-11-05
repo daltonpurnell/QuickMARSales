@@ -121,11 +121,11 @@
 
 - (IBAction)topMailButtonTapped:(id)sender {
     
-    [[[UIAlertView alloc] initWithTitle:@"Check the contacts you would like to send materials to"
-                                message:nil
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Check the contacts you would like to send materials to" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 
     
     self.cancelButton.enabled = YES;

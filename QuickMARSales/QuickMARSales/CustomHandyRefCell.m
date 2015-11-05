@@ -26,6 +26,9 @@ BOOL checked;
     
     checked = !checked;
     [sender setImage:[UIImage imageNamed:((checked) ? @"Checked Checkbox-32" : @"Unchecked Checkbox-32")] forState:UIControlStateNormal];
+    
+    [self.checkBoxDelegate checkBoxTapped:self.indexPath];
+    
 }
 
 
