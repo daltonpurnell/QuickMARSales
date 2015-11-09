@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
+#import "MaterialsTableViewController.h"
 @import MessageUI;
 @import AddressBook;
 @import AddressBookUI;

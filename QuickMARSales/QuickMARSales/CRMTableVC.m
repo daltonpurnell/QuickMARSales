@@ -268,6 +268,8 @@
 
 
 -(void)emailButtonTapped:(NSIndexPath*)indexPath {
+    
+    
     Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
     
     // if the email string contains @
@@ -275,17 +277,19 @@
     if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
         
-        //TODO: let user select which links include in the email body. maybe a modal vc with a list view and check boxes
+        [self performSegueWithIdentifier:@"showMaterials" sender:self];
         
-        
-        // launch mfmailcompose
-        MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
-        mailViewController.mailComposeDelegate = self;
-        [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
-        
-        //TODO: determine which links to include
-        [mailViewController setMessageBody:@"links" isHTML:NO];
-        [self presentViewController:mailViewController animated:YES completion:nil];
+               // launch mfmailcompose
+//        MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+//        mailViewController.mailComposeDelegate = self;
+//        [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
+//        
+//        // TODO: determine which links to include
+//        [mailViewController setMessageBody:@"links" isHTML:NO];
+//        [self presentViewController:mailViewController animated:YES completion:^{
+//            
+//            
+//        }];
         
         
     } else {
