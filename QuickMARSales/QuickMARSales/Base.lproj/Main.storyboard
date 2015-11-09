@@ -389,7 +389,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="sez-0H-MAl" id="uJf-D9-xgW"/>
-                        <segue destination="f4Z-gT-36f" kind="showDetail" identifier="showMaterials" id="ogV-fu-YBz"/>
+                        <segue destination="f4Z-gT-36f" kind="showDetail" identifier="showMaterials" id="ZWT-ah-hnp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWL-wl-TMA" userLabel="First Responder" sceneMemberID="firstResponder"/>

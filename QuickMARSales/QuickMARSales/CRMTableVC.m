@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *savedFirstName;
 @property (strong, nonatomic) NSString *savedLastName;
 
+
 @end
 
 @implementation CRMTableVC
@@ -279,19 +280,6 @@
         
         [self performSegueWithIdentifier:@"showMaterials" sender:self];
         
-               // launch mfmailcompose
-//        MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
-//        mailViewController.mailComposeDelegate = self;
-//        [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
-//        
-//        // TODO: determine which links to include
-//        [mailViewController setMessageBody:@"links" isHTML:NO];
-//        [self presentViewController:mailViewController animated:YES completion:^{
-//            
-//            
-//        }];
-        
-        
     } else {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This person does not have an email address on file" preferredStyle:UIAlertControllerStyleAlert];
@@ -315,21 +303,13 @@
 
 
 
-#pragma mark - mail compose delegate method
-
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-
 #pragma mark - nsnotifications methods
 
 -(void)registerForNotifications {
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToNoPhoneNumber:) name:NoPhoneNumberNotificationKey object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToMaterialsSelected:) name:MaterialsSelectedNotificationKey object:nil];
     
 }
 
@@ -344,7 +324,28 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)respondToMaterialsSelected:(NSNotification *)notification {
+    
+    
+    // launch mail compose vc
+    
+//    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
 
+    // launch mfmailcompose
+    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+    mailViewController.mailComposeDelegate = self;
+//    [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
+    
+    //    [mailViewController setMessageBody:@"links" isHTML:NO];
+    [self presentViewController:mailViewController animated:YES completion:^{
+        
+        MaterialsTableViewController *materialsVC = [MaterialsTableViewController new];
+        
+        [mailViewController presentViewController:materialsVC animated:YES completion:nil];
+    }];
+
+    
+}
 
 -(void)unregisterForNotifications {
     
@@ -367,12 +368,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"showMaterialsList"]) {
-        UINavigationController *navController = [segue destinationViewController];
-        MaterialsTableViewController *MaterialsVC = navController.viewControllers.firstObject;
+//    if ([segue.identifier isEqualToString:@"showMaterials"]) {
+//        UINavigationController *navController = [segue destinationViewController];
+//        MaterialsTableViewController *MaterialsVC = navController.viewControllers.firstObject;
+    
+        // Pass the selected object to the new view controller (NOT WORKING) MaterialsVC.person is nil (maybe because i already assigned self.person to cell.person when i was configuring the cell)
+//        MaterialsVC.person = self.person;
         
-    }
+//    }
 }
 
 @end

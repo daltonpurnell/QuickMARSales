@@ -15,8 +15,9 @@
 
 
 static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
+static NSString *const MaterialsSelectedNotificationKey = @"MaterialsSelected";
 
-@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate>
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) Person *person;
 

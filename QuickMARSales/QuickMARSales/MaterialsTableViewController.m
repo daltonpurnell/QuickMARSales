@@ -45,9 +45,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"materialsCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = [self.optionsList objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"Unchecked Checkbox-32"];
+        // Configure the cell...
+        cell.textLabel.text = [self.optionsList objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -59,9 +58,11 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     
-    return @"Check the materials you would like to send to these contacts";
+    return @"Check the materials you would like to send";
     
 }
+
+
 
 #pragma mark - events
 
@@ -72,17 +73,15 @@
 
 - (IBAction)sendTapped:(id)sender {
     
-    // launch mfmailcompose
-    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
-    mailViewController.mailComposeDelegate = self;
-    //    [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", self.person.emailAddress], nil]];
-    
-    //    [mailViewController setMessageBody:@"links" isHTML:NO];
-    [self presentViewController:mailViewController animated:YES completion:nil];
+    // send notification to CRMTableVC to launch mailcompose vc
 
     
+    [self dismissViewControllerAnimated:YES completion:^{
+            [[NSNotificationCenter defaultCenter]postNotificationName:MaterialsSelectedNotificationKey object:nil];
+    }];
     
 }
+
 
 
 #pragma mark - message compose delegate methods
