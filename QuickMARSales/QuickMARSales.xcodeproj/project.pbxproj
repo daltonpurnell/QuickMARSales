@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF1C41D51BE7B06600B834EF /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1C41D41BE7B06600B834EF /* ContactsTableViewController.m */; };
 		CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */; };
 		CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */; };
 		CF2863AC1BDA8F610005ABA0 /* CRMTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */; };
@@ -69,8 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CF1C41D31BE7B06600B834EF /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
-		CF1C41D41BE7B06600B834EF /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHandyRefCell.h; sourceTree = "<group>"; };
 		CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHandyRefCell.m; sourceTree = "<group>"; };
 		CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElevatorPitchViewController.h; sourceTree = "<group>"; };
@@ -233,8 +230,6 @@
 				CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */,
 				CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */,
 				CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */,
-				CF1C41D31BE7B06600B834EF /* ContactsTableViewController.h */,
-				CF1C41D41BE7B06600B834EF /* ContactsTableViewController.m */,
 				CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */,
 				CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */,
 				CF2863AA1BDA8F610005ABA0 /* CRMTableVC.h */,
@@ -433,7 +428,6 @@
 				CF661CA41BEA74AA00818B7C /* Appearance.m in Sources */,
 				CF91AE2C1BE9140800C99107 /* MaterialsTableViewController.m in Sources */,
 				CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */,
-				CF1C41D51BE7B06600B834EF /* ContactsTableViewController.m in Sources */,
 				CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */,
 				CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */,
 				CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */,

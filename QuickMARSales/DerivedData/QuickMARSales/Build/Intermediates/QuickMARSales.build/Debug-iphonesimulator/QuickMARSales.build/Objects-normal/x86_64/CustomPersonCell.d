@@ -70,5 +70,4 @@ dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/ParseUI.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Modules/module.modulemap \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/ElevatorPitchViewController.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/ContactsTableViewController.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/MaterialsTableViewController.h

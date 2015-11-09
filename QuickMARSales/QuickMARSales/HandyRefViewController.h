@@ -13,9 +13,6 @@
 @import ParseUI;
 
 @interface HandyRefViewController : UITableViewController <MFMailComposeViewControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *mailButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendButton;
-@property (strong, nonatomic) NSMutableArray *selectedCells;
+
 
 @end

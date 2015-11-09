@@ -12,17 +12,12 @@
 
 @protocol textButtonTappedDelegate;
 @protocol emailButtonTappedDelegate;
-@protocol checkBoxDelegate;
 
-static NSString *const topEmailButtonNotificationKey = @"top email button tapped";
-static NSString *const topCancelButtonNotificationKey = @"Cancel button tapped";
 
 @interface CustomPersonCell : UITableViewCell
 @property (nonatomic, strong) id <textButtonTappedDelegate>delegate;
 @property (nonatomic, strong) id <emailButtonTappedDelegate>emailDelegate;
-@property (nonatomic, strong) id <checkBoxDelegate> checkBoxDelegate2;
 
-@property (weak, nonatomic) IBOutlet UIButton *checkBox;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
@@ -49,11 +44,5 @@ static NSString *const topCancelButtonNotificationKey = @"Cancel button tapped";
 
 @end
 
-
-@protocol checkBoxDelegate <NSObject>
-
--(IBAction)checkBoxTapped:(NSIndexPath *) indexPath;
-
-@end
 
 

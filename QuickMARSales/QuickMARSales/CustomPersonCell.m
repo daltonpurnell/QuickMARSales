@@ -16,8 +16,6 @@ BOOL isChecked;
 - (void)awakeFromNib {
     // Initialization code
     
-    [self registerForNotification];
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -33,9 +31,7 @@ BOOL isChecked;
     self.emailLabel.text = [NSString stringWithFormat:@"%@", self.person.emailAddress];
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.person.address];
     self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
-    
-    self.checkBox.hidden = YES;
-    
+        
     [Appearance initializeAppearanceDefaults];
 
     
@@ -69,48 +65,6 @@ BOOL isChecked;
     
     [self.emailDelegate emailButtonTapped:self.indexPath];
 
-}
-
-- (IBAction)checkBoxTapped:(id)sender {
-    
-    
-    isChecked = !isChecked;
-    [sender setImage:[UIImage imageNamed:((isChecked) ? @"Checked Checkbox-32" : @"Unchecked Checkbox-32")] forState: UIControlStateNormal];
-    
-    [self.checkBoxDelegate2 checkBoxTapped:self.indexPath];
-    
-}
-
-
-#pragma mark - nsnotification methods
-
--(void)registerForNotification {
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToTopEmailButton:) name:topEmailButtonNotificationKey object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToTopCancelButton:) name:topCancelButtonNotificationKey object:nil];
-}
-
--(void)respondToTopEmailButton:(NSNotification *)notification {
-    
-    self.checkBox.hidden = NO;
-}
-
--(void)respondToTopCancelButton:(NSNotification *)notification {
-    
-    self.checkBox.hidden = YES;
-}
-
--(void)unregisterForNotification {
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:topEmailButtonNotificationKey object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:topCancelButtonNotificationKey object:nil];
-    
-}
-
--(void)dealloc {
-    
-    [self unregisterForNotification];
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "HandyRefViewController.h"
 #import "Appearance.h"
 
-@interface HandyRefViewController () <checkBoxTappedDelegate>
+@interface HandyRefViewController ()
 @property (nonatomic, strong) NSArray *optionsList;
 
 @end
@@ -55,11 +55,6 @@
         }];
     
     }
-    
-    self.cancelButton.enabled = NO;
-    self.sendButton.enabled = NO;
-    
-    self.tableView.allowsMultipleSelection = NO;
 
 }
 
@@ -82,10 +77,7 @@
     
     // Configure the cell...
     cell.label.text = [self.optionsList objectAtIndex:indexPath.row];
-    cell.checkBox.hidden = YES;
-    cell.checkBoxDelegate = self;
     cell.indexPath = indexPath;
-    // unhide this when the mail button is tapped
     
     
     return cell;
@@ -168,67 +160,11 @@
 
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-
-    return @"Tap the mail button to send materials to a friend";
-}
-
 
 
 
 #pragma mark - events
 
-- (IBAction)mailButtonTapped:(id)sender {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Check the materials you would like to send" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-    // send notification to cell to show the check box button
-    [[NSNotificationCenter defaultCenter] postNotificationName:mailButtonTappedNotificationKey object:nil userInfo:nil];
-
-    
-    // show cancel button
-    self.cancelButton.enabled = YES;
-    
-    // disable mail button
-    self.mailButton.enabled = NO;
-    
-    // multiple selection
-    self.tableView.allowsMultipleSelection = YES;
-    
-    self.sendButton.enabled = YES;
-    
-    self.tableView.allowsMultipleSelection = YES;
-
-    
-    
-}
-
-- (IBAction)cancelButtonTapped:(id)sender {
-    
-    
-    // send notification to cell to hide check box button
-    [[NSNotificationCenter defaultCenter] postNotificationName:cancelButtonTappedNotificationKey object:nil userInfo:nil];
-
-    
-    // disallow multiple selection
-    self.tableView.allowsMultipleSelection = NO;
-    
-    // disable cancel button again
-    self.cancelButton.enabled = NO;
-    
-    // enable mail button again
-    self.mailButton.enabled = YES;
-    
-    // disable send button
-    self.sendButton.enabled = NO;
-    
-    self.tableView.allowsMultipleSelection = NO;
-
-}
 
 
 #pragma mark - mfmailcompose delegate methods
@@ -326,33 +262,13 @@
 
 
 
-#pragma mark - custom delegate methods
-
--(void)checkBoxTapped:(NSIndexPath *)indexPath {
-    
-
-    // TODO: add this index path to the array (this doesn't seem to be working)
-    [self.selectedCells addObject:[NSNumber numberWithInteger:indexPath.row]];
-
-    NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
-    
-    // the array is nil, even though we are getting the indexPath.rows in the above log
-    NSLog(@"Selected Cells:\n%@", self.selectedCells);
-}
-
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"showSendTo"]) {
-        UINavigationController *navController = [segue destinationViewController];
-        ContactsTableViewController *SendToVC = navController.viewControllers.firstObject;
-        
-        self.selectedCells = SendToVC.selectedCellsFromPreviousVC;
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//       }
 
 @end

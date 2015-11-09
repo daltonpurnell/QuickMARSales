@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Show Video-->
@@ -165,39 +164,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-aU-bns">
-                                            <rect key="frame" x="51" y="12" width="541" height="20.5"/>
+                                            <rect key="frame" x="8" y="12" width="584" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-0H-4fP">
-                                            <rect key="frame" x="8" y="7" width="35" height="30"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="3GW-Xs-no7"/>
-                                                <constraint firstAttribute="width" constant="35" id="EfK-EM-Tn9"/>
-                                            </constraints>
-                                            <state key="normal" image="Unchecked Checkbox-32"/>
-                                            <connections>
-                                                <action selector="checkBoxTapped:" destination="IwX-kO-2I4" eventType="touchUpInside" id="Ria-v5-w4C"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="2xp-0H-4fP" firstAttribute="centerY" secondItem="4mm-aU-bns" secondAttribute="centerY" id="A2U-Pm-QTu"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4mm-aU-bns" secondAttribute="trailing" id="Lbt-fU-w6i"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="4mm-aU-bns" secondAttribute="leading" id="eoB-Cq-IKy"/>
                                         <constraint firstItem="4mm-aU-bns" firstAttribute="centerY" secondItem="16o-Y0-mOo" secondAttribute="centerY" id="wKt-BC-Q21"/>
-                                        <constraint firstItem="4mm-aU-bns" firstAttribute="leading" secondItem="2xp-0H-4fP" secondAttribute="trailing" constant="8" id="zCv-fo-02j"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstItem="2xp-0H-4fP" firstAttribute="leading" secondItem="IwX-kO-2I4" secondAttribute="leading" constant="8" id="LOU-8d-6no"/>
-                                </constraints>
                                 <connections>
-                                    <outlet property="checkBox" destination="2xp-0H-4fP" id="Qpm-cB-fAs"/>
                                     <outlet property="label" destination="4mm-aU-bns" id="JIi-1j-UpK"/>
                                 </connections>
                             </tableViewCell>
@@ -207,95 +189,11 @@
                             <outlet property="delegate" destination="sew-bc-eUT" id="EGB-Re-sQi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yus-MX-nZD">
-                            <connections>
-                                <action selector="cancelButtonTapped:" destination="sew-bc-eUT" id="Yhl-yc-HVs"/>
-                            </connections>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="Message-25" id="J3h-BB-nCc">
-                                <connections>
-                                    <action selector="mailButtonTapped:" destination="sew-bc-eUT" id="iSl-IZ-4ka"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Next" id="jd1-rv-qoh">
-                                <connections>
-                                    <segue destination="2QH-m1-b3J" kind="showDetail" identifier="showSendTo" id="Pq7-6A-gzT"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="yus-MX-nZD" id="pDa-mz-HoW"/>
-                        <outlet property="mailButton" destination="J3h-BB-nCc" id="Q9O-9Q-iIZ"/>
-                        <outlet property="sendButton" destination="jd1-rv-qoh" id="7am-Sh-Ncg"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Handy Reference" id="V8M-pA-4cM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1080"/>
-        </scene>
-        <!--Send to...-->
-        <scene sceneID="Iet-VV-Uo6">
-            <objects>
-                <tableViewController id="7dx-NO-1qg" customClass="ContactsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="66K-dA-F1X">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="5Om-PQ-ujj" detailTextLabel="qgb-oj-57r" style="IBUITableViewCellStyleSubtitle" id="Wk4-Hs-FCG">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wk4-Hs-FCG" id="WLi-sD-VVP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Om-PQ-ujj">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qgb-oj-57r">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="7dx-NO-1qg" id="fek-Ew-fZO"/>
-                            <outlet property="delegate" destination="7dx-NO-1qg" id="fpI-8n-u5L"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Send to..." id="8fK-ga-nkz">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5D-Qz-pY0">
-                            <connections>
-                                <action selector="cancelButtonTapped:" destination="7dx-NO-1qg" id="iUG-Bh-WPV"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="UFM-1d-Zys">
-                            <connections>
-                                <action selector="sendButtonTapped:" destination="7dx-NO-1qg" id="KpP-uC-AXy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6bR-dW-8Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2851" y="1080"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -442,18 +340,6 @@
                                                 <action selector="callButtonTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="ces-9I-oPa"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-Lg-WXS">
-                                            <rect key="frame" x="8" y="59" width="32" height="32"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="LzG-Yk-OaZ"/>
-                                                <constraint firstAttribute="width" constant="32" id="tgY-4a-Y1B"/>
-                                            </constraints>
-                                            <state key="normal" image="Unchecked Checkbox-32"/>
-                                            <connections>
-                                                <action selector="checkBoxTapped:" destination="CKj-j8-AbI" eventType="touchUpInside" id="Iup-3P-vst"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
@@ -462,28 +348,25 @@
                                         <constraint firstItem="evk-rE-qQQ" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="Hqo-Wf-vpE"/>
                                         <constraint firstItem="mUC-LB-bZL" firstAttribute="leading" secondItem="68N-Jg-c49" secondAttribute="trailing" constant="8" id="ILH-2H-W5X"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bNs-TV-YLM" secondAttribute="trailing" constant="6" id="KyU-PL-PWq"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="fcv-Lg-WXS" secondAttribute="leading" id="MBt-fz-qqk"/>
                                         <constraint firstItem="68N-Jg-c49" firstAttribute="centerY" secondItem="mUC-LB-bZL" secondAttribute="centerY" id="R2Y-BK-Qul"/>
                                         <constraint firstItem="mUC-LB-bZL" firstAttribute="centerY" secondItem="UU9-xw-FDq" secondAttribute="centerY" id="RpS-Gb-ZEM"/>
-                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="fcv-Lg-WXS" secondAttribute="trailing" constant="8" id="TCg-D2-r2h"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cwA-uN-7pK" secondAttribute="trailing" constant="6" id="WI1-A6-PSj"/>
                                         <constraint firstItem="Xjd-Q3-2nH" firstAttribute="top" secondItem="evk-rE-qQQ" secondAttribute="bottom" constant="8" id="aZE-9R-v4e"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="evk-rE-qQQ" secondAttribute="trailing" constant="6" id="bth-n3-zQx"/>
                                         <constraint firstItem="cwA-uN-7pK" firstAttribute="top" secondItem="Xjd-Q3-2nH" secondAttribute="bottom" constant="8" id="eAw-5b-aMR"/>
+                                        <constraint firstItem="cwA-uN-7pK" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="lLy-UY-iUz"/>
                                         <constraint firstItem="bNs-TV-YLM" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="o4a-Dl-ohb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Xjd-Q3-2nH" secondAttribute="trailing" constant="6" id="r1o-XA-HwS"/>
                                         <constraint firstItem="Xjd-Q3-2nH" firstAttribute="leading" secondItem="zDC-4z-ZN0" secondAttribute="leadingMargin" constant="40" id="r3P-e4-LYx"/>
                                         <constraint firstItem="bNs-TV-YLM" firstAttribute="top" secondItem="cwA-uN-7pK" secondAttribute="bottom" constant="8" id="uY6-Fm-60m"/>
                                         <constraint firstItem="UU9-xw-FDq" firstAttribute="leading" secondItem="mUC-LB-bZL" secondAttribute="trailing" constant="8" id="vwZ-ga-9Oh"/>
                                         <constraint firstItem="evk-rE-qQQ" firstAttribute="top" secondItem="zDC-4z-ZN0" secondAttribute="topMargin" constant="6" id="yGs-FT-IpO"/>
-                                        <constraint firstItem="fcv-Lg-WXS" firstAttribute="centerY" secondItem="zDC-4z-ZN0" secondAttribute="centerY" id="ybS-YP-m1O"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="addressLabel" destination="bNs-TV-YLM" id="CMv-Aj-o8l"/>
                                     <outlet property="callButton" destination="68N-Jg-c49" id="cWS-j2-jk3"/>
-                                    <outlet property="checkBox" destination="fcv-Lg-WXS" id="NW9-S3-pHY"/>
                                     <outlet property="emailButton" destination="UU9-xw-FDq" id="yeT-xE-Ygv"/>
                                     <outlet property="emailLabel" destination="cwA-uN-7pK" id="LGb-gQ-PmN"/>
                                     <outlet property="nameLabel" destination="evk-rE-qQQ" id="KjO-bp-8Ii"/>
@@ -498,36 +381,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="9KE-sg-xIh">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Cancel" id="Mlo-HX-rkA">
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="qca-Y4-wAQ" id="7OA-iL-SRQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" systemItem="add" id="sez-0H-MAl">
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <rightBarButtonItems>
-                            <barButtonItem image="Message-25" id="PIz-ZE-cR9">
-                                <connections>
-                                    <action selector="topMailButtonTapped:" destination="qca-Y4-wAQ" id="ZGA-gK-pti"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Next" id="NyG-aG-YKe">
-                                <connections>
-                                    <segue destination="Cj6-nq-Vsy" kind="showDetail" id="a4u-RF-xpl"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="sez-0H-MAl">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="qca-Y4-wAQ" id="rfJ-9J-JBO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="sez-0H-MAl" id="uJf-D9-xgW"/>
-                        <outlet property="cancelButton" destination="Mlo-HX-rkA" id="J6o-Yb-ex0"/>
-                        <outlet property="nextButton" destination="NyG-aG-YKe" id="dOe-Cf-nOm"/>
-                        <outlet property="topMailButton" destination="PIz-ZE-cR9" id="M2p-IJ-XJ0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWL-wl-TMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,25 +543,6 @@
             <point key="canvasLocation" x="750" y="1833"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="sqz-dQ-got">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2QH-m1-b3J" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CvV-MU-cUQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7dx-NO-1qg" kind="relationship" relationship="rootViewController" id="MM5-lG-zR3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eDZ-c8-be4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2204" y="1080"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="tX4-af-Scu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cj6-nq-Vsy" sceneMemberID="viewController">
@@ -727,6 +569,5 @@
         <image name="Message-25" width="25" height="25"/>
         <image name="Phone-25 (1)" width="25" height="25"/>
         <image name="Speech Bubble-25" width="25" height="25"/>
-        <image name="Unchecked Checkbox-32" width="32" height="32"/>
     </resources>
 </document>

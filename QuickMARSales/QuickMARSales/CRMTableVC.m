@@ -10,7 +10,7 @@
 #import "CustomPersonCell.h"
 #import "Appearance.h"
 
-@interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate, checkBoxDelegate>
+@interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate>
 
 @property (strong, nonatomic) NSString *savedEmail;
 @property (strong, nonatomic) NSString *savedPhoneNumber;
@@ -38,13 +38,6 @@
     });
     
     [self registerForNotifications];
-    
-    self.cancelButton.enabled = NO;
-    self.nextButton.enabled = NO;
-    
-    self.tableView.allowsMultipleSelection = NO;
-
-
 }
 
 
@@ -75,7 +68,6 @@
     
     cell.delegate = self;
     cell.emailDelegate = self;
-    cell.checkBoxDelegate2 = self;
     cell.indexPath = indexPath;
     
     return cell;
@@ -96,7 +88,7 @@
     if ([PersonController sharedInstance].people.count == 0) {
         return @"Tap the + to add people to your contact list";
     } else {
-        return @"Tap the mail button at the top of the screen to send materials to a friend";
+        return nil;
     }
 }
 
@@ -119,42 +111,6 @@
 
     
 }
-
-- (IBAction)topMailButtonTapped:(id)sender {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Check the contacts you would like to send materials to" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-
-    
-    self.cancelButton.enabled = YES;
-    self.nextButton.enabled = YES;
-    self.topMailButton.enabled = NO;
-    self.addButton.enabled = NO;
-    
-    self.tableView.allowsMultipleSelection = YES;
-
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:topEmailButtonNotificationKey object:nil];
-}
-
-- (IBAction)cancelButtonTapped:(id)sender {
-    
-    self.cancelButton.enabled = NO;
-    self.nextButton.enabled = NO;
-    self.topMailButton.enabled = YES;
-    self.addButton.enabled = YES;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:topCancelButtonNotificationKey object:nil];
-    
-    self.tableView.allowsMultipleSelection = NO;
-
-    
-}
-
-
 
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate methods
@@ -343,17 +299,6 @@
 }
 
 
--(void)checkBoxTapped:(NSIndexPath *)indexPath {
-    
-    //TODO: add this index path to the array
-    [self.selectedContactCells addObject:[NSNumber numberWithInteger:indexPath.row]];
-    
-    NSLog(@"Adding %@", [NSNumber numberWithInteger:indexPath.row]);
-    
-    NSLog(@"Selected Cells:\n%@", self.selectedContactCells);
-    
-}
-
 
 #pragma mark - message compose delegate method
 
@@ -412,7 +357,6 @@
 
 
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -424,7 +368,6 @@
         UINavigationController *navController = [segue destinationViewController];
         MaterialsTableViewController *MaterialsVC = navController.viewControllers.firstObject;
         
-        self.selectedContactCells = MaterialsVC.selectedCellsFromPreviousViewController;
     }
 }
 

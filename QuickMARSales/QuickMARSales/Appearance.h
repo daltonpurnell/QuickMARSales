@@ -12,7 +12,6 @@
 #import "HandyRefViewController.h"
 #import "CustomHandyRefCell.h"
 #import "ElevatorPitchViewController.h"
-#import "ContactsTableViewController.h"
 #import "CustomHandyRefCell.h"
 #import "MaterialsTableViewController.h"
 
