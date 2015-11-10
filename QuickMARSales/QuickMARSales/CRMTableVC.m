@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *savedLastName;
 
 @property (strong, nonatomic) NSMutableArray *selectedMaterials;
+@property (strong, nonatomic) NSMutableArray *linksArray;
 
 
 @end
@@ -36,6 +37,7 @@
     self.tableView.dataSource = self;
     
     self.selectedMaterials = [[NSMutableArray alloc] init];
+    self.linksArray = [[NSMutableArray alloc] init];
 
     
     // get permission to access contacts
@@ -297,54 +299,88 @@
             
             [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
                 if (indexPath.row == 11) {
+                    
+                    // add correct links to links array
+                    if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.0.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.1.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.2.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.3.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.4.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.5.com"];
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.6.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.7.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.8.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.9.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
+                        
+                        // add link to links array
+                        [self.linksArray addObject:@"www.10.com"];
+                        NSLog(@"%@", self.linksArray);
+                        
+                    }
+                    
+                    
                     [sheet dismissAnimated:YES];
                 // launch mfmailcompose
                 MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
                 mailViewController.mailComposeDelegate = self;
                 [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
-                    
-                    
-                    // determine which links to add to the email
-                    if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
-                        [mailViewController setMessageBody:@"links" isHTML:NO];
 
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {
-                        [mailViewController setMessageBody:@"links1" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
-                        [mailViewController setMessageBody:@"links2" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
-                        [mailViewController setMessageBody:@"links3" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
-                        [mailViewController setMessageBody:@"links4" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
-                        [mailViewController setMessageBody:@"links5" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
-                        [mailViewController setMessageBody:@"links6" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
-                        [mailViewController setMessageBody:@"links7" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
-                        [mailViewController setMessageBody:@"links8" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
-                        [mailViewController setMessageBody:@"links9" isHTML:NO];
-                        
-                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
-                        [mailViewController setMessageBody:@"links10" isHTML:NO];
-                    }
+                [mailViewController setMessageBody:[self.linksArray description] isHTML:NO];
 
-                [self presentViewController:mailViewController animated:YES completion:nil];
+                 [self presentViewController:mailViewController animated:YES completion:nil];
                 } else {
                     // add index path to array of selected buttons
                     [section1 setButtonStyle:JGActionSheetButtonStyleGreen forButtonAtIndex:indexPath.row];
-                    
-                    
                     [self.selectedMaterials addObject:[NSNumber numberWithInteger:indexPath.row]];
                     NSLog(@"%@", self.selectedMaterials);
                 }
@@ -411,6 +447,10 @@
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.selectedMaterials removeAllObjects];
+    [self.linksArray removeAllObjects];
+    
 }
 
 
