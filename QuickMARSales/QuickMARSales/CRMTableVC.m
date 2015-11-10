@@ -280,19 +280,19 @@
     if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
             // create view programmatically and present it
-            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?"] buttonStyle:JGActionSheetButtonStyleDefault];
-            
-            JGActionSheetSection *okSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Ok"] buttonStyle:JGActionSheetButtonStyleDefault];
-            
-            JGActionSheetSection *cancelSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel];
-            
-            NSArray *sections = @[section1, okSection, cancelSection];
+            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok"] buttonStyle:JGActionSheetButtonStyleDefault];
+        
+        [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:11];
+
+        
+            NSArray *sections = @[section1];
             
             JGActionSheet *sheet = [JGActionSheet actionSheetWithSections:sections];
+        
             
             [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
-                [sheet dismissAnimated:YES];
-                
+                if (indexPath.row == 11) {
+                    [sheet dismissAnimated:YES];
                 // launch mfmailcompose
                 MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
                 mailViewController.mailComposeDelegate = self;
@@ -300,6 +300,10 @@
                 
                 //    [mailViewController setMessageBody:@"links" isHTML:NO];
                 [self presentViewController:mailViewController animated:YES completion:nil];
+                } else if (indexPath.row == 2) {
+                    
+                    [sheet dismissAnimated:YES];
+                }
             }];
             
             [sheet showInView:self.view animated:YES];
