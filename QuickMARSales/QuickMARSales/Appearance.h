@@ -13,7 +13,6 @@
 #import "CustomHandyRefCell.h"
 #import "ElevatorPitchViewController.h"
 #import "CustomHandyRefCell.h"
-#import "MaterialsTableViewController.h"
 
 @interface Appearance : NSObject
 

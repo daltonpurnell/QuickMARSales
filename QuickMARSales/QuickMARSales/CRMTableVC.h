@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
-#import "MaterialsTableViewController.h"
+#import "JGActionSheet.h"
 @import MessageUI;
 @import AddressBook;
 @import AddressBookUI;
 
 
 static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
-static NSString *const MaterialsSelectedNotificationKey = @"MaterialsSelected";
 
-@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate>
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate> {
+    
+}
 
 @property (strong, nonatomic) Person *person;
 

@@ -23,6 +23,7 @@
 
 @implementation CRMTableVC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,12 +57,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     return [PersonController sharedInstance].people.count;
 }
 
 
 - (CustomPersonCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CustomPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    CustomPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     // Configure the cell...
     Person *person = [PersonController sharedInstance].people[indexPath.row];
@@ -70,7 +72,7 @@
     cell.delegate = self;
     cell.emailDelegate = self;
     cell.indexPath = indexPath;
-    
+
     return cell;
 }
 
@@ -240,7 +242,7 @@
 -(void)textButtonTapped:(NSIndexPath*)indexPath {
     Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
     
-    // if the phoneNumber string contains numbers and his more than 7 characters long
+    // if the phoneNumber string contains numbers and is more than 7 characters long
     if (person.phoneNumber.length >= 7 && [person.phoneNumber rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound)
     {
         
@@ -277,9 +279,31 @@
     NSCharacterSet *cset = [NSCharacterSet characterSetWithCharactersInString:@"@"];
     if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
-        
-        [self performSegueWithIdentifier:@"showMaterials" sender:self];
-        
+            // create view programmatically and present it
+            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?"] buttonStyle:JGActionSheetButtonStyleDefault];
+            
+            JGActionSheetSection *okSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Ok"] buttonStyle:JGActionSheetButtonStyleDefault];
+            
+            JGActionSheetSection *cancelSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel];
+            
+            NSArray *sections = @[section1, okSection, cancelSection];
+            
+            JGActionSheet *sheet = [JGActionSheet actionSheetWithSections:sections];
+            
+            [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
+                [sheet dismissAnimated:YES];
+                
+                // launch mfmailcompose
+                MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
+                mailViewController.mailComposeDelegate = self;
+                [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
+                
+                //    [mailViewController setMessageBody:@"links" isHTML:NO];
+                [self presentViewController:mailViewController animated:YES completion:nil];
+            }];
+            
+            [sheet showInView:self.view animated:YES];
+
     } else {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"This person does not have an email address on file" preferredStyle:UIAlertControllerStyleAlert];
@@ -309,9 +333,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToNoPhoneNumber:) name:NoPhoneNumberNotificationKey object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToMaterialsSelected:) name:MaterialsSelectedNotificationKey object:nil];
-    
-}
+    }
 
 
 -(void)respondToNoPhoneNumber:(NSNotification *)notification {
@@ -324,28 +346,6 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)respondToMaterialsSelected:(NSNotification *)notification {
-    
-    
-    // launch mail compose vc
-    
-//    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
-
-    // launch mfmailcompose
-    MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
-    mailViewController.mailComposeDelegate = self;
-//    [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
-    
-    //    [mailViewController setMessageBody:@"links" isHTML:NO];
-    [self presentViewController:mailViewController animated:YES completion:^{
-        
-        MaterialsTableViewController *materialsVC = [MaterialsTableViewController new];
-        
-        [mailViewController presentViewController:materialsVC animated:YES completion:nil];
-    }];
-
-    
-}
 
 -(void)unregisterForNotifications {
     
@@ -359,7 +359,11 @@
 }
 
 
-
+#pragma mark - mfmailcompose delegate methods
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - Navigation
