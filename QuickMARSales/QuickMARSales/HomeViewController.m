@@ -11,7 +11,6 @@
 
 @interface HomeViewController ()
 
-//@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @end
@@ -23,7 +22,7 @@
     // Do any additional setup after loading the view.
     
     // load youtube video into player view
-    [self.playerView loadWithVideoId:@"4LhHBE2RyqY"];
+    [self.playerView loadWithVideoId:@"G_X2EVm8_Xc"];
     self.tabBarController.tabBar.barTintColor =  [UIColor colorWithRed:0.533 green:0.764 blue:0.216 alpha:1.000];
     self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     self.playerView.delegate = self;
