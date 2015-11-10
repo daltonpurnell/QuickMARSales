@@ -18,6 +18,8 @@
 @property (strong, nonatomic) NSString *savedFirstName;
 @property (strong, nonatomic) NSString *savedLastName;
 
+@property (strong, nonatomic) NSMutableArray *selectedMaterials;
+
 
 @end
 
@@ -32,6 +34,9 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.selectedMaterials = [[NSMutableArray alloc] init];
+
     
     // get permission to access contacts
     ABAddressBookRef addressBook =  ABAddressBookCreateWithOptions(NULL, NULL);
@@ -297,12 +302,51 @@
                 MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
                 mailViewController.mailComposeDelegate = self;
                 [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
-                
-                //    [mailViewController setMessageBody:@"links" isHTML:NO];
-                [self presentViewController:mailViewController animated:YES completion:nil];
-                } else if (indexPath.row == 2) {
                     
-                    [sheet dismissAnimated:YES];
+                    
+                    // determine which links to add to the email
+                    if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
+                        [mailViewController setMessageBody:@"links" isHTML:NO];
+
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {
+                        [mailViewController setMessageBody:@"links1" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
+                        [mailViewController setMessageBody:@"links2" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
+                        [mailViewController setMessageBody:@"links3" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
+                        [mailViewController setMessageBody:@"links4" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
+                        [mailViewController setMessageBody:@"links5" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
+                        [mailViewController setMessageBody:@"links6" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
+                        [mailViewController setMessageBody:@"links7" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
+                        [mailViewController setMessageBody:@"links8" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
+                        [mailViewController setMessageBody:@"links9" isHTML:NO];
+                        
+                    } else if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
+                        [mailViewController setMessageBody:@"links10" isHTML:NO];
+                    }
+
+                [self presentViewController:mailViewController animated:YES completion:nil];
+                } else {
+                    // add index path to array of selected buttons
+                    [section1 setButtonStyle:JGActionSheetButtonStyleGreen forButtonAtIndex:indexPath.row];
+                    
+                    
+                    [self.selectedMaterials addObject:[NSNumber numberWithInteger:indexPath.row]];
+                    NSLog(@"%@", self.selectedMaterials);
                 }
             }];
             
