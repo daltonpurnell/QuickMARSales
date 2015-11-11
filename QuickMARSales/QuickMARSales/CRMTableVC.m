@@ -287,9 +287,10 @@
     if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
             // create view programmatically and present it
-            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok"] buttonStyle:JGActionSheetButtonStyleDefault];
+            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
         
         [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:11];
+        [section1 setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:12];
 
         
             NSArray *sections = @[section1];
@@ -298,6 +299,13 @@
         
             
             [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
+                
+                if (indexPath.row == 12) {
+                    [sheet dismissAnimated:YES];
+                    [self.selectedMaterials removeAllObjects];
+                    [self.linksArray removeAllObjects];
+                }
+                
                 if (indexPath.row == 11) {
                     
                     // add correct links to links array
@@ -365,8 +373,8 @@
                         // add link to links array
                         [self.linksArray addObject:@"www.10.com"];
                         NSLog(@"%@", self.linksArray);
-                        
                     }
+        
                     
                     
                     [sheet dismissAnimated:YES];
