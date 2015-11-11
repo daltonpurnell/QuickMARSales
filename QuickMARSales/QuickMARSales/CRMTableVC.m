@@ -304,60 +304,60 @@
                     if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.0.com"];
+                        [self.linksArray addObject:@"www.quickmar.com/demo"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.1.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.2.com"];
+                        [self.linksArray addObject:@"TBD"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.3.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.4.com"];
+                        [self.linksArray addObject:@"TBD"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.5.com"];
+                        [self.linksArray addObject:@"TBD"];
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.6.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.7.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.8.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.9.com"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
