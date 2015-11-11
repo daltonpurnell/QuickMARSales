@@ -371,7 +371,7 @@
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.10.com"];
+                        [self.linksArray addObject:@"TBD"];
                         NSLog(@"%@", self.linksArray);
                     }
         
