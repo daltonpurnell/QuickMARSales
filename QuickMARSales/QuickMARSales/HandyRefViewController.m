@@ -92,13 +92,13 @@
     if (indexPath.row == 0) {
         
         // demo request form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"www.quickmar.com/demo"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
     } else if (indexPath.row == 1) {
         
         // training request form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 2) {
@@ -110,7 +110,7 @@
     } else if (indexPath.row == 3) {
         
         // materials order form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 4) {
@@ -128,25 +128,25 @@
     } else if (indexPath.row == 6) {
         
         // quickmar university
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 7) {
         
         // news
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 8) {
         
         // brochure
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 9) {
         
         // fact sheet
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 10) {
