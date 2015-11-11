@@ -312,7 +312,7 @@
                     if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"www.quickmar.com/demo"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/demo"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {

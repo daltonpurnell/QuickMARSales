@@ -92,7 +92,7 @@
     if (indexPath.row == 0) {
         
         // demo request form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"www.quickmar.com/demo"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/demo"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
     } else if (indexPath.row == 1) {
