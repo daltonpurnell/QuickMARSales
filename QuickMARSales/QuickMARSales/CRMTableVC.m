@@ -383,7 +383,7 @@
                 mailViewController.mailComposeDelegate = self;
                 [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
 
-                [mailViewController setMessageBody:[self.linksArray description] isHTML:NO];
+                [mailViewController setMessageBody:[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"] isHTML:NO];
 
                  [self presentViewController:mailViewController animated:YES completion:nil];
                 } else {
