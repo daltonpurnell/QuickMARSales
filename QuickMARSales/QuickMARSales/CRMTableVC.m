@@ -347,25 +347,25 @@
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
