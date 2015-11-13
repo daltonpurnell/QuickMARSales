@@ -1,0 +1,1 @@
+/Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/DerivedData/QuickMARSales/Build/Intermediates/ArchiveIntermediates/QuickMARSales/InstallationBuildProductsLocation/Applications/QuickMARSales.app
