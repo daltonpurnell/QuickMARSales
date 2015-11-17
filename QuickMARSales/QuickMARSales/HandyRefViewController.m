@@ -98,20 +98,47 @@
     } else if (indexPath.row == 1) {
         
         // training request form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+
+        
+        
+
 
     } else if (indexPath.row == 2) {
         
         // hardware requirements form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 3) {
         
         // materials order form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 4) {
         
@@ -128,26 +155,58 @@
     } else if (indexPath.row == 6) {
         
         // quickmar university
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 7) {
         
         // news
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 8) {
         
         // brochure
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 9) {
         
         // fact sheet
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }]];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+
 
     } else if (indexPath.row == 10) {
         

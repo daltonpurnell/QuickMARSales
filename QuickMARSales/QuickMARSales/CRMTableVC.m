@@ -21,7 +21,6 @@
 @property (strong, nonatomic) NSMutableArray *selectedMaterials;
 @property (strong, nonatomic) NSMutableArray *linksArray;
 
-
 @end
 
 @implementation CRMTableVC
