@@ -382,7 +382,7 @@
                 mailViewController.mailComposeDelegate = self;
                 [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
 
-                [mailViewController setMessageBody:[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"] isHTML:NO];
+                [mailViewController setMessageBody:[NSString stringWithFormat:@"Your username for the links that require it is:\n \n Your password is:\n \n %@",[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"]] isHTML:NO];
 
                  [self presentViewController:mailViewController animated:YES completion:nil];
                 } else {
