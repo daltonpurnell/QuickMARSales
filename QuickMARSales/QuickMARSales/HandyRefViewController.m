@@ -225,6 +225,38 @@
 
 #pragma mark - events
 
+- (IBAction)logOutTapped:(id)sender {
+    
+    
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
+    if (!currentUser) { // No user logged in
+        
+        // parse log in
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self];
+        [logInViewController setFields:PFLogInFieldsUsernameAndPassword
+         | PFLogInFieldsSignUpButton
+         | PFLogInFieldsLogInButton
+         | PFLogInFieldsUsernameAndPassword];
+        
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self];
+        [signUpViewController setFields:PFSignUpFieldsUsernameAndPassword
+         | PFSignUpFieldsSignUpButton
+         | PFSignUpFieldsDismissButton];
+        
+        [logInViewController setSignUpController:signUpViewController];
+        
+        [self presentViewController:logInViewController animated:YES completion:^{
+            
+            // nothing
+        }];
+        
+    }
+
+    
+}
 
 
 #pragma mark - mfmailcompose delegate methods
