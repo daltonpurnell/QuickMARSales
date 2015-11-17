@@ -36,6 +36,7 @@
         
         // parse log in
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+//        [logInViewController.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QMAppIcon"]]];
         [logInViewController setDelegate:self];
         [logInViewController setFields:PFLogInFieldsUsernameAndPassword
          | PFLogInFieldsSignUpButton
@@ -43,6 +44,7 @@
          | PFLogInFieldsUsernameAndPassword];
         
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+//        [signUpViewController.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QMAppIcon"]]];
         [signUpViewController setDelegate:self];
         [signUpViewController setFields:PFSignUpFieldsUsernameAndPassword
          | PFSignUpFieldsSignUpButton
@@ -234,6 +236,8 @@
         
         // parse log in
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+//        [logInViewController.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QMAppIcon"]]];
+
         [logInViewController setDelegate:self];
         [logInViewController setFields:PFLogInFieldsUsernameAndPassword
          | PFLogInFieldsSignUpButton
@@ -241,6 +245,7 @@
          | PFLogInFieldsUsernameAndPassword];
         
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+//        [signUpViewController.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"QMAppIcon"]]];
         [signUpViewController setDelegate:self];
         [signUpViewController setFields:PFSignUpFieldsUsernameAndPassword
          | PFSignUpFieldsSignUpButton
