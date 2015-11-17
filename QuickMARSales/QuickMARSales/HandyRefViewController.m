@@ -45,7 +45,8 @@
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self];
         [signUpViewController setFields:PFSignUpFieldsUsernameAndPassword
-         | PFSignUpFieldsSignUpButton];
+         | PFSignUpFieldsSignUpButton
+         | PFSignUpFieldsDismissButton];
         
         [logInViewController setSignUpController:signUpViewController];
         
