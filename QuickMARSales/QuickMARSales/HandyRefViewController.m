@@ -99,7 +99,7 @@
         
         // training request form
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
@@ -115,7 +115,7 @@
     } else if (indexPath.row == 2) {
         
         // hardware requirements form
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
@@ -129,7 +129,7 @@
     } else if (indexPath.row == 3) {
         
         // materials order form
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
@@ -155,7 +155,7 @@
     } else if (indexPath.row == 6) {
         
         // quickmar university
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
@@ -169,7 +169,7 @@
     } else if (indexPath.row == 7) {
         
         // news
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
@@ -183,7 +183,7 @@
     } else if (indexPath.row == 8) {
         
         // brochure
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n" preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
