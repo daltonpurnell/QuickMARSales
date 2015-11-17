@@ -580,7 +580,7 @@
 					"$(PROJECT_DIR)/QuickMARSales/parse-library-1.9.0",
 				);
 				INFOPLIST_FILE = QuickMARSales/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -597,7 +597,7 @@
 					"$(PROJECT_DIR)/QuickMARSales/parse-library-1.9.0",
 				);
 				INFOPLIST_FILE = QuickMARSales/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dalton.QuickMARSales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
