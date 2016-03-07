@@ -9,7 +9,9 @@
 #import "CustomPersonCell.h"
 #import "Appearance.h"
 
-@implementation CustomPersonCell
+@implementation CustomPersonCell {
+
+}
 
 BOOL isChecked;
 
@@ -33,6 +35,19 @@ BOOL isChecked;
     self.phoneNumberLabel.text = [NSString stringWithFormat:@"%@", self.person.phoneNumber];
         
     [Appearance initializeAppearanceDefaults];
+    
+    self.textButton.hidden = YES;
+    self.callButton.hidden = YES;
+    
+    self.emailButton.backgroundColor = [UIColor colorWithRed:102/255 green:101/255 blue:101/255 alpha:1];
+    self.emailButton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gray"]];
+    self.emailButton.clipsToBounds = YES;
+    self.emailButton.layer.cornerRadius = 3;
+    self.emailButton.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.emailButton.layer.shadowOffset = CGSizeMake(1, 2);
+    self.emailButton.layer.shadowOpacity = 0.5;
+    self.emailButton.layer.shadowRadius = 2.0;
+    self.emailButton.clipsToBounds = NO;
 
     
 }

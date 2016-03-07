@@ -23,11 +23,14 @@
     
     // load youtube video into player view
     [self.playerView loadWithVideoId:@"C9mUlUB43kk"];
-    self.tabBarController.tabBar.barTintColor =  [UIColor colorWithRed:0.533 green:0.764 blue:0.216 alpha:1.000];
-    self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
     self.playerView.delegate = self;
     
     [Appearance initializeAppearanceDefaults];
+    
+    self.navigationController.navigationBar.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
+    self.navigationController.navigationBar.layer.shadowOpacity = 0.5;
+    self.navigationController.navigationBar.layer.shadowRadius = 2.0;
     
 
 }

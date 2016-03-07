@@ -45,4 +45,40 @@ dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Headers/PFACL.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Headers/Parse.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Modules/module.modulemap \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/Person.h
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/Person.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/Appearance.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HomeViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/YTPlayerView.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/SalesToolsViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HandyRefViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/CustomHandyRefCell.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DropboxSDK.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBAccountInfo.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBQuota.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialConcreteStore.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialStore.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthParameterFactory.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRestClient.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRequest.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBMetadata.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBError.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/NSString+Dropbox.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBDeltaEntry.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession+iOS.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFTextField.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFSignUpViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFSignUpView.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFQueryCollectionViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFTableViewCell.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFPurchaseTableViewCell.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFQueryTableViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFProductTableViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFLogInViewController.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFLogInView.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFImageView.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/ParseUIConstants.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/PFCollectionViewCell.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Headers/ParseUI.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/ParseUI.framework/Modules/module.modulemap \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/ElevatorPitchViewController.h

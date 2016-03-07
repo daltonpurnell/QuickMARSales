@@ -1,0 +1,6 @@
+framework module GTMSessionFetcherOSX {
+  umbrella header "GTMSessionFetcherOSX.h"
+
+  export *
+  module * { export * }
+}

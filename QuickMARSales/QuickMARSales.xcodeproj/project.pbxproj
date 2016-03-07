@@ -48,6 +48,7 @@
 		CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */; };
 		CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */; };
 		CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */; };
+		CFFC695A1C80C0CE0012E28B /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
 		CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			files = (
 				CF2863DA1BDA99F40005ABA0 /* Social.framework in Frameworks */,
 				CF2863D81BDA99ED0005ABA0 /* Accounts.framework in Frameworks */,
+				CFFC695A1C80C0CE0012E28B /* DropboxSDK.framework in Frameworks */,
 				CF2863D61BDA99E40005ABA0 /* libsqlite3.tbd in Frameworks */,
 				CF2863D41BDA99DB0005ABA0 /* libz.tbd in Frameworks */,
 				CF2863D21BDA99D20005ABA0 /* SystemConfiguration.framework in Frameworks */,
@@ -214,14 +217,12 @@
 		CF78B1851BCC110B00FDC2CF /* QuickMARSales */ = {
 			isa = PBXGroup;
 			children = (
-				CF661CA21BEA74AA00818B7C /* Appearance.h */,
-				CF661CA31BEA74AA00818B7C /* Appearance.m */,
-				CF2863DB1BDAA5570005ABA0 /* Person.h */,
-				CF2863DC1BDAA5570005ABA0 /* Person.m */,
-				CF2863DE1BDAA56B0005ABA0 /* PersonController.h */,
-				CF2863DF1BDAA56B0005ABA0 /* PersonController.m */,
+				CFCC7CB81C80AE62008803EA /* Model */,
+				CFCC7CB91C80AE6E008803EA /* Controller */,
 				CF78B1891BCC110B00FDC2CF /* AppDelegate.h */,
 				CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */,
+				CF661CA21BEA74AA00818B7C /* Appearance.h */,
+				CF661CA31BEA74AA00818B7C /* Appearance.m */,
 				CF78B1BC1BCC12DD00FDC2CF /* HomeViewController.h */,
 				CF78B1BD1BCC12DD00FDC2CF /* HomeViewController.m */,
 				CF78B1BF1BCC130500FDC2CF /* SalesToolsViewController.h */,
@@ -248,6 +249,7 @@
 		CF78B1861BCC110B00FDC2CF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */,
 				CF20FBBF1BF24737001491E7 /* JGActionSheet.h */,
 				CF20FBC01BF24738001491E7 /* JGActionSheet.m */,
 				CF2863B41BDA996C0005ABA0 /* parse-library-1.9.0 */,
@@ -288,6 +290,24 @@
 				CF78B1B01BCC110B00FDC2CF /* Info.plist */,
 			);
 			path = QuickMARSalesUITests;
+			sourceTree = "<group>";
+		};
+		CFCC7CB81C80AE62008803EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF2863DB1BDAA5570005ABA0 /* Person.h */,
+				CF2863DC1BDAA5570005ABA0 /* Person.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CFCC7CB91C80AE6E008803EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF2863DE1BDAA56B0005ABA0 /* PersonController.h */,
+				CF2863DF1BDAA56B0005ABA0 /* PersonController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +601,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuickMARSales/parse-library-1.9.0",
+					"$(PROJECT_DIR)/QuickMARSales",
 				);
 				INFOPLIST_FILE = QuickMARSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -601,6 +622,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuickMARSales/parse-library-1.9.0",
+					"$(PROJECT_DIR)/QuickMARSales",
 				);
 				INFOPLIST_FILE = QuickMARSales/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

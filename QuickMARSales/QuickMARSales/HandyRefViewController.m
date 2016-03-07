@@ -11,15 +11,39 @@
 
 @interface HandyRefViewController ()
 @property (nonatomic, strong) NSArray *optionsList;
+@property (nonatomic, strong) DBRestClient *restClient;
 
 @end
 
 @implementation HandyRefViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    // dropbox
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self];
+    }
+    
+    
+    
+    self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    self.restClient.delegate = self;
+    
+    
+    //  appearance
     [Appearance initializeAppearanceDefaults];
+    
+    self.navigationController.navigationBar.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
+    self.navigationController.navigationBar.layer.shadowOpacity = 0.5;
+    self.navigationController.navigationBar.layer.shadowRadius = 2.0;
+
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -28,7 +52,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.optionsList= [[NSArray alloc] initWithObjects: @"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", nil];
+    self.optionsList= [[NSArray alloc] initWithObjects: @"   Request A Demo", @"   Request A Training", @"   Hardware Requirements", @"   Order Materials", @"   View Training Materials", @"   Sample Project Plan",  @"   QuickMAR University", @"   News", @"   Brochure", @"   Fact Sheet", @"   I bought QuickMAR. Now what?", nil];
 
     
     PFUser *currentUser = [PFUser currentUser];
@@ -55,7 +79,7 @@
         [self presentViewController:logInViewController animated:YES completion:^{
             
             // nothing
-        }];
+        }];  
     
     }
 
@@ -95,103 +119,163 @@
     if (indexPath.row == 0) {
         
         // demo request form
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/demo"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/demo"]];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
     } else if (indexPath.row == 1) {
         
         // training request form
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
-        
-        [self presentViewController:alert animated:YES completion:nil];
 
-        
-        
-
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/demo"]];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     } else if (indexPath.row == 2) {
         
-        // hardware requirements form
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                              message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // hardware requirements form
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
         
         [self presentViewController:alert animated:YES completion:nil];
+
         
 
 
     } else if (indexPath.row == 3) {
         
-        // materials order form
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for this site is:\n \n \n \nYour password is:\n \n"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // materials order form
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/demo"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
         
         [self presentViewController:alert animated:YES completion:nil];
+
         
 
 
     } else if (indexPath.row == 4) {
         
-        // training materials link
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                // training materials link
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
 
     } else if (indexPath.row == 5) {
         
-        // sample project plan
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                         // sample project plan
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
 
     } else if (indexPath.row == 6) {
         
-        // quickmar university
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for this site is:\n \n \n \nYour password is:\n \n"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                // quickmar university
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/demo"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
         
         [self presentViewController:alert animated:YES completion:nil];
+        
+
         
 
 
     } else if (indexPath.row == 7) {
         
         // news
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n " preferredStyle:UIAlertControllerStyleAlert];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/demo"]];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
 
 
     } else if (indexPath.row == 8) {
         
-        // brochure
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is:\n \n Your password is:\n" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // brochure
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
         
         [self presentViewController:alert animated:YES completion:nil];
         
@@ -199,13 +283,22 @@
 
     } else if (indexPath.row == 9) {
         
-        // fact sheet
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login details" message:@"Your username for this site is: \n Your password is: " preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/partners-2/"]];
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }]];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // fact sheet
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
         
         [self presentViewController:alert animated:YES completion:nil];
         
@@ -213,9 +306,26 @@
 
     } else if (indexPath.row == 10) {
         
-        //now what?
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.quickmar.com/"]];
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:nil
+                                      message:@"Your username for the QuickMAR Sales DropBox account is:\n \nquickmarsalesapp@gmail.com\n \nYour password is:\n \nquickmar123\n \n(You may need to sign out of your DropBox first)"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // now what
+                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.dropbox.com/home/QuickMAR%20Sales?preview=dummy.pdf"]];
+                                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
 
     }
 }

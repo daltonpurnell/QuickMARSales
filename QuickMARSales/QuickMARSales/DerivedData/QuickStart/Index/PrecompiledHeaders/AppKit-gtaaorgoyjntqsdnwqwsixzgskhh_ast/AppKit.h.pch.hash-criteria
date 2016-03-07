@@ -1,0 +1,26 @@
+-x
+objective-c
+-arch
+x86_64
+-fretain-comments-from-system-headers
+-std=c99
+-gmodules
+-fpascal-strings
+-O0
+-DOBJC_OLD_DISPATCH_PROTOTYPES=0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk
+-fasm-blocks
+-mmacosx-version-min=10.11
+-g
+-I/Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DerivedData/QuickStart/Build/Products/Debug/include
+-F/Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DerivedData/QuickStart/Build/Products/Debug
+-ferror-limit=10
+-working-directory=/Users/djp1989/google-api-objectivec-client/Source
+-Xclang
+-detailed-preprocessing-record
+-DDEBUG=1
+x86_64-apple-darwin15.0.0
+"4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)"
+SDK_PRODUCT_BUILD_VERSION=15A278
+15A278

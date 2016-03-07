@@ -49,6 +49,20 @@ dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/parse-library-1.9.0/Parse.framework/Modules/module.modulemap \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/CRMTableVC.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/JGActionSheet.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DropboxSDK.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBAccountInfo.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBQuota.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialConcreteStore.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialStore.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthParameterFactory.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRestClient.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRequest.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBMetadata.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBError.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/NSString+Dropbox.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBDeltaEntry.h \
+  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession+iOS.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/Appearance.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HomeViewController.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/YTPlayerView.h \

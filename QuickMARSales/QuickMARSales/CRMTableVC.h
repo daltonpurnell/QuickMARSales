@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PersonController.h"
 #import "JGActionSheet.h"
+#import <DropboxSDK/DropboxSDK.h>
+
 @import MessageUI;
 @import AddressBook;
 @import AddressBookUI;
@@ -16,7 +18,7 @@
 
 static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 
-@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate> {
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate,DBRestClientDelegate> {
     
 }
 

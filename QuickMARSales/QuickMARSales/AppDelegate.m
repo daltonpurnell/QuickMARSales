@@ -25,6 +25,15 @@
     
     [Person registerSubclass];
     
+    [Appearance initializeAppearanceDefaults];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    DBSession *dbSession = [[DBSession alloc]
+                            initWithAppKey:@"h88oe108wiudpge"
+                            appSecret:@"i69qzlz9mxk6jiu"
+                            root:kDBRootAppFolder]; // either kDBRootAppFolder or kDBRootDropbox
+    [DBSession setSharedSession:dbSession];
+    
     return YES;
 }
 
@@ -48,6 +57,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url sourceApplication:(NSString *)source annotation:(id)annotation {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
 }
 
 @end

@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) NSMutableArray *selectedMaterials;
 @property (strong, nonatomic) NSMutableArray *linksArray;
+@property (strong, nonatomic) DBRestClient *restClient;
 
 @end
 
@@ -30,7 +31,18 @@
     [super viewDidLoad];
     
     [Appearance initializeAppearanceDefaults];
-
+    
+    
+    self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    self.restClient.delegate = self;
+    
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    
+    self.navigationController.navigationBar.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
+    self.navigationController.navigationBar.layer.shadowOpacity = 0.5;
+    self.navigationController.navigationBar.layer.shadowRadius = 2.0;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -88,17 +100,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 150;
-}
-
-
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    if ([PersonController sharedInstance].people.count == 0) {
-        return @"Tap the + to add people to your contact list";
-    } else {
-        return nil;
-    }
+    return 195;
 }
 
 
@@ -223,7 +225,7 @@
     
     [self dismissViewControllerAnimated:YES
                              completion:^{
-                                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure you would like to add this person to your CRM?" message:[NSString stringWithFormat:@"%@ %@ \n %@ \n %@ \n %@", firstName, lastName, phoneNumber, emailAddress, address] preferredStyle:UIAlertControllerStyleAlert];
+                                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure you would like to add this person?" message:[NSString stringWithFormat:@"%@ %@ \n %@ \n %@ \n %@", firstName, lastName, phoneNumber, emailAddress, address] preferredStyle:UIAlertControllerStyleAlert];
                                  
                                  [alert addAction:[UIAlertAction actionWithTitle:@"Add Person" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      
@@ -286,7 +288,7 @@
     if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
             // create view programmatically and present it
-            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"View Training Materials", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
+            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"Training Course Outlines", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
         
         [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:11];
         [section1 setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:12];
@@ -317,83 +319,164 @@
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:1]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/demo"];
                         NSLog(@"%@", self.linksArray);
                         
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"TBD"];
-                        NSLog(@"%@", self.linksArray);
+//                        [self.restClient loadMetadata:@"/"];
+                        
+                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/demo  \n Your username for this site is: \n Your password is:"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"TBD"];
-                        NSLog(@"%@", self.linksArray);
+//                        [self.restClient loadMetadata:@"/"];
+//                        
+//                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"TBD"];
+//                        [self.restClient loadMetadata:@"/"];
+//                        
+//                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
+                        
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/demo  \n Your username for this site is: shared_training \n Your password is: password701"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
                         
                         // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
+                        [self.linksArray addObject:@"http://www.quickmar.com/demo"];
                         NSLog(@"%@", self.linksArray);
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
-                        NSLog(@"%@", self.linksArray);
+                        
+//                        [self.restClient loadMetadata:@"/"];
+//                        
+//                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
+                        
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/partners-2/"];
-                        NSLog(@"%@", self.linksArray);
+//                        [self.restClient loadMetadata:@"/"];
+//                        
+//                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                         
                     } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
                         
-                        // add link to links array
-                        [self.linksArray addObject:@"TBD"];
-                        NSLog(@"%@", self.linksArray);
+//                        [self.restClient loadMetadata:@"/"];
+//                        
+//                        // download document from dropbox
+//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
+//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
+//                        
+//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                     }
-        
-                    
                     
                     [sheet dismissAnimated:YES];
+                    
+                    
+                    
                 // launch mfmailcompose
                 MFMailComposeViewController *mailViewController = [MFMailComposeViewController new];
                 mailViewController.mailComposeDelegate = self;
+                    
+                    
+                    if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
+                       
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
+                        
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
+                        
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
+                        
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
+                       
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
+                       
+                        // attach file
+                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        
+                    }
+                    
+                    
+                    
                 [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
 
-                [mailViewController setMessageBody:[NSString stringWithFormat:@"Your username for the links that require it is:\n \n Your password is:\n \n %@",[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"]] isHTML:NO];
-
+                [mailViewController setMessageBody:[NSString stringWithFormat:@"%@",[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"]] isHTML:NO];
+                    
                  [self presentViewController:mailViewController animated:YES completion:nil];
                 } else {
+                    
                     // add index path to array of selected buttons
                     [section1 setButtonStyle:JGActionSheetButtonStyleGreen forButtonAtIndex:indexPath.row];
                     [self.selectedMaterials addObject:[NSNumber numberWithInteger:indexPath.row]];
                     NSLog(@"%@", self.selectedMaterials);
                 }
             }];
+        
+        UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(0, -30, self.view.frame.size.width, self.view.frame.size.height - 64)];
+        [self.view addSubview:newView];
             
-            [sheet showInView:self.view animated:YES];
+            [sheet showInView:newView animated:YES];
 
     } else {
         
@@ -450,6 +533,7 @@
 }
 
 
+
 #pragma mark - mfmailcompose delegate methods
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
@@ -458,6 +542,34 @@
     [self.selectedMaterials removeAllObjects];
     [self.linksArray removeAllObjects];
     
+}
+
+
+
+
+#pragma mark - dropbox methods
+- (void)restClient:(DBRestClient *)client loadedFile:(NSString *)localPath
+       contentType:(NSString *)contentType metadata:(DBMetadata *)metadata {
+    NSLog(@"File loaded into path: %@", localPath);
+}
+
+- (void)restClient:(DBRestClient *)client loadFileFailedWithError:(NSError *)error {
+    NSLog(@"There was an error loading the file: %@", error);
+}
+
+
+- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+    if (metadata.isDirectory) {
+        NSLog(@"Folder '%@' contains:", metadata.path);
+        for (DBMetadata *file in metadata.contents) {
+            NSLog(@"	%@", file.filename);
+        }
+    }
+}
+
+- (void)restClient:(DBRestClient *)client
+loadMetadataFailedWithError:(NSError *)error {
+    NSLog(@"Error loading metadata: %@", error);
 }
 
 
