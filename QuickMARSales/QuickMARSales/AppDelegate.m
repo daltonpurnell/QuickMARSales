@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BuddySDK/Buddy.h"
 
 @interface AppDelegate ()
 
@@ -18,12 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // Initialize Parse.
-    [Parse setApplicationId:@"Fg952Idn4lDdhlFZSEutCexY9sFS5lDRn2iwXiPM"
-                  clientKey:@"UVw84TDwmBOzDzLwbo7UEbfCfK8iaP9ueHILikcK"];
+    [Buddy init:@"bbbbbc.zDrpzPFPBMggc" appKey:@"2f6e68b6-2582-d922-382c-d4aaac57b585" ];
     
-    
-    [Person registerSubclass];
     
     [Appearance initializeAppearanceDefaults];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];

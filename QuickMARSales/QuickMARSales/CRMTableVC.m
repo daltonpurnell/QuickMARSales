@@ -9,6 +9,8 @@
 #import "CRMTableVC.h"
 #import "CustomPersonCell.h"
 #import "Appearance.h"
+#import "BuddySDK/Buddy.h"
+
 
 @interface CRMTableVC () <textButtonTappedDelegate, emailButtonTappedDelegate>
 
@@ -20,7 +22,7 @@
 
 @property (strong, nonatomic) NSMutableArray *selectedMaterials;
 @property (strong, nonatomic) NSMutableArray *linksArray;
-@property (strong, nonatomic) DBRestClient *restClient;
+@property (strong, nonatomic) NSArray *people;
 
 @end
 
@@ -32,9 +34,7 @@
     
     [Appearance initializeAppearanceDefaults];
     
-    
-    self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-    self.restClient.delegate = self;
+    [self loadPeopleFromBuddy];
     
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
@@ -63,10 +63,10 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    [[PersonController sharedInstance]loadPeopleFromParse:^(NSError *error) {
-        [self.tableView reloadData];
-    }];
+    [self loadPeopleFromBuddy];
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -74,18 +74,41 @@
     return 1;
 }
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [PersonController sharedInstance].people.count;
+    return self.people.count;
 }
+
+
 
 
 - (CustomPersonCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     // Configure the cell...
-    Person *person = [PersonController sharedInstance].people[indexPath.row];
-    cell.person = person;
+    
+    BPPicture *picture = [self.people objectAtIndex:indexPath.row];
+    [Buddy GET:[NSString stringWithFormat:@"pictures/%@/file", picture.id] parameters:nil class:[BPFile class] callback:^(id obj, NSError *error) {
+        
+        if(error==nil)
+        {
+            BPFile *file = (BPFile*)obj;
+//
+//            UIImage* image = [UIImage imageWithData:file.fileData];
+//            [cell.imageView setImage:image];
+            
+            cell.nameLabel.text = picture.title;
+            
+            cell.phoneNumberLabel.text = picture.tag;
+            
+            cell.emailLabel.text = picture.caption;
+            
+        }
+        
+    }];
+
     
     cell.delegate = self;
     cell.emailDelegate = self;
@@ -225,20 +248,39 @@
     
     [self dismissViewControllerAnimated:YES
                              completion:^{
-                                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure you would like to add this person?" message:[NSString stringWithFormat:@"%@ %@ \n %@ \n %@ \n %@", firstName, lastName, phoneNumber, emailAddress, address] preferredStyle:UIAlertControllerStyleAlert];
                                  
-                                 [alert addAction:[UIAlertAction actionWithTitle:@"Add Person" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 // convert uiimage to bpfile
+                                 BPFile *file = [[BPFile alloc] init];
+                                 file.contentType = @"image/png";
+                                 file.fileData = UIImagePNGRepresentation([UIImage imageNamed:@"contactGray"]);
+                                 
+                                 // post picture
+                                 NSDictionary *params = @{
+                                                          @"data": file,
+                                                          @"tag": emailAddress,
+                                                          @"caption":phoneNumber,
+                                                          @"readPermissions": @"App",
+                                                          @"writePermissions": @"App",
+                                                          @"title": [NSString stringWithFormat:@"%@ %@", firstName, lastName]
+                                                          };
+                                 
+                                 [Buddy POST:@"/pictures" parameters:params class:[BPPicture class] callback:^(id obj, NSError *error) {
                                      
-                                     // now load all these things into a person object and save it to parse
-                                     self.person = [[PersonController sharedInstance]createPersonWithFirstName:firstName LastName:lastName              PhoneNumber:phoneNumber EmailAddress:emailAddress Address:address];
+                                     // Your callback code here
+                                     if (!error) {
+                                         NSLog(@"Success!");
+                                         [self.tableView reloadData];
+                                         
+                                     } else {
+                                         
+                                         NSLog(@"ERROR: %@", error);
+                                     }
+                                     
+                                     
+                                 }];
+
                                      [self.tableView reloadData];
-                                     NSLog(@"Person saved to parse");
-                                 }]];
-                                 
-                                 [alert addAction:[UIAlertAction actionWithTitle:@"Nevermind" style:UIAlertActionStyleCancel handler:nil]];
-                                 
-                                 [self presentViewController:alert animated:YES completion:nil];
-                                 
+
                              }];
     
 }
@@ -248,14 +290,14 @@
 #pragma mark - custom delegate methods
 
 -(void)textButtonTapped:(NSIndexPath*)indexPath {
-    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
+    BPPicture *person = [self.people objectAtIndex:indexPath.row];
     
     // if the phoneNumber string contains numbers and is more than 7 characters long
-    if (person.phoneNumber.length >= 7 && [person.phoneNumber rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound)
+    if (person.caption.length >= 7 && [person.caption rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound)
     {
         
         
-        NSString *strippedPhoneNumber = [[person.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
+        NSString *strippedPhoneNumber = [[person.caption componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
         
         NSLog(@"%@", strippedPhoneNumber);
         
@@ -280,15 +322,14 @@
 
 -(void)emailButtonTapped:(NSIndexPath*)indexPath {
     
-    
-    Person *person = [[PersonController sharedInstance].people objectAtIndex:indexPath.row];
+    BPPicture *person = [self.people objectAtIndex:indexPath.row];
     
     // if the email string contains @
     NSCharacterSet *cset = [NSCharacterSet characterSetWithCharactersInString:@"@"];
-    if ([person.emailAddress rangeOfCharacterFromSet:cset].location != NSNotFound)
+    if ([person.tag rangeOfCharacterFromSet:cset].location != NSNotFound)
     {
             // create view programmatically and present it
-            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Order Materials", @"Training Course Outlines", @"Sample Project Plan",  @"QuickMAR University", @"News", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
+            JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Training Course Outlines", @"Sample Project Plan",  @"QuickMAR University", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
         
         [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:11];
         [section1 setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:12];
@@ -387,27 +428,6 @@
 //                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                         
                         
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
-                        
-//                        [self.restClient loadMetadata:@"/"];
-//                        
-//                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
-                        
-//                        [self.restClient loadMetadata:@"/"];
-//                        
-//                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
                     }
                     
                     [sheet dismissAnimated:YES];
@@ -459,7 +479,7 @@
                     
                     
                     
-                [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.emailAddress], nil]];
+                [mailViewController setToRecipients:[NSArray arrayWithObjects:[NSString stringWithFormat:@"%@", person.caption], nil]];
 
                 [mailViewController setMessageBody:[NSString stringWithFormat:@"%@",[[self.linksArray valueForKey:@"description"] componentsJoinedByString:@"\n"]] isHTML:NO];
                     
@@ -545,32 +565,25 @@
 }
 
 
-
-
-#pragma mark - dropbox methods
-- (void)restClient:(DBRestClient *)client loadedFile:(NSString *)localPath
-       contentType:(NSString *)contentType metadata:(DBMetadata *)metadata {
-    NSLog(@"File loaded into path: %@", localPath);
-}
-
-- (void)restClient:(DBRestClient *)client loadFileFailedWithError:(NSError *)error {
-    NSLog(@"There was an error loading the file: %@", error);
-}
-
-
-- (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
-    if (metadata.isDirectory) {
-        NSLog(@"Folder '%@' contains:", metadata.path);
-        for (DBMetadata *file in metadata.contents) {
-            NSLog(@"	%@", file.filename);
-        }
+#pragma mark - load tableview with data
+-(void)loadPeopleFromBuddy {
+// load pictures from Buddy
+[Buddy GET:@"/pictures" parameters:nil class:[BPPageResults class] callback:^(id obj, NSError *error) {
+    
+    if (!error) {
+        // Your callback code here
+        BPPageResults *searchResults = (BPPageResults*)obj;
+        self.people = [searchResults convertPageResultsToType:[BPPicture class]];
+        [self.tableView reloadData];
+        NSLog(@"ALERTS: %@", self.people);
+        
+    } else {
+        
+        NSLog(@"ERROR: %@", error);
     }
+}];
 }
 
-- (void)restClient:(DBRestClient *)client
-loadMetadataFailedWithError:(NSError *)error {
-    NSLog(@"Error loading metadata: %@", error);
-}
 
 
 #pragma mark - Navigation

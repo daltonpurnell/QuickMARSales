@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PersonController.h"
 #import "CRMTableVC.h"
 
 @protocol textButtonTappedDelegate;
@@ -22,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (strong, nonatomic) Person *person;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
 @property (weak, nonatomic) IBOutlet UIButton *textButton;

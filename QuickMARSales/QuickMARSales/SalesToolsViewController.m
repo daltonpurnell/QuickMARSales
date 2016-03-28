@@ -8,6 +8,8 @@
 
 #import "SalesToolsViewController.h"
 #import "Appearance.h"
+#import "LoginSignupVC.h"
+
 
 @interface SalesToolsViewController ()
 
@@ -28,7 +30,11 @@
     
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
-
+    
+    
+    
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
     
 }
 

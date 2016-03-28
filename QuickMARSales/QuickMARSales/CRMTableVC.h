@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PersonController.h"
 #import "JGActionSheet.h"
 #import <DropboxSDK/DropboxSDK.h>
 
@@ -18,11 +17,9 @@
 
 static NSString *const NoPhoneNumberNotificationKey = @"No phone number";
 
-@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate,DBRestClientDelegate> {
+@interface CRMTableVC : UITableViewController <UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate> {
     
 }
-
-@property (strong, nonatomic) Person *person;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 

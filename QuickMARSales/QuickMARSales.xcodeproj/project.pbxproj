@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		269DB4A11B2AB7192064BF57 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A3AAC9005DE034100253C6 /* libPods.a */; };
 		CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */; };
 		CF20FBC11BF24738001491E7 /* JGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CF20FBC01BF24738001491E7 /* JGActionSheet.m */; };
 		CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863A81BDA8B860005ABA0 /* ElevatorPitchViewController.m */; };
@@ -14,13 +15,6 @@
 		CF2863AE1BDA904C0005ABA0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863AD1BDA904C0005ABA0 /* AddressBook.framework */; };
 		CF2863B01BDA90540005ABA0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863AF1BDA90540005ABA0 /* AddressBookUI.framework */; };
 		CF2863B31BDA98820005ABA0 /* CustomPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863B21BDA98820005ABA0 /* CustomPersonCell.m */; };
-		CF2863BC1BDA996C0005ABA0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863B51BDA996C0005ABA0 /* Bolts.framework */; };
-		CF2863BD1BDA996C0005ABA0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863B61BDA996C0005ABA0 /* Parse.framework */; };
-		CF2863BE1BDA996C0005ABA0 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863B71BDA996C0005ABA0 /* ParseCrashReporting.framework */; };
-		CF2863BF1BDA996C0005ABA0 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863B81BDA996C0005ABA0 /* ParseFacebookUtils.framework */; };
-		CF2863C01BDA996C0005ABA0 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863B91BDA996C0005ABA0 /* ParseFacebookUtilsV4.framework */; };
-		CF2863C11BDA996C0005ABA0 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863BA1BDA996C0005ABA0 /* ParseTwitterUtils.framework */; };
-		CF2863C21BDA996C0005ABA0 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863BB1BDA996C0005ABA0 /* ParseUI.framework */; };
 		CF2863C41BDA999C0005ABA0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863C31BDA999C0005ABA0 /* AudioToolbox.framework */; };
 		CF2863C61BDA99A40005ABA0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863C51BDA99A40005ABA0 /* CFNetwork.framework */; };
 		CF2863C81BDA99AC0005ABA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863C71BDA99AC0005ABA0 /* CoreGraphics.framework */; };
@@ -33,8 +27,7 @@
 		CF2863D61BDA99E40005ABA0 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863D51BDA99E40005ABA0 /* libsqlite3.tbd */; };
 		CF2863D81BDA99ED0005ABA0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863D71BDA99ED0005ABA0 /* Accounts.framework */; };
 		CF2863DA1BDA99F40005ABA0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2863D91BDA99F40005ABA0 /* Social.framework */; };
-		CF2863DD1BDAA5570005ABA0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863DC1BDAA5570005ABA0 /* Person.m */; };
-		CF2863E01BDAA56B0005ABA0 /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2863DF1BDAA56B0005ABA0 /* PersonController.m */; };
+		CF4B5B101CA980A4007DAFA1 /* DocView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B5B0F1CA980A4007DAFA1 /* DocView.m */; };
 		CF661CA41BEA74AA00818B7C /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = CF661CA31BEA74AA00818B7C /* Appearance.m */; };
 		CF78B1881BCC110B00FDC2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1871BCC110B00FDC2CF /* main.m */; };
 		CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B18A1BCC110B00FDC2CF /* AppDelegate.m */; };
@@ -48,6 +41,7 @@
 		CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */; };
 		CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */; };
 		CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */; };
+		CFE4F1A11C9AF9F0008679E8 /* LoginSignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE4F1A01C9AF9F0008679E8 /* LoginSignupVC.m */; };
 		CFFC695A1C80C0CE0012E28B /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078AC85C283559F8D210FBC3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9996418917849971FA376290 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHandyRefCell.h; sourceTree = "<group>"; };
 		CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHandyRefCell.m; sourceTree = "<group>"; };
 		CF20FBBF1BF24737001491E7 /* JGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGActionSheet.h; sourceTree = "<group>"; };
@@ -81,13 +77,6 @@
 		CF2863AF1BDA90540005ABA0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CF2863B11BDA98820005ABA0 /* CustomPersonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPersonCell.h; sourceTree = "<group>"; };
 		CF2863B21BDA98820005ABA0 /* CustomPersonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPersonCell.m; sourceTree = "<group>"; };
-		CF2863B51BDA996C0005ABA0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		CF2863B61BDA996C0005ABA0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		CF2863B71BDA996C0005ABA0 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		CF2863B81BDA996C0005ABA0 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		CF2863B91BDA996C0005ABA0 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		CF2863BA1BDA996C0005ABA0 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
-		CF2863BB1BDA996C0005ABA0 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		CF2863C31BDA999C0005ABA0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF2863C51BDA99A40005ABA0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CF2863C71BDA99AC0005ABA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,10 +89,8 @@
 		CF2863D51BDA99E40005ABA0 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CF2863D71BDA99ED0005ABA0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CF2863D91BDA99F40005ABA0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		CF2863DB1BDAA5570005ABA0 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		CF2863DC1BDAA5570005ABA0 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		CF2863DE1BDAA56B0005ABA0 /* PersonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
-		CF2863DF1BDAA56B0005ABA0 /* PersonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
+		CF4B5B0E1CA980A4007DAFA1 /* DocView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocView.h; sourceTree = "<group>"; };
+		CF4B5B0F1CA980A4007DAFA1 /* DocView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocView.m; sourceTree = "<group>"; };
 		CF661CA21BEA74AA00818B7C /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		CF661CA31BEA74AA00818B7C /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		CF78B1831BCC110B00FDC2CF /* QuickMARSales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickMARSales.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +116,10 @@
 		CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		CF78B1C71BCC19E600FDC2CF /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
 		CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		CFE4F19F1C9AF9F0008679E8 /* LoginSignupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSignupVC.h; sourceTree = "<group>"; };
+		CFE4F1A01C9AF9F0008679E8 /* LoginSignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSignupVC.m; sourceTree = "<group>"; };
 		CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		D3A3AAC9005DE034100253C6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,15 +140,9 @@
 				CF2863C81BDA99AC0005ABA0 /* CoreGraphics.framework in Frameworks */,
 				CF2863C61BDA99A40005ABA0 /* CFNetwork.framework in Frameworks */,
 				CF2863C41BDA999C0005ABA0 /* AudioToolbox.framework in Frameworks */,
-				CF2863C21BDA996C0005ABA0 /* ParseUI.framework in Frameworks */,
-				CF2863BC1BDA996C0005ABA0 /* Bolts.framework in Frameworks */,
-				CF2863BE1BDA996C0005ABA0 /* ParseCrashReporting.framework in Frameworks */,
-				CF2863C01BDA996C0005ABA0 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				CF2863BF1BDA996C0005ABA0 /* ParseFacebookUtils.framework in Frameworks */,
 				CF2863B01BDA90540005ABA0 /* AddressBookUI.framework in Frameworks */,
-				CF2863BD1BDA996C0005ABA0 /* Parse.framework in Frameworks */,
-				CF2863C11BDA996C0005ABA0 /* ParseTwitterUtils.framework in Frameworks */,
 				CF2863AE1BDA904C0005ABA0 /* AddressBook.framework in Frameworks */,
+				269DB4A11B2AB7192064BF57 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,18 +163,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF2863B41BDA996C0005ABA0 /* parse-library-1.9.0 */ = {
+		1D4CA0C9070FCB091FE99941 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF2863B51BDA996C0005ABA0 /* Bolts.framework */,
-				CF2863B61BDA996C0005ABA0 /* Parse.framework */,
-				CF2863B71BDA996C0005ABA0 /* ParseCrashReporting.framework */,
-				CF2863B81BDA996C0005ABA0 /* ParseFacebookUtils.framework */,
-				CF2863B91BDA996C0005ABA0 /* ParseFacebookUtilsV4.framework */,
-				CF2863BA1BDA996C0005ABA0 /* ParseTwitterUtils.framework */,
-				CF2863BB1BDA996C0005ABA0 /* ParseUI.framework */,
+				078AC85C283559F8D210FBC3 /* Pods.debug.xcconfig */,
+				9996418917849971FA376290 /* Pods.release.xcconfig */,
 			);
-			path = "parse-library-1.9.0";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF78B17A1BCC110B00FDC2CF = {
@@ -201,6 +180,8 @@
 				CF78B1A21BCC110B00FDC2CF /* QuickMARSalesTests */,
 				CF78B1AD1BCC110B00FDC2CF /* QuickMARSalesUITests */,
 				CF78B1841BCC110B00FDC2CF /* Products */,
+				1D4CA0C9070FCB091FE99941 /* Pods */,
+				D490E1E9374D8A0A49883E19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,6 +210,8 @@
 				CF78B1C01BCC130500FDC2CF /* SalesToolsViewController.m */,
 				CF78B1C21BCC132400FDC2CF /* HandyRefViewController.h */,
 				CF78B1C31BCC132400FDC2CF /* HandyRefViewController.m */,
+				CF4B5B0E1CA980A4007DAFA1 /* DocView.h */,
+				CF4B5B0F1CA980A4007DAFA1 /* DocView.m */,
 				CF1DDED41BE3B5CA00B57D5F /* CustomHandyRefCell.h */,
 				CF1DDED51BE3B5CA00B57D5F /* CustomHandyRefCell.m */,
 				CF2863A71BDA8B860005ABA0 /* ElevatorPitchViewController.h */,
@@ -237,6 +220,8 @@
 				CF2863AB1BDA8F610005ABA0 /* CRMTableVC.m */,
 				CF2863B11BDA98820005ABA0 /* CustomPersonCell.h */,
 				CF2863B21BDA98820005ABA0 /* CustomPersonCell.m */,
+				CFE4F19F1C9AF9F0008679E8 /* LoginSignupVC.h */,
+				CFE4F1A01C9AF9F0008679E8 /* LoginSignupVC.m */,
 				CF78B1921BCC110B00FDC2CF /* Main.storyboard */,
 				CF78B1951BCC110B00FDC2CF /* Assets.xcassets */,
 				CF78B1971BCC110B00FDC2CF /* LaunchScreen.storyboard */,
@@ -252,7 +237,6 @@
 				CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */,
 				CF20FBBF1BF24737001491E7 /* JGActionSheet.h */,
 				CF20FBC01BF24738001491E7 /* JGActionSheet.m */,
-				CF2863B41BDA996C0005ABA0 /* parse-library-1.9.0 */,
 				CF2863D91BDA99F40005ABA0 /* Social.framework */,
 				CF2863D71BDA99ED0005ABA0 /* Accounts.framework */,
 				CF2863D51BDA99E40005ABA0 /* libsqlite3.tbd */,
@@ -295,8 +279,6 @@
 		CFCC7CB81C80AE62008803EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CF2863DB1BDAA5570005ABA0 /* Person.h */,
-				CF2863DC1BDAA5570005ABA0 /* Person.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -304,10 +286,16 @@
 		CFCC7CB91C80AE6E008803EA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CF2863DE1BDAA56B0005ABA0 /* PersonController.h */,
-				CF2863DF1BDAA56B0005ABA0 /* PersonController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D490E1E9374D8A0A49883E19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A3AAC9005DE034100253C6 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,9 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF78B1B31BCC110B00FDC2CF /* Build configuration list for PBXNativeTarget "QuickMARSales" */;
 			buildPhases = (
+				D89AD0736FCC982A2A1E62DE /* Check Pods Manifest.lock */,
 				CF78B17F1BCC110B00FDC2CF /* Sources */,
 				CF78B1801BCC110B00FDC2CF /* Frameworks */,
 				CF78B1811BCC110B00FDC2CF /* Resources */,
+				D9F57F428E24653FA14F9777 /* Embed Pods Frameworks */,
+				F036A658FFF679270E73509B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,6 +428,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D89AD0736FCC982A2A1E62DE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9F57F428E24653FA14F9777 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F036A658FFF679270E73509B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF78B17F1BCC110B00FDC2CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -444,9 +483,10 @@
 			files = (
 				CF78B18B1BCC110B00FDC2CF /* AppDelegate.m in Sources */,
 				CF2863A91BDA8B860005ABA0 /* ElevatorPitchViewController.m in Sources */,
-				CF2863DD1BDAA5570005ABA0 /* Person.m in Sources */,
 				CF2863AC1BDA8F610005ABA0 /* CRMTableVC.m in Sources */,
 				CF661CA41BEA74AA00818B7C /* Appearance.m in Sources */,
+				CF4B5B101CA980A4007DAFA1 /* DocView.m in Sources */,
+				CFE4F1A11C9AF9F0008679E8 /* LoginSignupVC.m in Sources */,
 				CF78B1C11BCC130500FDC2CF /* SalesToolsViewController.m in Sources */,
 				CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */,
 				CF78B1C41BCC132400FDC2CF /* HandyRefViewController.m in Sources */,
@@ -454,7 +494,6 @@
 				CF1DDED61BE3B5CA00B57D5F /* CustomHandyRefCell.m in Sources */,
 				CF78B1881BCC110B00FDC2CF /* main.m in Sources */,
 				CF2863B31BDA98820005ABA0 /* CustomPersonCell.m in Sources */,
-				CF2863E01BDAA56B0005ABA0 /* PersonController.m in Sources */,
 				CF78B1BE1BCC12DD00FDC2CF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +633,7 @@
 		};
 		CF78B1B41BCC110B00FDC2CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078AC85C283559F8D210FBC3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -615,6 +655,7 @@
 		};
 		CF78B1B51BCC110B00FDC2CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9996418917849971FA376290 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
