@@ -269,6 +269,7 @@
                                      // Your callback code here
                                      if (!error) {
                                          NSLog(@"Success!");
+                                         [self loadPeopleFromBuddy];
                                          [self.tableView reloadData];
                                          
                                      } else {
@@ -278,8 +279,6 @@
                                      
                                      
                                  }];
-
-                                     [self.tableView reloadData];
 
                              }];
     
