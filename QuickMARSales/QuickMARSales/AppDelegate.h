@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Appearance.h"
-#import <DropboxSDK/DropboxSDK.h>
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

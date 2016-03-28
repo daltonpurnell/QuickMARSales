@@ -21,11 +21,9 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+
+#pragma mark - scrollview delegate method
 -(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return self.imageView;
