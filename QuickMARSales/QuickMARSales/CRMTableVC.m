@@ -252,16 +252,16 @@
                                  // convert uiimage to bpfile
                                  BPFile *file = [[BPFile alloc] init];
                                  file.contentType = @"image/png";
-                                 file.fileData = UIImagePNGRepresentation([UIImage imageNamed:@"contactGray"]);
+                                 file.fileData = UIImagePNGRepresentation([UIImage imageNamed:@"ContactGray"]);
                                  
                                  // post picture
                                  NSDictionary *params = @{
                                                           @"data": file,
-                                                          @"tag": emailAddress,
-                                                          @"caption":phoneNumber,
-                                                          @"readPermissions": @"App",
-                                                          @"writePermissions": @"App",
-                                                          @"title": [NSString stringWithFormat:@"%@ %@", firstName, lastName]
+                                                          @"tag": self.savedEmail,
+                                                          @"caption":self.savedPhoneNumber,
+                                                          @"readPermissions": @"User",
+                                                          @"writePermissions": @"User",
+                                                          @"title": [NSString stringWithFormat:@"%@ %@", self.savedFirstName, self.savedLastName]
                                                           };
                                  
                                  [Buddy POST:@"/pictures" parameters:params class:[BPPicture class] callback:^(id obj, NSError *error) {
@@ -521,7 +521,7 @@
         BPPageResults *searchResults = (BPPageResults*)obj;
         self.people = [searchResults convertPageResultsToType:[BPPicture class]];
         [self.tableView reloadData];
-        NSLog(@"ALERTS: %@", self.people);
+        NSLog(@"PEOPLE: %@", self.people);
         
     } else {
         
