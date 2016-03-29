@@ -27,12 +27,6 @@
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
     
     
-    // dropbox
-    if (![[DBSession sharedSession] isLinked]) {
-        [[DBSession sharedSession] linkFromController:self];
-    }
-    
-    
     
     //  appearance
     [Appearance initializeAppearanceDefaults];
@@ -54,10 +48,20 @@
     
     
     
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-
-
+    
+    NSString *savedUsername = [[NSUserDefaults standardUserDefaults]
+                               stringForKey:@"username"];
+    
+    if (savedUsername == nil) {
+        
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+        
+    }
+    
+    
 }
+
+
 
 
 #pragma mark - Table view data source and delegate

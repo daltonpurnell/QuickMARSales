@@ -9,18 +9,4 @@ dependencies: \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/SalesToolsViewController.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/HandyRefViewController.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/CustomHandyRefCell.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DropboxSDK.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBAccountInfo.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBQuota.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialConcreteStore.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthCredentialStore.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/MPOAuthParameterFactory.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRestClient.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBRequest.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBMetadata.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBError.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/NSString+Dropbox.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBDeltaEntry.h \
-  /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/DropboxSDK.framework/Headers/DBSession+iOS.h \
   /Users/djp1989/Documents/Development/QuickMAR/QuickMARSales/QuickMARSales/QuickMARSales/ElevatorPitchViewController.h

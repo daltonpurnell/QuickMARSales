@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomHandyRefCell.h"
-#import <DropboxSDK/DropboxSDK.h>
 
 @import MessageUI;
 
