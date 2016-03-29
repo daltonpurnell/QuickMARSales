@@ -51,6 +51,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.optionsList= [[NSArray alloc] initWithObjects: @"   Request A Demo", @"   Request A Training", @"   Hardware Requirements", @"   View Training Outlines", @"   Sample Project Plan",  @"   QuickMAR University", @"   Brochure", @"   Fact Sheet", @"   I bought QuickMAR. Now what?", nil];
+    
+    
+    
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+
 
 }
 

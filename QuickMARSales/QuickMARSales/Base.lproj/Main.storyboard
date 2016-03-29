@@ -130,9 +130,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SALES TOOLS" id="o6B-3C-WSC"/>
-                    <connections>
-                        <segue destination="EBw-Hk-44J" kind="presentation" identifier="showLogin" id="fdM-Vn-Rwh"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMB-eC-TLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,6 +177,7 @@
                     <navigationItem key="navigationItem" title="HANDY REF" id="V8M-pA-4cM"/>
                     <connections>
                         <segue destination="V0f-2g-v2j" kind="presentation" identifier="showDoc" id="iWL-Ob-EOw"/>
+                        <segue destination="EBw-Hk-44J" kind="presentation" identifier="showLogin" id="t8L-A1-AUr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgH-FX-i5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
