@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "JGActionSheet.h"
-#import <DropboxSDK/DropboxSDK.h>
 
 @import MessageUI;
 @import AddressBook;

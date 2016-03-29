@@ -330,8 +330,8 @@
             // create view programmatically and present it
             JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:@"Materials" message:@"Choose the materials you would like to send" buttonTitles:@[@"Request A Demo", @"Request A Training", @"Hardware Requirements", @"Training Course Outlines", @"Sample Project Plan",  @"QuickMAR University", @"Brochure", @"Fact Sheet", @"I bought QuickMAR. Now what?", @"Ok", @"Cancel"] buttonStyle:JGActionSheetButtonStyleDefault];
         
-        [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:11];
-        [section1 setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:12];
+        [section1 setButtonStyle:JGActionSheetButtonStyleBlue forButtonAtIndex:9];
+        [section1 setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:10];
 
         
             NSArray *sections = @[section1];
@@ -341,13 +341,13 @@
             
             [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
                 
-                if (indexPath.row == 12) {
+                if (indexPath.row == 10) {
                     [sheet dismissAnimated:YES];
                     [self.selectedMaterials removeAllObjects];
                     [self.linksArray removeAllObjects];
                 }
                 
-                if (indexPath.row == 11) {
+                if (indexPath.row == 9) {
                     
                     // add correct links to links array
                     if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:0]]) {
@@ -362,70 +362,11 @@
                         [self.linksArray addObject:@"http://www.quickmar.com/demo"];
                         NSLog(@"%@", self.linksArray);
                         
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
-                        
-//                        [self.restClient loadMetadata:@"/"];
-                        
-                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
+                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
                         
                         // add link to links array
                         [self.linksArray addObject:@"http://www.quickmar.com/demo  \n Your username for this site is: \n Your password is:"];
                         NSLog(@"%@", self.linksArray);
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
-                        
-//                        [self.restClient loadMetadata:@"/"];
-//                        
-//                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
-                        
-//                        [self.restClient loadMetadata:@"/"];
-//                        
-//                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
-                        
-                        // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/demo  \n Your username for this site is: shared_training \n Your password is: password701"];
-                        NSLog(@"%@", self.linksArray);
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
-                        
-                        // add link to links array
-                        [self.linksArray addObject:@"http://www.quickmar.com/demo"];
-                        NSLog(@"%@", self.linksArray);
-                        
-                    } if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
-                        
-                        
-//                        [self.restClient loadMetadata:@"/"];
-//                        
-//                        // download document from dropbox
-//                        NSString *dropboxPath = @"/CareSuite_by_QuickMAR_brochure.pdf";
-//                        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//                        NSString *localPath = [NSString stringWithFormat:@"%@/CareSuite_by_QuickMAR_brochure.pdf", [paths objectAtIndex:0]];
-//                        
-//                        [self.restClient loadFile:dropboxPath intoPath:localPath];
-                        
                         
                     }
                     
@@ -441,38 +382,44 @@
                     if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:2]]) {
                        
                         // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"hardware_requirements" ofType:@"jpg"];
+                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"hardware_requirements.jpg"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:3]]) {
+                        
+                        // attach file
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"training_outlines" ofType:@"jpg"];
+                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"training_outlines.jpg"];
                         
                     }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:4]]) {
                         
                         // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sample_project_plan" ofType:@"jpg"];
+                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"sample_project_plan.jpg"];
                         
-                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:5]]) {
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:6]]) {
                         
                         // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"brochure" ofType:@"jpg"];
+                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"brochure.jpg"];
+                        
+                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:7]]) {
+                       
+                        // attach file
+                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"fact_sheet" ofType:@"jpg"];
+                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"fact_sheet.jpg"];
                         
                     }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:8]]) {
-                        
-                        // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        
-                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:9]]) {
                        
                         // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        
-                    }if ([self.selectedMaterials containsObject:[NSNumber numberWithInteger:10]]) {
-                       
-                        // attach file
-                        NSData *pdfData = [NSData dataWithContentsOfFile:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
-                        [mailViewController addAttachmentData:pdfData mimeType:@"application/pdf" fileName:@"/CareSuite_by_QuickMAR and_Manager Brochure v2.1.pdf"];
+//                        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"now_what" ofType:@"jpg"];
+//                        NSData *pdfData = [NSData dataWithContentsOfFile:filePath];
+//                        [mailViewController addAttachmentData:pdfData mimeType:@"image/jpeg" fileName:@"now_what"];
                         
                     }
                     
