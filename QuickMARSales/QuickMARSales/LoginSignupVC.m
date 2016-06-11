@@ -41,72 +41,21 @@
     self.logInButton.clipsToBounds = NO;
     self.logInButton.layer.shadowRadius = 2.0;
     
-    self.signupButton.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BLUE"]];
-    self.signupButton.clipsToBounds = YES;
-    self.signupButton.layer.cornerRadius = 10;
-    self.signupButton.layer.shadowColor = [UIColor darkGrayColor].CGColor;
-    self.signupButton.layer.shadowOffset = CGSizeMake(1, 2);
-    self.signupButton.layer.shadowOpacity = 0.5;
-    self.signupButton.clipsToBounds = NO;
-    self.signupButton.layer.shadowRadius = 2.0;
-    
     self.passwordTextField.secureTextEntry = YES;
     self.passwordTextField2.secureTextEntry = YES;
 
 }
 
 
-
-
 -(void)viewWillAppear:(BOOL)animated {
-    
     [Appearance initializeAppearanceDefaults];
-    
 }
 
+- (IBAction)linkTapped:(id)sender {
+    // send to web page
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/salesapp"]];
 
-
-
-
-- (IBAction)signupButtonTapped:(id)sender {
-    
-    [Buddy createUser:self.emailTextField.text
-             password:self.passwordTextField.text
-            firstName:nil
-             lastName:nil
-                email:self.emailTextField.text
-          dateOfBirth:nil
-               gender:nil
-                  tag:nil
-             callback:^(id newBuddyObject, NSError *error)
-     {
-         if (!error)
-         {
-             // Greet the user
-             NSLog(@"Success! User created");
-    
-             // log in user
-             [Buddy loginUser:self.emailTextField.text password:self.passwordTextField.text callback:^(id newBuddyObject, NSError *error)
-              {
-                  if (!error)
-                  {
-                      // save username to defaults
-                      NSString *username = self.emailTextField.text;
-                      [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
-                      [[NSUserDefaults standardUserDefaults] synchronize];
-    
-                      // Greet the user
-                      NSLog(@"Success! user logged in");
-                      [self dismissViewControllerAnimated:YES completion:nil];
-                  }
-              }];
-         }
-     }];
 }
-
-
-
-
 
 
 - (IBAction)loginButtonTapped:(id)sender {
