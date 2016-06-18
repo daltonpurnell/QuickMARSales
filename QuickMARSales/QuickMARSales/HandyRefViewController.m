@@ -67,9 +67,7 @@
     
     // Configure the cell...
     cell.label.text = [self.optionsList objectAtIndex:indexPath.row];
-    cell.indexPath = indexPath;
-    DocView *vc = [DocView new];
-    
+    cell.indexPath = indexPath;    
     return cell;
 }
 
@@ -90,7 +88,7 @@
     } else if (indexPath.row == 4) {
         [self performSegueWithIdentifier:@"showDoc3" sender:self];
     } else if (indexPath.row == 5) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/university"]];
+        [self presentAlert];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else if (indexPath.row == 6) {
         [self performSegueWithIdentifier:@"showDoc4" sender:self];
@@ -101,6 +99,22 @@
     }
 }
 
+#pragma mark - alert
+
+-(void)presentAlert {
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Your username and password for this site:"
+                                  message:@"Username: shared_training\nPassword: password701"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.quickmar.com/university"]];
+    }];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
 
 #pragma mark - mfmailcompose delegate methods
 
