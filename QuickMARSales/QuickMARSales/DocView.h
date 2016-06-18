@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UIImage *image;
 @property (strong, nonatomic) NSString *vcTitle;
+@property (nonatomic) NSInteger *tagg;
+
 
 
 @end

@@ -43,6 +43,11 @@
 		CF78B1C91BCC19E600FDC2CF /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78B1C81BCC19E600FDC2CF /* YTPlayerView.m */; };
 		CFE4F1A11C9AF9F0008679E8 /* LoginSignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE4F1A01C9AF9F0008679E8 /* LoginSignupVC.m */; };
 		CFFC695A1C80C0CE0012E28B /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */; };
+		CFFDA7C01D158B1B00468995 /* brochure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFFDA7BB1D158B1A00468995 /* brochure.jpg */; };
+		CFFDA7C11D158B1B00468995 /* fact_sheet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFFDA7BC1D158B1A00468995 /* fact_sheet.jpg */; };
+		CFFDA7C21D158B1B00468995 /* hardware_requirements.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFFDA7BD1D158B1A00468995 /* hardware_requirements.jpg */; };
+		CFFDA7C31D158B1B00468995 /* sample_project_plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFFDA7BE1D158B1A00468995 /* sample_project_plan.jpg */; };
+		CFFDA7C41D158B1B00468995 /* training_outlines.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFFDA7BF1D158B1A00468995 /* training_outlines.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,11 @@
 		CFE4F19F1C9AF9F0008679E8 /* LoginSignupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSignupVC.h; sourceTree = "<group>"; };
 		CFE4F1A01C9AF9F0008679E8 /* LoginSignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSignupVC.m; sourceTree = "<group>"; };
 		CFFC69591C80C0CE0012E28B /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		CFFDA7BB1D158B1A00468995 /* brochure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brochure.jpg; sourceTree = "<group>"; };
+		CFFDA7BC1D158B1A00468995 /* fact_sheet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fact_sheet.jpg; sourceTree = "<group>"; };
+		CFFDA7BD1D158B1A00468995 /* hardware_requirements.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hardware_requirements.jpg; sourceTree = "<group>"; };
+		CFFDA7BE1D158B1A00468995 /* sample_project_plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample_project_plan.jpg; sourceTree = "<group>"; };
+		CFFDA7BF1D158B1A00468995 /* training_outlines.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = training_outlines.jpg; sourceTree = "<group>"; };
 		D3A3AAC9005DE034100253C6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,6 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				CF78B1C51BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html */,
+				CFFDA7BB1D158B1A00468995 /* brochure.jpg */,
+				CFFDA7BC1D158B1A00468995 /* fact_sheet.jpg */,
+				CFFDA7BD1D158B1A00468995 /* hardware_requirements.jpg */,
+				CFFDA7BE1D158B1A00468995 /* sample_project_plan.jpg */,
+				CFFDA7BF1D158B1A00468995 /* training_outlines.jpg */,
 				CF78B1851BCC110B00FDC2CF /* QuickMARSales */,
 				CF78B1A21BCC110B00FDC2CF /* QuickMARSalesTests */,
 				CF78B1AD1BCC110B00FDC2CF /* QuickMARSalesUITests */,
@@ -405,10 +420,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFDA7C31D158B1B00468995 /* sample_project_plan.jpg in Resources */,
+				CFFDA7C01D158B1B00468995 /* brochure.jpg in Resources */,
+				CFFDA7C21D158B1B00468995 /* hardware_requirements.jpg in Resources */,
 				CF78B1991BCC110B00FDC2CF /* LaunchScreen.storyboard in Resources */,
 				CF78B1961BCC110B00FDC2CF /* Assets.xcassets in Resources */,
+				CFFDA7C41D158B1B00468995 /* training_outlines.jpg in Resources */,
 				CF78B1C61BCC19DC00FDC2CF /* YTPlayerView-iframe-player.html in Resources */,
 				CF78B1941BCC110B00FDC2CF /* Main.storyboard in Resources */,
+				CFFDA7C11D158B1B00468995 /* fact_sheet.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

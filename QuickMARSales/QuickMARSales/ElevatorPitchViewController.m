@@ -27,6 +27,8 @@
     
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    
+    self.title = [@"Elevator Pitch" uppercaseString];
 
 }
 

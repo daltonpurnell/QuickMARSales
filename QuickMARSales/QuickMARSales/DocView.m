@@ -16,11 +16,26 @@
 
 @implementation DocView
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    self.title = self.vcTitle;
+    self.imageView.image = self.image;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.scrollView.minimumZoomScale=0.5;
+    self.scrollView.maximumZoomScale=6.0;
+    self.scrollView.contentSize=CGSizeMake(1280, 960);
+    self.scrollView.delegate=self;
 }
 
+- (IBAction)doneTapped:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - scrollview delegate method

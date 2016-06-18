@@ -32,6 +32,8 @@
     self.navigationController.navigationBar.layer.shadowOpacity = 0.5;
     self.navigationController.navigationBar.layer.shadowRadius = 2.0;
     
+    self.title = [@"Show Video" uppercaseString];
+    
 
 }
 
