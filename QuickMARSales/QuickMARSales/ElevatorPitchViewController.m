@@ -9,7 +9,7 @@
 #import "ElevatorPitchViewController.h"
 #import "Appearance.h"
 
-@interface ElevatorPitchViewController ()
+@interface ElevatorPitchViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -29,6 +29,13 @@
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
     
     self.title = [@"Elevator Pitch" uppercaseString];
+    
+    self.scrollView.minimumZoomScale=0.5;
+    self.scrollView.maximumZoomScale=6.0;
+    self.scrollView.contentSize=CGSizeMake(1280, 960);
+    self.scrollView.delegate=self;
+    
+    self.imageView.image = [UIImage imageNamed:@"elevator_pitch"];
 
 }
 
@@ -37,6 +44,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - scrollview delegate method
+-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageView;
+}
 
 /*
 #pragma mark - Navigation

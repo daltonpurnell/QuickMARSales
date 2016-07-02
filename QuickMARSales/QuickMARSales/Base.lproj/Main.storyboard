@@ -60,7 +60,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ql1-YC-ozE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="iLG-xY-nsK">
                                 <cells>
@@ -159,7 +159,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZuV-1t-M8G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="44" id="IwX-kO-2I4" customClass="CustomHandyRefCell">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
@@ -462,21 +462,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-fV-haG">
-                                <rect key="frame" x="20" y="72" width="560" height="168"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sS5-Ou-xdL">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gl8-dS-wp6">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="520"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="520" id="xgi-Z6-nZx"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="WCu-pv-rBx"/>
+                                    <constraint firstItem="gl8-dS-wp6" firstAttribute="leading" secondItem="sS5-Ou-xdL" secondAttribute="leading" id="2wO-QT-xHn"/>
+                                    <constraint firstAttribute="bottom" secondItem="gl8-dS-wp6" secondAttribute="bottom" id="79U-QV-jdO"/>
+                                    <constraint firstAttribute="trailing" secondItem="gl8-dS-wp6" secondAttribute="trailing" id="L4y-M5-dY4"/>
+                                    <constraint firstItem="gl8-dS-wp6" firstAttribute="top" secondItem="sS5-Ou-xdL" secondAttribute="top" id="qOy-RS-Gpv"/>
+                                    <constraint firstItem="gl8-dS-wp6" firstAttribute="centerX" secondItem="sS5-Ou-xdL" secondAttribute="centerX" id="yRK-LP-Vul"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="Y3Q-fV-haG" secondAttribute="leading" id="811-sR-nE2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Y3Q-fV-haG" secondAttribute="trailing" id="BBb-QT-aPN"/>
-                            <constraint firstItem="Y3Q-fV-haG" firstAttribute="top" secondItem="KdT-85-s3F" secondAttribute="bottom" constant="8" id="h83-G9-6fW"/>
+                            <constraint firstItem="sS5-Ou-xdL" firstAttribute="top" secondItem="KdT-85-s3F" secondAttribute="bottom" constant="8" id="0bF-wJ-O2N"/>
+                            <constraint firstItem="5rw-Aa-UaH" firstAttribute="top" secondItem="sS5-Ou-xdL" secondAttribute="bottom" constant="8" id="UEn-Dg-9dy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sS5-Ou-xdL" secondAttribute="leading" id="Vyc-q9-Spq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sS5-Ou-xdL" secondAttribute="trailing" id="gIv-vP-jF0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Elevator Pitch" id="peX-nm-of1">
@@ -487,7 +497,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="pitchTextView" destination="Y3Q-fV-haG" id="d2T-x3-qEh"/>
+                        <outlet property="imageView" destination="gl8-dS-wp6" id="SCt-WR-Ug5"/>
+                        <outlet property="scrollView" destination="sS5-Ou-xdL" id="F3u-mA-9da"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06S-GU-ByI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -550,7 +561,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a user yet? Head over to our website to sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-IL-vre">
                                 <rect key="frame" x="20" y="261" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw6-ay-ANc">

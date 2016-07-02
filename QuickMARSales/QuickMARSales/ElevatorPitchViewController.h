@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ElevatorPitchViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *pitchTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
